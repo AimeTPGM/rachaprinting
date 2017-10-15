@@ -1,0 +1,13 @@
+nav.navbar(ng-controller="NavbarCtrl")
+	div.navbar-brand
+		a.navbar-item(href="http://bulma.io")
+			img(src="http://bulma.io/images/bulma-logo.png")
+	div.navbar-end
+		a.navbar-item(href="#", ng-repeat="menu in menus")
+			span
+				| {{menu.name}}
+		div.navbar-search
+			p.control.has-icons-left
+				input.input(type="text", placeholder="search")
+				span.icon.is-left
+					i.fa.fa-search

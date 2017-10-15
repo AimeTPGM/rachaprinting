@@ -1,0 +1,76 @@
+// responsive break points
+$break-xs: 576px;
+$break-s: 768px;
+$break-md: 992px;
+$break-lg: 1200px;
+
+// color palette
+$cyan: #9DD1F1;
+$magenta: #820263;
+$yellow: #FFF;
+$super-dark-grey: #333;
+
+// navbar
+$navbar-height: 50px;
+
+// slide
+$slide-wrapper: 300px;
+$slide-button-margin-side: 20px;
+$slide-button-font-size: 60px;
+$slide-button-margin-top: calc((#{$slide-wrapper}/2) - (#{$slide-button-font-size}/2)); 
+
+// product
+$product-wrapper: 400px;
+
+// how to
+$howto-wrapper: 35vh;
+
+// review
+$review-wrapper: 35vh;
+
+// example
+$example-wrapper: 35vh;
+
+.navbar
+  padding: 10px 15px 10px 15px;
+  background: rgba(255,255,255,0.5);
+  .navbar-search
+    margin-top: 5px;
+
+.banner-wrapper
+  height: $slide-wrapper;
+  background: $super-dark-grey;
+  .btn-wrapper.btn-navigator
+    button.right
+      border: 0;
+      background: transparent;
+      color: white;
+      float: right;
+      font-size: $slide-button-font-size;
+      margin-right: $slide-button-margin-side;
+      margin-top: $slide-button-margin-top;
+    button.left
+      border: 0;
+      background: transparent;
+      color: white;
+      float: left;
+      font-size: $slide-button-font-size;
+      margin-left: $slide-button-margin-side;
+      margin-top: $slide-button-margin-top;
+.product-wrapper
+  background: $cyan;
+  padding: 20px;
+  .item
+    padding: 20px;
+    .img-wrapper
+      height: 200px;
+      width: 200px;
+      background: $magenta;
+      margin: auto;
+    .content
+      text-align: center;
+      margin-top: 20px;
+      .name
+        font-size: 1.5em;
+      .price
+        font-size: 2em;
