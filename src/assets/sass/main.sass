@@ -33,6 +33,9 @@ $review-wrapper: 35vh;
 // example
 $example-wrapper: 35vh;
 
+// review
+$customer-img-size: 150px;
+
 html
   color: $super-dark-grey;
 
@@ -128,5 +131,40 @@ html
           border-left: 15px solid $super-dark-grey;
           margin-top: -10px;
 .review-wrapper
-  
+  padding: 100px;
+  .content-wrapper
+    border: solid 1px $grey;
+    background: white;
+    width: 100%;
+    height: 300px;
+    padding: 20px;
+    display: flex;
+    position: relative;
+    .img-wrapper
+      height: 150px;
+      width: 150px;
+      background: $super-dark-grey;
+      border-radius: 50%;
+      margin: 50px;
+    .comment-info-wrapper
+      text-align: right;
+      position: absolute;
+      right: 70px;
+      margin-top: 50px;
+      overflow: scroll;
+      height: 150px;
+      .customer-info
+        margin-top: 20px;
+        .name
+          font-size: 1em;
+        .company
+          font-size: 0.8em;
+      .comment-wrapper
+        .comment
+          font-size: 2em;
+          font-style: italic;
+    .comment-info-wrapper::-webkit-scrollbar
+      width: 0px;
+      background: transparent;
+      display: none;
   

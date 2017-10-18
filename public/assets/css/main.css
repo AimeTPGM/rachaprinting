@@ -93,3 +93,40 @@ html {
           border-bottom: 15px solid transparent;
           border-left: 15px solid #333;
           margin-top: -10px; }
+
+.review-wrapper {
+  padding: 100px; }
+  .review-wrapper .content-wrapper {
+    border: solid 1px #999;
+    background: white;
+    width: 100%;
+    height: 300px;
+    padding: 20px;
+    display: flex;
+    position: relative; }
+    .review-wrapper .content-wrapper .img-wrapper {
+      height: 150px;
+      width: 150px;
+      background: #333;
+      border-radius: 50%;
+      margin: 50px; }
+    .review-wrapper .content-wrapper .comment-info-wrapper {
+      text-align: right;
+      position: absolute;
+      right: 70px;
+      margin-top: 50px;
+      overflow: scroll;
+      height: 150px; }
+      .review-wrapper .content-wrapper .comment-info-wrapper .customer-info {
+        margin-top: 20px; }
+        .review-wrapper .content-wrapper .comment-info-wrapper .customer-info .name {
+          font-size: 1em; }
+        .review-wrapper .content-wrapper .comment-info-wrapper .customer-info .company {
+          font-size: 0.8em; }
+      .review-wrapper .content-wrapper .comment-info-wrapper .comment-wrapper .comment {
+        font-size: 2em;
+        font-style: italic; }
+    .review-wrapper .content-wrapper .comment-info-wrapper::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+      display: none; }
