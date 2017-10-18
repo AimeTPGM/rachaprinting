@@ -4,6 +4,9 @@ html {
 .grey-bg {
   background: #999; }
 
+.white-bg {
+  background: #FFF; }
+
 .navbar {
   padding: 10px 15px 10px 15px;
   background: rgba(255, 255, 255, 0.5); }
@@ -32,18 +35,57 @@ html {
 
 .product-wrapper {
   padding: 20px;
-  display: inline-flex; }
-  .product-wrapper .item {
-    padding: 20px; }
-    .product-wrapper .item .img-wrapper {
-      height: 200px;
-      width: 200px;
-      background: #666;
-      margin: auto; }
-    .product-wrapper .item .content {
-      text-align: center;
-      margin-top: 20px; }
-      .product-wrapper .item .content .name {
-        font-size: 1.5em; }
-      .product-wrapper .item .content .price {
-        font-size: 2em; }
+  overflow-x: scroll; }
+  .product-wrapper .item-wrapper::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+    display: none; }
+  .product-wrapper .item-wrapper {
+    overflow-x: scroll;
+    display: inline-flex; }
+    .product-wrapper .item-wrapper .item {
+      padding: 20px; }
+      .product-wrapper .item-wrapper .item .img-wrapper {
+        height: 200px;
+        width: 200px;
+        background: #666;
+        margin: auto;
+        border-radius: 50%; }
+      .product-wrapper .item-wrapper .item .content {
+        text-align: center;
+        margin-top: 20px; }
+        .product-wrapper .item-wrapper .item .content .name {
+          font-size: 1.5em; }
+        .product-wrapper .item-wrapper .item .content .price {
+          font-size: 2em; }
+
+.howto-wrapper {
+  padding: 20px; }
+  .howto-wrapper .item-wrapper {
+    margin: auto;
+    width: fit-content;
+    display: flex; }
+    .howto-wrapper .item-wrapper .item {
+      padding: 20px;
+      text-align: center; }
+      .howto-wrapper .item-wrapper .item .img-wrapper {
+        width: 150px;
+        height: 150px;
+        background: #333;
+        border-radius: 50%; }
+    .howto-wrapper .item-wrapper .arrow-wrapper {
+      margin-top: 90px;
+      display: flex; }
+      .howto-wrapper .item-wrapper .arrow-wrapper .arrow-body {
+        height: 2px;
+        width: 70px;
+        border: none;
+        border-top: 10px dotted #333; }
+      .howto-wrapper .item-wrapper .arrow-wrapper .arrow-head {
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid #333;
+        margin: 10px;
+        margin-top: -5px; }

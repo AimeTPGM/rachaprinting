@@ -1,7 +1,8 @@
 div.product-wrapper(ng-controller="ProductCtrl")
-	div.item(ng-repeat="product in products")
-		div.img-wrapper
-			img(src="product.img")
-		div.content
-			div.name {{product.name}}
-			div.price {{product.price}}
+	div.item-wrapper
+		div.item(ng-repeat="product in products")
+			div.img-wrapper
+				img(src="product.img")
+			div.content
+				div.name {{product.name}}
+				div.price ราคาเริ่มต้นที่ {{product.price}}.-

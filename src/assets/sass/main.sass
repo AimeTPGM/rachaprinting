@@ -10,6 +10,7 @@ $magenta: #666;
 $yellow: #333;
 $super-dark-grey: #333;
 $grey: #999;
+$white: #FFF;
 
 // navbar
 $navbar-height: 50px;
@@ -37,6 +38,9 @@ html
 
 .grey-bg
   background: $grey;
+
+.white-bg
+  background: $white;
 
 .navbar
   padding: 10px 15px 10px 15px;
@@ -66,18 +70,59 @@ html
       margin-top: $slide-button-margin-top;
 .product-wrapper
   padding: 20px;
-  display: inline-flex;
-  .item
-    padding: 20px;
-    .img-wrapper
-      height: 200px;
-      width: 200px;
-      background: $magenta;
-      margin: auto;
-    .content
+  overflow-x: scroll;
+  .item-wrapper::-webkit-scrollbar
+    width: 0px;
+    background: transparent;
+    display: none;
+  .item-wrapper
+    overflow-x: scroll;
+    display: inline-flex;
+    .item
+      padding: 20px;
+      .img-wrapper
+        height: 200px;
+        width: 200px;
+        background: $magenta;
+        margin: auto;
+        border-radius: 50%;
+      .content
+        text-align: center;
+        margin-top: 20px;
+        .name
+          font-size: 1.5em;
+        .price
+          font-size: 2em;
+.howto-wrapper
+  padding: 20px;
+  .item-wrapper
+    margin: auto;
+    width: fit-content;
+    display: flex;
+    .item
+      padding: 20px;
       text-align: center;
-      margin-top: 20px;
-      .name
-        font-size: 1.5em;
-      .price
-        font-size: 2em;
+      .img-wrapper
+        width: 150px;
+        height: 150px;
+        background: $super-dark-grey;
+        border-radius: 50%;
+    .arrow-wrapper
+      margin-top: 90px;
+      display: flex;
+      .arrow-body
+        height: 2px;
+        width: 70px;
+        border: none;
+        border-top: 10px dotted $super-dark-grey;
+      .arrow-head
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid $super-dark-grey;
+        margin: 10px;
+        margin-top: -5px;
+
+  
+  

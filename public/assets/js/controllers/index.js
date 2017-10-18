@@ -4,7 +4,8 @@ angular.module('app')
 		$scope.templates = {
 			'navbar' : '/views/navbar.html',
 			'banner' : '/views/banner.html',
-			'product' : '/views/product.html'
+			'product' : '/views/product.html',
+			'howto' : 'views/howto.html'
 		}
 	}
 ]);
