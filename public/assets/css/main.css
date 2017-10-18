@@ -1,3 +1,9 @@
+html {
+  color: #333; }
+
+.grey-bg {
+  background: #999; }
+
 .navbar {
   padding: 10px 15px 10px 15px;
   background: rgba(255, 255, 255, 0.5); }
@@ -25,14 +31,14 @@
     margin-top: calc((300px/2) - (60px/2)); }
 
 .product-wrapper {
-  background: #9DD1F1;
-  padding: 20px; }
+  padding: 20px;
+  display: inline-flex; }
   .product-wrapper .item {
     padding: 20px; }
     .product-wrapper .item .img-wrapper {
       height: 200px;
       width: 200px;
-      background: #820263;
+      background: #666;
       margin: auto; }
     .product-wrapper .item .content {
       text-align: center;

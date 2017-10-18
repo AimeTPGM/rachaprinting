@@ -1,1 +1,1 @@
-<div class="product-wrapper"><div class="item"><div class="img-wrapper"><img/></div><div class="content"><div class="name">a</div><div class="price">123</div></div></div></div>
+<div ng-controller="ProductCtrl" class="product-wrapper"><div ng-repeat="product in products" class="item"><div class="img-wrapper"><img src="product.img"/></div><div class="content"><div class="name">{{product.name}}</div><div class="price">{{product.price}}</div></div></div></div>

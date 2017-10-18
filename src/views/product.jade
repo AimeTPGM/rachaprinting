@@ -1,7 +1,7 @@
-div.product-wrapper
-	div.item
+div.product-wrapper(ng-controller="ProductCtrl")
+	div.item(ng-repeat="product in products")
 		div.img-wrapper
-			img
+			img(src="product.img")
 		div.content
-			div.name a
-			div.price 123
+			div.name {{product.name}}
+			div.price {{product.price}}

@@ -5,10 +5,11 @@ $break-md: 992px;
 $break-lg: 1200px;
 
 // color palette
-$cyan: #9DD1F1;
-$magenta: #820263;
-$yellow: #FFF;
+$cyan: #999;
+$magenta: #666;
+$yellow: #333;
 $super-dark-grey: #333;
+$grey: #999;
 
 // navbar
 $navbar-height: 50px;
@@ -30,6 +31,12 @@ $review-wrapper: 35vh;
 
 // example
 $example-wrapper: 35vh;
+
+html
+  color: $super-dark-grey;
+
+.grey-bg
+  background: $grey;
 
 .navbar
   padding: 10px 15px 10px 15px;
@@ -58,8 +65,8 @@ $example-wrapper: 35vh;
       margin-left: $slide-button-margin-side;
       margin-top: $slide-button-margin-top;
 .product-wrapper
-  background: $cyan;
   padding: 20px;
+  display: inline-flex;
   .item
     padding: 20px;
     .img-wrapper
