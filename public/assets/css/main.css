@@ -65,27 +65,29 @@ html {
     margin: auto;
     width: fit-content;
     display: flex; }
-    .howto-wrapper .item-wrapper .item {
-      padding: 20px;
-      text-align: center; }
-      .howto-wrapper .item-wrapper .item .img-wrapper {
-        width: 150px;
-        height: 150px;
-        background: #333;
-        border-radius: 50%; }
-    .howto-wrapper .item-wrapper .arrow-wrapper {
-      margin-top: 90px;
+    .howto-wrapper .item-wrapper .step-wrapper {
       display: flex; }
-      .howto-wrapper .item-wrapper .arrow-wrapper .arrow-body {
-        height: 2px;
-        width: 70px;
-        border: none;
-        border-top: 10px dotted #333; }
-      .howto-wrapper .item-wrapper .arrow-wrapper .arrow-head {
-        width: 0;
-        height: 0;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-left: 10px solid #333;
-        margin: 10px;
-        margin-top: -5px; }
+      .howto-wrapper .item-wrapper .step-wrapper .item {
+        padding: 20px;
+        text-align: center; }
+        .howto-wrapper .item-wrapper .step-wrapper .item .img-wrapper {
+          width: 150px;
+          height: 150px;
+          background: #333;
+          border-radius: 50%; }
+      .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper {
+        margin-top: 90px;
+        display: flex; }
+        .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper .arrow-body {
+          height: 2px;
+          width: 70px;
+          border: none;
+          border-top: 10px dotted #333; }
+        .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper .arrow-head {
+          width: 0;
+          height: 0;
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          border-left: 10px solid #333;
+          margin: 10px;
+          margin-top: -5px; }

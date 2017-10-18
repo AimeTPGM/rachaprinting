@@ -1,10 +1,11 @@
 div.howto-wrapper(ng-controller="HowtoCtrl")
 	div.item-wrapper
-		div.item
-			div.img-wrapper
-				img
-			div.description
-				| First step
-		div.arrow-wrapper(ng-if="!$last")
-			div.arrow-body
-			div.arrow-head
+		div.step-wrapper(ng-repeat="step in steps")
+			div.item
+				div.img-wrapper
+					img
+				div.description
+					| First step
+			div.arrow-wrapper(ng-if="!$last")
+				div.arrow-body
+				div.arrow-head
