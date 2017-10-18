@@ -5,7 +5,8 @@ angular.module('app')
 			'navbar' : '/views/navbar.html',
 			'banner' : '/views/banner.html',
 			'product' : '/views/product.html',
-			'howto' : 'views/howto.html'
+			'howto' : '/views/howto.html',
+			'review' : '/views/review.html'
 		}
 	}
 ]);
