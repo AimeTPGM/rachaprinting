@@ -75,6 +75,8 @@ html {
           height: 150px;
           background: #333;
           border-radius: 50%; }
+        .howto-wrapper .item-wrapper .step-wrapper .item .description {
+          margin-top: 20px; }
       .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper {
         margin-top: 90px;
         display: flex; }
