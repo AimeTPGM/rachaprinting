@@ -149,7 +149,8 @@ html {
         background: #999; }
 
 .footer-wrapper {
-  padding: 100px; }
+  padding: 100px;
+  padding-bottom: 10px; }
   .footer-wrapper .section-wrapper {
     display: -webkit-inline-box;
     vertical-align: top;
@@ -163,11 +164,26 @@ html {
         .footer-wrapper .section-wrapper .section .content .social-icon-wrapper .social-icon {
           padding: 5px;
           display: inline-flex; }
-          .footer-wrapper .section-wrapper .section .content .social-icon-wrapper .social-icon .contact-icon {
-            font-size: 1.5em;
-            padding-right: 20px; }
-          .footer-wrapper .section-wrapper .section .content .social-icon-wrapper .social-icon .contact-text {
-            font-size: 1em;
-            margin-top: 0.5em; }
+          .footer-wrapper .section-wrapper .section .content .social-icon-wrapper .social-icon a {
+            display: inherit; }
+            .footer-wrapper .section-wrapper .section .content .social-icon-wrapper .social-icon a .contact-icon {
+              font-size: 1.5em;
+              padding-right: 20px; }
+            .footer-wrapper .section-wrapper .section .content .social-icon-wrapper .social-icon a .contact-text {
+              font-size: 1em;
+              margin-top: 0.5em; }
+      .footer-wrapper .section-wrapper .section .content .list ul {
+        margin-left: -5px; }
+        .footer-wrapper .section-wrapper .section .content .list ul li {
+          list-style: none; }
+      .footer-wrapper .section-wrapper .section .header {
+        margin-bottom: 20px;
+        font-size: 2em; }
     .footer-wrapper .section-wrapper .section:not(:last-child) {
       padding-right: 30px; }
+
+.credit-wrapper {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.8em;
+  padding-bottom: 80px; }

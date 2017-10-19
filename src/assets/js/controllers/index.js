@@ -8,7 +8,8 @@ angular.module('app')
 			'howto' : '/views/howto.html',
 			'review' : '/views/review.html',
 			'example' : '/views/example.html',
-			'footer' : '/views/footer.html'
+			'footer' : '/views/footer.html',
+			'credit' : '/views/credit.html'
 		}
 	}
 ]);
