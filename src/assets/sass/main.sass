@@ -21,23 +21,16 @@ $slide-button-margin-side: 20px;
 $slide-button-font-size: 60px;
 $slide-button-margin-top: calc((#{$slide-wrapper}/2) - (#{$slide-button-font-size}/2)); 
 
-// product
-$product-wrapper: 400px;
-
-// how to
-$howto-wrapper: 35vh;
-
-// review
-$review-wrapper: 35vh;
-
-// example
-$example-wrapper: 35vh;
-
 // review
 $customer-img-size: 150px;
 
+
+
 html
   color: $super-dark-grey;
+
+.super-dark-grey-bg
+  background: $super-dark-grey;
 
 .grey-bg
   background: $grey;
@@ -97,7 +90,7 @@ html
         .price
           font-size: 2em;
 .howto-wrapper
-  padding: 20px;
+  padding: 100px;
   .item-wrapper
     margin: auto;
     width: fit-content;
@@ -169,4 +162,14 @@ html
       width: 0px;
       background: transparent;
       display: none;
-  
+.example-wrapper
+  padding: 100px;
+  .item-wrapper
+    display: -webkit-box;
+    .item
+      padding: 20px;
+      .img-wrapper
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: $grey;

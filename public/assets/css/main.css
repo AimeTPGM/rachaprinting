@@ -1,6 +1,9 @@
 html {
   color: #333; }
 
+.super-dark-grey-bg {
+  background: #333; }
+
 .grey-bg {
   background: #999; }
 
@@ -60,7 +63,7 @@ html {
           font-size: 2em; }
 
 .howto-wrapper {
-  padding: 20px; }
+  padding: 100px; }
   .howto-wrapper .item-wrapper {
     margin: auto;
     width: fit-content;
@@ -132,3 +135,15 @@ html {
       width: 0px;
       background: transparent;
       display: none; }
+
+.example-wrapper {
+  padding: 100px; }
+  .example-wrapper .item-wrapper {
+    display: -webkit-box; }
+    .example-wrapper .item-wrapper .item {
+      padding: 20px; }
+      .example-wrapper .item-wrapper .item .img-wrapper {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: #999; }

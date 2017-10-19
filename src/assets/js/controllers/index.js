@@ -6,7 +6,9 @@ angular.module('app')
 			'banner' : '/views/banner.html',
 			'product' : '/views/product.html',
 			'howto' : '/views/howto.html',
-			'review' : '/views/review.html'
+			'review' : '/views/review.html',
+			'example' : '/views/example.html',
+			'footer' : '/views/footer.html'
 		}
 	}
 ]);
