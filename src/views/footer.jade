@@ -1,4 +1,4 @@
-div.footer-wrapper
+div.footer-wrapper(ng-controller="FooterCtrl")
 	div.section-wrapper
 		div.section
 			div.header
@@ -28,4 +28,38 @@ div.footer-wrapper
 					| hello
 			div.content
 				div.social-icon-wrapper
-					div
+					div.social-icon
+						div.contact-icon
+							a
+								i.icon
+									span.fa.fa-phone
+						div.contact-text
+							| phone
+					div.social-icon
+						div.contact-icon
+							a
+								i.icon
+									span.fa.fa-envelope
+						div.contact-text
+							| email@email.com
+					div.social-icon
+						div.contact-icon
+							a
+								i.icon
+									span.fa.fa-facebook
+						div.contact-text
+							| facebook
+					div.social-icon
+						div.contact-icon
+							a
+								i.icon
+									span.fa.fa-twitter
+						div.contact-text
+							| twitter
+					div.social-icon
+						div.contact-icon
+							a
+								i.icon
+									span.fa.fa-instagram
+						div.contact-text
+							| instagram

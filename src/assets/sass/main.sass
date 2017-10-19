@@ -175,13 +175,25 @@ html
         background: $grey;
 .footer-wrapper
   padding: 100px;
-  padding-top: 120px;
-  padding-bottom: 120px;
   .section-wrapper
     display: -webkit-inline-box;
     vertical-align: top;
     color: $grey;
     .section
       width: calc(100%/3);
+      .content
+        .social-icon-wrapper
+          margin-top: 20px;
+          padding-left: 0;
+          display: grid;
+          .social-icon
+            padding: 5px;
+            display: inline-flex;
+            .contact-icon
+              font-size: 1.5em;
+              padding-right: 20px;  
+            .contact-text
+              font-size: 1em;
+              margin-top: 0.5em;
     .section:not(:last-child)
       padding-right: 30px;

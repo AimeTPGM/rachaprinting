@@ -149,14 +149,25 @@ html {
         background: #999; }
 
 .footer-wrapper {
-  padding: 100px;
-  padding-top: 120px;
-  padding-bottom: 120px; }
+  padding: 100px; }
   .footer-wrapper .section-wrapper {
     display: -webkit-inline-box;
     vertical-align: top;
     color: #999; }
     .footer-wrapper .section-wrapper .section {
       width: calc(100%/3); }
+      .footer-wrapper .section-wrapper .section .content .social-icon-wrapper {
+        margin-top: 20px;
+        padding-left: 0;
+        display: grid; }
+        .footer-wrapper .section-wrapper .section .content .social-icon-wrapper .social-icon {
+          padding: 5px;
+          display: inline-flex; }
+          .footer-wrapper .section-wrapper .section .content .social-icon-wrapper .social-icon .contact-icon {
+            font-size: 1.5em;
+            padding-right: 20px; }
+          .footer-wrapper .section-wrapper .section .content .social-icon-wrapper .social-icon .contact-text {
+            font-size: 1em;
+            margin-top: 0.5em; }
     .footer-wrapper .section-wrapper .section:not(:last-child) {
       padding-right: 30px; }
