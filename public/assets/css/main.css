@@ -147,3 +147,16 @@ html {
         height: 200px;
         border-radius: 50%;
         background: #999; }
+
+.footer-wrapper {
+  padding: 100px;
+  padding-top: 120px;
+  padding-bottom: 120px; }
+  .footer-wrapper .section-wrapper {
+    display: -webkit-inline-box;
+    vertical-align: top;
+    color: #999; }
+    .footer-wrapper .section-wrapper .section {
+      width: calc(100%/3); }
+    .footer-wrapper .section-wrapper .section:not(:last-child) {
+      padding-right: 30px; }
