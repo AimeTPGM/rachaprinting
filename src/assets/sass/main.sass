@@ -47,30 +47,25 @@ html
 .banner-wrapper
   height: $slide-wrapper;
   background: $super-dark-grey;
-  .slide:not(:first-child)
-    display: none !important;
   .slide
     transition: 1s ease bottom !important;
-    display: block !important;
-  .btn-wrapper.btn-navigator
-    button.right
+    opacity: 0;
+  .active
+    opacity: 1;
+  .btn-wrapper
+    width: fit-content;
+    margin: auto;
+    margin-top: 200px;
+    .btn
+      padding: 5px;
+      margin: 5px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
       border: 0;
-      background: transparent;
-      color: white;
-      float: right;
-      font-size: $slide-button-font-size;
-      position: absolute;
-      right: $slide-button-margin-side;
-      top: $slide-button-margin-top; 
-    button.left
-      border: 0;
-      background: transparent;
-      color: white;
-      float: left;
-      font-size: $slide-button-font-size;
-      position: absolute;
-      left: $slide-button-margin-side;
-      top: $slide-button-margin-top;
+    .btn:hover
+      background: rgba(255,255,255,1);
+    .active
+      background: rgba(255,255,255,1);
 .product-wrapper
   padding: 20px;
   overflow-x: scroll;

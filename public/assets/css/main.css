@@ -19,29 +19,25 @@ html {
 .banner-wrapper {
   height: 300px;
   background: #333; }
-  .banner-wrapper .slide:not(:first-child) {
-    display: none !important; }
   .banner-wrapper .slide {
     transition: 1s ease bottom !important;
-    display: block !important; }
-  .banner-wrapper .btn-wrapper.btn-navigator button.right {
-    border: 0;
-    background: transparent;
-    color: white;
-    float: right;
-    font-size: 60px;
-    position: absolute;
-    right: 20px;
-    top: calc((300px/2) + (60px/2)); }
-  .banner-wrapper .btn-wrapper.btn-navigator button.left {
-    border: 0;
-    background: transparent;
-    color: white;
-    float: left;
-    font-size: 60px;
-    position: absolute;
-    left: 20px;
-    top: calc((300px/2) + (60px/2)); }
+    opacity: 0; }
+  .banner-wrapper .active {
+    opacity: 1; }
+  .banner-wrapper .btn-wrapper {
+    width: fit-content;
+    margin: auto;
+    margin-top: 200px; }
+    .banner-wrapper .btn-wrapper .btn {
+      padding: 5px;
+      margin: 5px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      border: 0; }
+    .banner-wrapper .btn-wrapper .btn:hover {
+      background: white; }
+    .banner-wrapper .btn-wrapper .active {
+      background: white; }
 
 .product-wrapper {
   padding: 20px;
