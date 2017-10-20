@@ -133,54 +133,6 @@ html {
       background: transparent;
       display: none; }
 
-@media (max-width: 576px) {
-  .review-wrapper .content-wrapper {
-    display: block;
-    position: static;
-    min-height: fit-content; }
-    .review-wrapper .content-wrapper .img-wrapper {
-      margin-left: auto;
-      margin-right: auto;
-      width: 100px;
-      height: 100px; }
-    .review-wrapper .content-wrapper .comment-info-wrapper {
-      margin-top: 20px;
-      position: static;
-      text-align: center;
-      min-height: fit-content; } }
-
-@media (min-width: 576px) {
-  .review-wrapper .content-wrapper {
-    display: block;
-    position: static;
-    min-height: fit-content; }
-    .review-wrapper .content-wrapper .img-wrapper {
-      margin-left: auto;
-      margin-right: auto;
-      width: 150px;
-      height: 150px; }
-    .review-wrapper .content-wrapper .comment-info-wrapper {
-      margin-top: 30px;
-      position: static;
-      text-align: center;
-      min-height: fit-content; } }
-
-@media (min-width: 992px) {
-  .review-wrapper .content-wrapper {
-    display: flex;
-    position: relative; }
-    .review-wrapper .content-wrapper .img-wrapper {
-      width: 150px;
-      height: 150px;
-      margin: 50px; }
-    .review-wrapper .content-wrapper .comment-info-wrapper {
-      text-align: right;
-      position: absolute;
-      right: 70px;
-      margin-top: 50px;
-      overflow: scroll;
-      height: 150px; } }
-
 .example-wrapper {
   padding: 100px; }
   .example-wrapper .item-wrapper {
@@ -198,33 +150,30 @@ html {
   padding-top: 80px;
   padding-bottom: 10px; }
   .footer-wrapper .section-wrapper {
-    display: -webkit-inline-box;
     vertical-align: top;
     color: #999; }
-    .footer-wrapper .section-wrapper .section {
-      width: calc(100%/3); }
-      .footer-wrapper .section-wrapper .section .content .social-icon-wrapper {
-        margin-top: 20px;
-        padding-left: 0;
-        display: grid; }
-        .footer-wrapper .section-wrapper .section .content .social-icon-wrapper .social-icon {
-          padding: 5px;
-          display: inline-flex; }
-          .footer-wrapper .section-wrapper .section .content .social-icon-wrapper .social-icon a {
-            display: inherit; }
-            .footer-wrapper .section-wrapper .section .content .social-icon-wrapper .social-icon a .contact-icon {
-              font-size: 1.5em;
-              padding-right: 20px; }
-            .footer-wrapper .section-wrapper .section .content .social-icon-wrapper .social-icon a .contact-text {
-              font-size: 1em;
-              margin-top: 0.5em; }
-      .footer-wrapper .section-wrapper .section .content .list ul {
-        margin-left: -5px; }
-        .footer-wrapper .section-wrapper .section .content .list ul li {
-          list-style: none; }
-      .footer-wrapper .section-wrapper .section .header {
-        margin-bottom: 20px;
-        font-size: 2em; }
+    .footer-wrapper .section-wrapper .section .content .social-icon-wrapper {
+      margin-top: 20px;
+      padding-left: 0;
+      display: grid; }
+      .footer-wrapper .section-wrapper .section .content .social-icon-wrapper .social-icon {
+        padding: 5px;
+        display: inline-flex; }
+        .footer-wrapper .section-wrapper .section .content .social-icon-wrapper .social-icon a {
+          display: inherit; }
+          .footer-wrapper .section-wrapper .section .content .social-icon-wrapper .social-icon a .contact-icon {
+            font-size: 1.5em;
+            padding-right: 20px; }
+          .footer-wrapper .section-wrapper .section .content .social-icon-wrapper .social-icon a .contact-text {
+            font-size: 1em;
+            margin-top: 0.5em; }
+    .footer-wrapper .section-wrapper .section .content .list ul {
+      margin-left: -5px; }
+      .footer-wrapper .section-wrapper .section .content .list ul li {
+        list-style: none; }
+    .footer-wrapper .section-wrapper .section .header {
+      margin-bottom: 20px;
+      font-size: 2em; }
     .footer-wrapper .section-wrapper .section:not(:last-child) {
       padding-right: 30px; }
 
@@ -233,3 +182,83 @@ html {
   padding: 20px;
   font-size: 0.8em;
   padding-bottom: 80px; }
+
+@media (max-width: 576px) {
+  .review-wrapper .content-wrapper {
+    display: block;
+    position: static;
+    min-height: fit-content; }
+    .review-wrapper .content-wrapper .img-wrapper {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100px;
+      height: 100px; }
+    .review-wrapper .content-wrapper .comment-info-wrapper {
+      margin-top: 20px;
+      position: static;
+      text-align: center;
+      min-height: fit-content; }
+  .footer-wrapper .section-wrapper {
+    display: block; }
+    .footer-wrapper .section-wrapper .section {
+      width: 100%; } }
+
+@media (min-width: 576px) {
+  .review-wrapper .content-wrapper {
+    display: block;
+    position: static;
+    min-height: fit-content; }
+    .review-wrapper .content-wrapper .img-wrapper {
+      margin-left: auto;
+      margin-right: auto;
+      width: 150px;
+      height: 150px; }
+    .review-wrapper .content-wrapper .comment-info-wrapper {
+      margin-top: 30px;
+      position: static;
+      text-align: center;
+      min-height: fit-content; }
+  .footer-wrapper .section-wrapper {
+    display: block; }
+    .footer-wrapper .section-wrapper .section {
+      width: 100%; } }
+
+@media (min-width: 768px) {
+  .review-wrapper .content-wrapper {
+    display: flex;
+    position: relative; }
+    .review-wrapper .content-wrapper .img-wrapper {
+      width: 150px;
+      height: 150px;
+      margin: 50px; }
+    .review-wrapper .content-wrapper .comment-info-wrapper {
+      text-align: right;
+      position: absolute;
+      right: 70px;
+      margin-top: 50px;
+      overflow: scroll;
+      height: 150px; }
+  .footer-wrapper .section-wrapper {
+    display: block; }
+    .footer-wrapper .section-wrapper .section {
+      width: 100%; } }
+
+@media (min-width: 992px) {
+  .review-wrapper .content-wrapper {
+    display: flex;
+    position: relative; }
+    .review-wrapper .content-wrapper .img-wrapper {
+      width: 150px;
+      height: 150px;
+      margin: 50px; }
+    .review-wrapper .content-wrapper .comment-info-wrapper {
+      text-align: right;
+      position: absolute;
+      right: 70px;
+      margin-top: 50px;
+      overflow: scroll;
+      height: 150px; }
+  .footer-wrapper .section-wrapper {
+    display: -webkit-inline-box; }
+    .footer-wrapper .section-wrapper .section {
+      width: calc(100%/3); } }
