@@ -21,13 +21,18 @@ html {
   background: #333; }
   .banner-wrapper .slide {
     transition: 1s ease bottom !important;
-    opacity: 0; }
+    display: none;
+    margin: auto;
+    color: white;
+    height: inherit;
+    text-align: center; }
   .banner-wrapper .active {
-    opacity: 1; }
+    display: block; }
   .banner-wrapper .btn-wrapper {
     width: fit-content;
     margin: auto;
-    margin-top: 200px; }
+    margin-top: -50px;
+    z-index: 1; }
     .banner-wrapper .btn-wrapper .btn {
       padding: 5px;
       margin: 5px;
@@ -36,7 +41,7 @@ html {
       border: 0; }
     .banner-wrapper .btn-wrapper .btn:hover {
       background: white; }
-    .banner-wrapper .btn-wrapper .active {
+    .banner-wrapper .btn-wrapper .btnactive {
       background: white; }
 
 .product-wrapper {

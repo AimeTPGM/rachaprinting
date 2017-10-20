@@ -4,10 +4,10 @@ angular.module('app')
 		$scope.activeIndex = 0;
 		$scope.banners = [
 			{
-			'img': '1'
+			'img': 'Slide 1'
 			},
 			{
-			'img': '2'
+			'img': 'Slide 2'
 			}
 		]
 

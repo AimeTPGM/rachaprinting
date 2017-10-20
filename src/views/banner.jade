@@ -3,5 +3,5 @@ div.banner-wrapper(ng-controller="BannerCtrl")
 		| {{banner.img}}
 	div.btn-wrapper
 		a(ng-repeat="banner in banners", ng-click="slideTo($index)")
-			button.btn(ng-class="{ active: $index == activeIndex }")
+			button.btn(ng-class="{ btnactive: $index == activeIndex }")
 		
