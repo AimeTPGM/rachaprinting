@@ -10,11 +10,8 @@ angular.module('app')
 			'img': 'Slide 2'
 			}
 		]
-
 		$scope.slideTo = function(index){
-			console.log(index)
 			$scope.activeIndex = index;
-
 		}
 	}
 ]);

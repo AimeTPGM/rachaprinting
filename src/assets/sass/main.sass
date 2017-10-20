@@ -48,19 +48,29 @@ html
   height: $slide-wrapper;
   background: $super-dark-grey;
   .slide
-    transition: 1s ease bottom !important;
-    display: none;
     margin: auto;
     color: white;
     height: inherit;
     text-align: center;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    opacity: 0;
   .active
     display: block;
+    transition: 1s;
+    opacity: 1;
   .btn-wrapper
     width: fit-content;
-    margin: auto;
-    margin-top: -50px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
     z-index: 1;
+    padding: 250px;
     .btn
       padding: 5px;
       margin: 5px;

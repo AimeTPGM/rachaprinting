@@ -20,19 +20,29 @@ html {
   height: 300px;
   background: #333; }
   .banner-wrapper .slide {
-    transition: 1s ease bottom !important;
-    display: none;
     margin: auto;
     color: white;
     height: inherit;
-    text-align: center; }
+    text-align: center;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    opacity: 0; }
   .banner-wrapper .active {
-    display: block; }
+    display: block;
+    transition: 1s;
+    opacity: 1; }
   .banner-wrapper .btn-wrapper {
     width: fit-content;
-    margin: auto;
-    margin-top: -50px;
-    z-index: 1; }
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    padding: 250px; }
     .banner-wrapper .btn-wrapper .btn {
       padding: 5px;
       margin: 5px;
