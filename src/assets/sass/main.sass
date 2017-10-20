@@ -19,7 +19,7 @@ $navbar-height: 50px;
 $slide-wrapper: 300px;
 $slide-button-margin-side: 20px;
 $slide-button-font-size: 60px;
-$slide-button-margin-top: calc((#{$slide-wrapper}/2) - (#{$slide-button-font-size}/2)); 
+$slide-button-margin-top: calc((#{$slide-wrapper}/2) + (#{$slide-button-font-size}/2)); 
 
 // review
 $customer-img-size: 150px;
@@ -47,6 +47,11 @@ html
 .banner-wrapper
   height: $slide-wrapper;
   background: $super-dark-grey;
+  .slide:not(:first-child)
+    display: none !important;
+  .slide
+    transition: 1s ease bottom !important;
+    display: block !important;
   .btn-wrapper.btn-navigator
     button.right
       border: 0;
@@ -54,16 +59,18 @@ html
       color: white;
       float: right;
       font-size: $slide-button-font-size;
-      margin-right: $slide-button-margin-side;
-      margin-top: $slide-button-margin-top;
+      position: absolute;
+      right: $slide-button-margin-side;
+      top: $slide-button-margin-top; 
     button.left
       border: 0;
       background: transparent;
       color: white;
       float: left;
       font-size: $slide-button-font-size;
-      margin-left: $slide-button-margin-side;
-      margin-top: $slide-button-margin-top;
+      position: absolute;
+      left: $slide-button-margin-side;
+      top: $slide-button-margin-top;
 .product-wrapper
   padding: 20px;
   overflow-x: scroll;
@@ -125,6 +132,7 @@ html
           border-bottom: 15px solid transparent;
           border-left: 15px solid $super-dark-grey;
           margin-top: -10px;
+
 .review-wrapper
   padding: 100px;
   .content-wrapper
@@ -133,21 +141,12 @@ html
     width: 100%;
     height: 300px;
     padding: 20px;
-    display: flex;
-    position: relative;
     .img-wrapper
       height: 150px;
       width: 150px;
       background: $super-dark-grey;
       border-radius: 50%;
-      margin: 50px;
     .comment-info-wrapper
-      text-align: right;
-      position: absolute;
-      right: 70px;
-      margin-top: 50px;
-      overflow: scroll;
-      height: 150px;
       .customer-info
         margin-top: 20px;
         .name
@@ -162,6 +161,57 @@ html
       width: 0px;
       background: transparent;
       display: none;
+// review xs
+@media (max-width: $break-xs)
+  .review-wrapper
+    .content-wrapper
+      display: block;
+      position: static;
+      min-height: fit-content;
+      .img-wrapper
+        margin-left: auto;
+        margin-right: auto;
+        width: 100px;
+        height: 100px;
+      .comment-info-wrapper
+        margin-top: 20px;
+        position: static;
+        text-align: center;
+        min-height: fit-content;
+// review s
+@media (min-width: $break-xs)
+  .review-wrapper
+    .content-wrapper
+      display: block;
+      position: static;
+      min-height: fit-content;
+      .img-wrapper
+        margin-left: auto;
+        margin-right: auto;
+        width: 150px;
+        height: 150px;
+      .comment-info-wrapper
+        margin-top: 30px;
+        position: static;
+        text-align: center;
+        min-height: fit-content;
+// review md
+@media (min-width: $break-md)
+  .review-wrapper
+    .content-wrapper
+      display: flex;
+      position: relative;
+      .img-wrapper
+        width: 150px;
+        height: 150px;
+        margin: 50px;
+      .comment-info-wrapper
+        text-align: right;
+        position: absolute;
+        right: 70px;
+        margin-top: 50px;
+        overflow: scroll;
+        height: 150px;
 .example-wrapper
   padding: 100px;
   .item-wrapper
