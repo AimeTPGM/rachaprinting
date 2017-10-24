@@ -1,6 +1,6 @@
 angular.module('app')
-.controller('BannerCtrl',['$scope', '$http','$window',
-	function($scope, $http, $window){
+.controller('BannerCtrl',['$scope', '$http','$window', '$timeout',
+	function($scope, $http, $window, $timeout){
 		$scope.activeIndex = 0;
 		$scope.banners = [
 			{
@@ -13,5 +13,17 @@ angular.module('app')
 		$scope.slideTo = function(index){
 			$scope.activeIndex = index;
 		}
+
+		var countUp = function() {
+			console.log($scope.activeIndex)
+
+			if($scope.activeIndex == $scope.banners.length-1)
+				$scope.activeIndex = 0;
+			else
+				$scope.activeIndex++;
+			$timeout(countUp, 1500);
+		}
+
+		$timeout(countUp, 1500);
 	}
 ]);
