@@ -1,14 +1,14 @@
-div.review-wrapper
-	div.content-wrapper
-		div.img-wrapper
+div.review-wrapper(ng-controller="ReviewCtrl")
+	div.content-wrapper(ng-repeat="review in reviews")
+		div.img-wrapper(ng-class="{ active: $index == activeIndex }")
 			img
-		div.comment-info-wrapper
+		div.comment-info-wrapper(ng-class="{ active: $index == activeIndex }")
 			div.comment-wrapper
 				div.comment
-					| "Good Service"
+					| {{review.customerReview}}
 			div.customer-info
 				| –
 				div.name
-					| Aime
-				div.company
-					| Wherever
+					| {{review.customerName}}
+				div.company(ng-if="review.customerCompany !== '-'")
+					| {{review.customerCompany}}

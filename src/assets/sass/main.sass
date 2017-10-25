@@ -131,11 +131,9 @@ html
         .arrow-body
           display: flex;
           .circle
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
+            width: 100px;
+            height: 2px;
             background: $super-dark-grey;
-            margin-right: 8px;
         .arrow-head
           width: 0;
           height: 0;
@@ -143,21 +141,65 @@ html
           border-bottom: 15px solid transparent;
           border-left: 15px solid $super-dark-grey;
           margin-top: -10px;
-
+  .item-wrapper-overlay
+    margin: auto;
+    width: fit-content;
+    display: flex;
+    position: absolute;
+    .step-wrapper
+      display: flex;
+      .item
+        padding: 20px;
+        text-align: center;
+        .img-wrapper
+          width: 150px;
+          height: 150px;
+          background: $cyan;
+          border-radius: 50%;
+        .description
+          margin-top: 20px;
+      .arrow-wrapper
+        margin-top: 90px;
+        display: flex;
+        .arrow-body
+          display: flex;
+          .circle
+            width: 100px;
+            height: 2px;
+            background: $cyan;
 .review-wrapper
-  padding: 100px;
+  padding: 150px;
+  position: relative;
+  height: 600px;
   .content-wrapper
-    border: solid 1px $grey;
     background: white;
-    width: 100%;
-    height: 300px;
+    width: 90%;
+    height: 350px;
     padding: 20px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
     .img-wrapper
       height: 150px;
       width: 150px;
       background: $super-dark-grey;
       border-radius: 50%;
+      position: absolute;
+      top: -70px;
+      margin: auto;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      z-index: 1;
     .comment-info-wrapper
+      position: absolute;
+      text-align: center;
+      margin-top: 120px;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      z-index: 1;
       .customer-info
         margin-top: 20px;
         .name
@@ -168,6 +210,13 @@ html
         .comment
           font-size: 2em;
           font-style: italic;
+    .active
+      display: block;
+      -webkit-transition: opacity 1s ease-in-out;
+      -moz-transition: opacity 1s ease-in-out;
+      -ms-transition: opacity 1s ease-in-out;
+      -o-transition: opacity 1s ease-in-out;
+      opacity: 1;
     .comment-info-wrapper::-webkit-scrollbar
       width: 0px;
       background: transparent;
@@ -226,21 +275,21 @@ html
 // xs
 @media (max-width: $break-xs)
   //review
-  .review-wrapper
-    .content-wrapper
-      display: block;
-      position: static;
-      min-height: fit-content;
-      .img-wrapper
-        margin-left: auto;
-        margin-right: auto;
-        width: 100px;
-        height: 100px;
-      .comment-info-wrapper
-        margin-top: 20px;
-        position: static;
-        text-align: center;
-        min-height: fit-content;
+  // .review-wrapper
+  //   .content-wrapper
+  //     display: block;
+  //     position: static;
+  //     min-height: fit-content;
+  //     .img-wrapper
+  //       margin-left: auto;
+  //       margin-right: auto;
+  //       width: 100px;
+  //       height: 100px;
+  //     .comment-info-wrapper
+  //       margin-top: 20px;
+  //       position: static;
+  //       text-align: center;
+  //       min-height: fit-content;
   //footer
   .footer-wrapper
     .section-wrapper
@@ -250,21 +299,21 @@ html
 // s
 @media (min-width: $break-xs)
   // review
-  .review-wrapper
-    .content-wrapper
-      display: block;
-      position: static;
-      min-height: fit-content;
-      .img-wrapper
-        margin-left: auto;
-        margin-right: auto;
-        width: 150px;
-        height: 150px;
-      .comment-info-wrapper
-        margin-top: 30px;
-        position: static;
-        text-align: center;
-        min-height: fit-content;
+  // .review-wrapper
+  //   .content-wrapper
+  //     display: block;
+  //     position: static;
+  //     min-height: fit-content;
+  //     .img-wrapper
+  //       margin-left: auto;
+  //       margin-right: auto;
+  //       width: 150px;
+  //       height: 150px;
+  //     .comment-info-wrapper
+  //       margin-top: 30px;
+  //       position: static;
+  //       text-align: center;
+  //       min-height: fit-content;
   //footer
   .footer-wrapper
     .section-wrapper
@@ -273,21 +322,21 @@ html
         width: 100%;
 // md
 @media (min-width: $break-s)
-  .review-wrapper
-    .content-wrapper
-      display: flex;
-      position: relative;
-      .img-wrapper
-        width: 150px;
-        height: 150px;
-        margin: 50px;
-      .comment-info-wrapper
-        text-align: right;
-        position: absolute;
-        right: 70px;
-        margin-top: 50px;
-        overflow: scroll;
-        height: 150px;
+  // .review-wrapper
+  //   .content-wrapper
+  //     display: flex;
+  //     position: relative;
+  //     .img-wrapper
+  //       width: 150px;
+  //       height: 150px;
+  //       margin: 50px;
+  //     .comment-info-wrapper
+  //       text-align: right;
+  //       position: absolute;
+  //       right: 70px;
+  //       margin-top: 50px;
+  //       overflow: scroll;
+  //       height: 150px;
   //footer
   .footer-wrapper
     .section-wrapper
@@ -296,21 +345,21 @@ html
         width: 100%;
 // lg
 @media (min-width: $break-md)
-  .review-wrapper
-    .content-wrapper
-      display: flex;
-      position: relative;
-      .img-wrapper
-        width: 150px;
-        height: 150px;
-        margin: 50px;
-      .comment-info-wrapper
-        text-align: right;
-        position: absolute;
-        right: 70px;
-        margin-top: 50px;
-        overflow: scroll;
-        height: 150px;
+  // .review-wrapper
+  //   .content-wrapper
+  //     display: flex;
+  //     position: relative;
+  //     .img-wrapper
+  //       width: 150px;
+  //       height: 150px;
+  //       margin: 50px;
+  //     .comment-info-wrapper
+  //       text-align: right;
+  //       position: absolute;
+  //       right: 70px;
+  //       margin-top: 50px;
+  //       overflow: scroll;
+  //       height: 150px;
   //footer
   .footer-wrapper
     .section-wrapper

@@ -1,7 +1,7 @@
 div.howto-wrapper(ng-controller="HowtoCtrl")
 	div.item-wrapper
 		div.step-wrapper(ng-repeat="step in steps")
-			div.item
+			div.item(ng-click="showOverlay($index)")
 				div.img-wrapper
 					img
 				div.description
@@ -9,8 +9,10 @@ div.howto-wrapper(ng-controller="HowtoCtrl")
 			div.arrow-wrapper(ng-if="!$last")
 				div.arrow-body
 					div.circle
-					div.circle
-					div.circle
-					div.circle
-					div.circle
-				div.arrow-head
+	//- div.item-wrapper-overlay
+	//- 	div.step-wrapper(ng-repeat="step in steps")
+	//- 		div.item(id="itemOverlay{{$step}}",ng-hide="true")
+	//- 			div.img-wrapper
+	//- 		div.arrow-wrapper(id="arrowOverlay{{$step}}", ng-if="!$last", ng-hide="true")
+	//- 			div.arrow-body
+	//- 				div.circle
