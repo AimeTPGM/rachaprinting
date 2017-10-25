@@ -12,3 +12,5 @@ div.review-wrapper(ng-controller="ReviewCtrl")
 					| {{review.customerName}}
 				div.company(ng-if="review.customerCompany !== '-'")
 					| {{review.customerCompany}}
+	div.bullet-wrapper
+		a.bullet(ng-repeat="review in reviews", ng-class="{ active: $index == activeIndex }", ng-click="changeReview($index)")

@@ -35,16 +35,19 @@ angular.module('app')
 		}
 		]
 
-		var reviewChange = function() {
+		var reviewAutoChange = function() {
 
 			if($scope.activeIndex == $scope.reviews.length-1)
 				$scope.activeIndex = 0;
 			else
 				$scope.activeIndex++;
-			$timeout(reviewChange, 5000);
+			$timeout(reviewAutoChange, 5000);
 		}
 
-		$timeout(reviewChange, 5000);
+		$timeout(reviewAutoChange, 5000);
 		
+		$scope.changeReview = function(index){
+			$scope.activeIndex = index;
+		}
 	}
 ]);

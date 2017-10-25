@@ -146,6 +146,24 @@ html {
   padding: 150px;
   position: relative;
   height: 600px; }
+  .review-wrapper .bullet-wrapper {
+    position: absolute;
+    bottom: 120px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    display: flex;
+    width: fit-content; }
+    .review-wrapper .bullet-wrapper .bullet {
+      padding: 5px;
+      border-radius: 50%;
+      border: solid 1px #333;
+      margin: 5px;
+      z-index: 2; }
+    .review-wrapper .bullet-wrapper .bullet:hover {
+      background: #999; }
+    .review-wrapper .bullet-wrapper .active {
+      background: #333; }
   .review-wrapper .content-wrapper {
     background: white;
     width: 90%;
