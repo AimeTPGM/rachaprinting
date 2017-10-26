@@ -1,8 +1,15 @@
 html {
-  color: #333; }
+  color: #00B900; }
 
 .super-dark-grey-bg {
   background: #333; }
+
+.darker-green-bg {
+  background: #009800; }
+
+.base-green-bg {
+  background: #00B900;
+  color: white; }
 
 .grey-bg {
   background: #999; }
@@ -18,7 +25,7 @@ html {
 
 .banner-wrapper {
   height: 300px;
-  background: #333; }
+  background: transparent; }
   .banner-wrapper .slide {
     margin: auto;
     color: white;
@@ -95,7 +102,7 @@ html {
         .howto-wrapper .item-wrapper .step-wrapper .item .img-wrapper {
           width: 150px;
           height: 150px;
-          background: #333;
+          background: #00B900;
           border-radius: 50%; }
         .howto-wrapper .item-wrapper .step-wrapper .item .description {
           margin-top: 20px; }
@@ -107,13 +114,13 @@ html {
           .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper .arrow-body .circle {
             width: 100px;
             height: 2px;
-            background: #333; }
+            background: #00B900; }
         .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper .arrow-head {
           width: 0;
           height: 0;
           border-top: 15px solid transparent;
           border-bottom: 15px solid transparent;
-          border-left: 15px solid #333;
+          border-left: 15px solid #00B900;
           margin-top: -10px; }
   .howto-wrapper .item-wrapper-overlay {
     margin: auto;
@@ -157,13 +164,13 @@ html {
     .review-wrapper .bullet-wrapper .bullet {
       padding: 5px;
       border-radius: 50%;
-      border: solid 1px #333;
+      border: solid 1px #00B900;
       margin: 5px;
       z-index: 2; }
     .review-wrapper .bullet-wrapper .bullet:hover {
-      background: #999; }
+      background: rgba(0, 185, 0, 0.3); }
     .review-wrapper .bullet-wrapper .active {
-      background: #333; }
+      background: #00B900; }
   .review-wrapper .content-wrapper {
     background: white;
     width: 90%;
@@ -176,7 +183,7 @@ html {
     .review-wrapper .content-wrapper .img-wrapper {
       height: 150px;
       width: 150px;
-      background: #333;
+      background: #009800;
       border-radius: 50%;
       position: absolute;
       top: -70px;
@@ -186,6 +193,7 @@ html {
       opacity: 0;
       z-index: 1; }
     .review-wrapper .content-wrapper .comment-info-wrapper {
+      color: #00B900;
       position: absolute;
       text-align: center;
       margin-top: 120px;
@@ -231,8 +239,7 @@ html {
   padding-top: 80px;
   padding-bottom: 10px; }
   .footer-wrapper .section-wrapper {
-    vertical-align: top;
-    color: #999; }
+    vertical-align: top; }
     .footer-wrapper .section-wrapper .section .content .social-icon-wrapper {
       margin-top: 20px;
       padding-left: 0;

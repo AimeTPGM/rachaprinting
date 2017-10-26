@@ -8,9 +8,11 @@ $break-lg: 1200px;
 $cyan: #999;
 $magenta: #666;
 $yellow: #333;
-$super-dark-grey: #333;
+$base-green: #00B900;
+$darker-green: #009800;
 $grey: #999;
 $white: #FFF;
+$super-dark-grey: #333;
 
 // navbar
 $navbar-height: 50px;
@@ -27,10 +29,17 @@ $customer-img-size: 150px;
 
 
 html
-  color: $super-dark-grey;
+  color: $base-green;
 
 .super-dark-grey-bg
   background: $super-dark-grey;
+
+.darker-green-bg
+  background: $darker-green;
+
+.base-green-bg
+  background: $base-green;
+  color: white;
 
 .grey-bg
   background: $grey;
@@ -46,7 +55,7 @@ html
 
 .banner-wrapper
   height: $slide-wrapper;
-  background: $super-dark-grey;
+  background: transparent;
   .slide
     margin: auto;
     color: white;
@@ -121,7 +130,7 @@ html
         .img-wrapper
           width: 150px;
           height: 150px;
-          background: $super-dark-grey;
+          background: $base-green;
           border-radius: 50%;
         .description
           margin-top: 20px;
@@ -133,13 +142,13 @@ html
           .circle
             width: 100px;
             height: 2px;
-            background: $super-dark-grey;
+            background: $base-green;
         .arrow-head
           width: 0;
           height: 0;
           border-top: 15px solid transparent;
           border-bottom: 15px solid transparent;
-          border-left: 15px solid $super-dark-grey;
+          border-left: 15px solid $base-green;
           margin-top: -10px;
   .item-wrapper-overlay
     margin: auto;
@@ -182,13 +191,13 @@ html
     .bullet
       padding: 5px;
       border-radius: 50%;
-      border: solid 1px $super-dark-grey;
+      border: solid 1px $base-green;
       margin: 5px;
       z-index: 2;
     .bullet:hover
-      background: $grey;
+      background: rgba(0,185,0,0.3);
     .active
-      background: $super-dark-grey;
+      background: $base-green;
   .content-wrapper
     background: white;
     width: 90%;
@@ -201,7 +210,7 @@ html
     .img-wrapper
       height: 150px;
       width: 150px;
-      background: $super-dark-grey;
+      background: $darker-green;
       border-radius: 50%;
       position: absolute;
       top: -70px;
@@ -211,6 +220,7 @@ html
       opacity: 0;
       z-index: 1;
     .comment-info-wrapper
+      color: $base-green;
       position: absolute;
       text-align: center;
       margin-top: 120px;
@@ -256,7 +266,6 @@ html
   padding-bottom: 10px;
   .section-wrapper
     vertical-align: top;
-    color: $grey;
     .section
       .content
         .social-icon-wrapper
