@@ -24,7 +24,7 @@ html {
     margin-top: 5px; }
 
 .banner-wrapper {
-  height: 300px;
+  height: 80vh;
   background: transparent; }
   .banner-wrapper .slide {
     margin: auto;
@@ -49,7 +49,7 @@ html {
     left: 0;
     right: 0;
     z-index: 1;
-    padding: 250px;
+    margin-top: 70vh;
     display: flex; }
     .banner-wrapper .btn-wrapper .btn {
       padding: 5px;
@@ -63,17 +63,22 @@ html {
       background: white; }
 
 .product-wrapper {
-  padding: 20px;
-  overflow-x: scroll; }
+  padding: 100px;
+  overflow-x: hidden; }
+  .product-wrapper .header {
+    text-align: center;
+    line-height: 2em;
+    font-size: 2em; }
   .product-wrapper .item-wrapper::-webkit-scrollbar {
     width: 0px;
     background: transparent;
     display: none; }
   .product-wrapper .item-wrapper {
     overflow-x: scroll;
-    display: inline-flex; }
+    display: inline-flex;
+    width: 100%; }
     .product-wrapper .item-wrapper .item {
-      padding: 20px; }
+      padding: 40px; }
       .product-wrapper .item-wrapper .item .img-wrapper {
         height: 200px;
         width: 200px;

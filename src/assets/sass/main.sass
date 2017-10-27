@@ -54,7 +54,7 @@ html
     margin-top: 5px;
 
 .banner-wrapper
-  height: $slide-wrapper;
+  height: 80vh;
   background: transparent;
   .slide
     margin: auto;
@@ -79,7 +79,7 @@ html
     left: 0;
     right: 0;
     z-index: 1;
-    padding: 250px;
+    margin-top: 70vh;
     display: flex;
     .btn
       padding: 5px;
@@ -92,8 +92,12 @@ html
     .btnactive
       background: rgba(255,255,255,1);
 .product-wrapper
-  padding: 20px;
-  overflow-x: scroll;
+  padding: 100px;
+  overflow-x: hidden;
+  .header
+    text-align: center;
+    line-height: 2em;
+    font-size: 2em;
   .item-wrapper::-webkit-scrollbar
     width: 0px;
     background: transparent;
@@ -101,8 +105,9 @@ html
   .item-wrapper
     overflow-x: scroll;
     display: inline-flex;
+    width: 100%;
     .item
-      padding: 20px;
+      padding: 40px;
       .img-wrapper
         height: 200px;
         width: 200px;
