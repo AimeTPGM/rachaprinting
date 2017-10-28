@@ -76,6 +76,25 @@ body
       input
         border-radius: 50px;
 
+.to-top-wrapper
+  width: 50px;
+  height: 50px;
+  background: rgba(255,255,255,0.3)
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+  border-radius: 50%;
+  text-align: center;
+  z-index: 999;
+  a
+    color: $base-green;
+    font-size: 2em;
+    line-height: 1.7em;
+    border: 0;
+  a:hover
+    color: rgba(0,0,0,0.5);
+
 .separator
   height: 2px;
   background: $base-green; /* For browsers that do not support gradients */
