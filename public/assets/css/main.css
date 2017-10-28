@@ -121,52 +121,42 @@ body {
     .banner-wrapper .btn-wrapper a {
       border-bottom: 0; }
 
-.product-wrapper {
+.horizontal-item-slide-wrapper {
   padding: 100px;
   overflow-x: hidden; }
-  .product-wrapper .header {
-    text-align: center;
-    line-height: 2em;
-    font-size: 2em;
-    font-weight: bold; }
-  .product-wrapper .slide {
+  .horizontal-item-slide-wrapper .slide {
     display: flex; }
-    .product-wrapper .slide .item-wrapper::-webkit-scrollbar {
+    .horizontal-item-slide-wrapper .slide .item-wrapper::-webkit-scrollbar {
       width: 0px;
       background: transparent;
       display: none; }
-    .product-wrapper .slide .item-wrapper {
+    .horizontal-item-slide-wrapper .slide .item-wrapper {
       overflow-x: scroll;
       display: inline-flex;
       width: 100%; }
-      .product-wrapper .slide .item-wrapper .item {
+      .horizontal-item-slide-wrapper .slide .item-wrapper .item {
         padding: 50px; }
-        .product-wrapper .slide .item-wrapper .item .img-wrapper {
+        .horizontal-item-slide-wrapper .slide .item-wrapper .item .img-wrapper {
           height: 150px;
           width: 150px;
           background: #666;
           margin: auto;
           border-radius: 50%; }
-        .product-wrapper .slide .item-wrapper .item .content {
+        .horizontal-item-slide-wrapper .slide .item-wrapper .item .content {
           text-align: center;
           margin-top: 20px; }
-          .product-wrapper .slide .item-wrapper .item .content .name {
+          .horizontal-item-slide-wrapper .slide .item-wrapper .item .content .name {
             font-size: 1em; }
-          .product-wrapper .slide .item-wrapper .item .content .price {
+          .horizontal-item-slide-wrapper .slide .item-wrapper .item .content .price {
             font-size: 1em; }
-    .product-wrapper .slide .button-wrapper {
+    .horizontal-item-slide-wrapper .slide .button-wrapper {
       margin-top: 100px; }
-      .product-wrapper .slide .button-wrapper .button {
+      .horizontal-item-slide-wrapper .slide .button-wrapper .button {
         border: 0;
         font-size: 2em; }
 
 .howto-wrapper {
   padding: 100px; }
-  .howto-wrapper .header {
-    text-align: center;
-    line-height: 2em;
-    font-size: 2em;
-    font-weight: bold; }
   .howto-wrapper .item-wrapper {
     margin: auto;
     width: fit-content;
@@ -231,11 +221,6 @@ body {
   padding: 100px;
   position: relative;
   height: 750px; }
-  .review-wrapper .header {
-    text-align: center;
-    line-height: 2em;
-    font-size: 2em;
-    font-weight: bold; }
   .review-wrapper .bullet-wrapper {
     position: absolute;
     bottom: 55px;
@@ -309,23 +294,30 @@ body {
       background: transparent;
       display: none; }
 
+.header {
+  text-align: center;
+  line-height: 2em;
+  font-size: 2em;
+  font-weight: bold; }
+
 .example-wrapper {
   padding: 100px; }
-  .example-wrapper .header {
-    text-align: center;
-    line-height: 2em;
-    font-size: 2em;
-    font-weight: bold; }
-  .example-wrapper .item-wrapper {
-    display: -webkit-box;
-    margin-top: 50px; }
-    .example-wrapper .item-wrapper .item {
-      padding: 20px; }
-      .example-wrapper .item-wrapper .item .img-wrapper {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        background: #999; }
+
+.mini-showcase-wrapper {
+  margin-top: 50px;
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  color: white;
+  flex-flow: wrap; }
+  .mini-showcase-wrapper .img-wrapper {
+    width: 100px;
+    height: 100px;
+    background: #00B900; }
+  .mini-showcase-wrapper .img-wrapper:hover {
+    background: #999;
+    transform: scale(2);
+    transition: .3s; }
 
 .footer-wrapper {
   padding: 100px;
@@ -360,7 +352,8 @@ body {
         list-style: none; }
     .footer-wrapper .section-wrapper .section .header {
       margin-bottom: 20px;
-      font-size: 2em; }
+      font-size: 2em;
+      text-align: left; }
     .footer-wrapper .section-wrapper .section:not(:last-child) {
       padding-right: 30px; }
 
@@ -371,67 +364,82 @@ body {
   padding-bottom: 80px; }
 
 @media (max-width: 576px) {
-  .product-wrapper .slide .item-wrapper .item {
+  .horizontal-item-slide-wrapper .slide .item-wrapper .item {
     padding: 10px; }
-    .product-wrapper .slide .item-wrapper .item .img-wrapper {
+    .horizontal-item-slide-wrapper .slide .item-wrapper .item .img-wrapper {
       height: 80px;
       width: 80px; }
-    .product-wrapper .slide .item-wrapper .item .content .name {
+    .horizontal-item-slide-wrapper .slide .item-wrapper .item .content .name {
       font-size: 1em; }
-    .product-wrapper .slide .item-wrapper .item .content .price {
+    .horizontal-item-slide-wrapper .slide .item-wrapper .item .content .price {
       font-size: 1em; }
-  .product-wrapper .slide .button-wrapper .button {
+  .horizontal-item-slide-wrapper .slide .button-wrapper .button {
     font-size: 1em; }
   .footer-wrapper .section-wrapper {
     display: block; }
     .footer-wrapper .section-wrapper .section {
-      width: 100%; } }
+      width: 100%; }
+  .example-wrapper {
+    padding: 50px; }
+  .mini-showcase-wrapper .img-wrapper {
+    width: 50px;
+    height: 50px; } }
 
 @media (min-width: 576px) {
-  .product-wrapper .slide .item-wrapper .item {
+  .horizontal-item-slide-wrapper .slide .item-wrapper .item {
     padding: 15px; }
-    .product-wrapper .slide .item-wrapper .item .img-wrapper {
+    .horizontal-item-slide-wrapper .slide .item-wrapper .item .img-wrapper {
       height: 100px;
       width: 100px; }
-    .product-wrapper .slide .item-wrapper .item .content .name {
+    .horizontal-item-slide-wrapper .slide .item-wrapper .item .content .name {
       font-size: 1em; }
-    .product-wrapper .slide .item-wrapper .item .content .price {
+    .horizontal-item-slide-wrapper .slide .item-wrapper .item .content .price {
       font-size: 1em; }
-  .product-wrapper .slide .button-wrapper .button {
+  .horizontal-item-slide-wrapper .slide .button-wrapper .button {
     font-size: 1em; }
+  .example-wrapper {
+    padding: 50px; }
+  .mini-showcase-wrapper .img-wrapper {
+    width: 75px;
+    height: 75px; }
   .footer-wrapper .section-wrapper {
     display: block; }
     .footer-wrapper .section-wrapper .section {
       width: 100%; } }
 
 @media (min-width: 768px) {
-  .product-wrapper .slide .item-wrapper .item {
+  .horizontal-item-slide-wrapper .slide .item-wrapper .item {
     padding: 20px; }
-    .product-wrapper .slide .item-wrapper .item .img-wrapper {
+    .horizontal-item-slide-wrapper .slide .item-wrapper .item .img-wrapper {
       height: 150px;
       width: 150px; }
-    .product-wrapper .slide .item-wrapper .item .content .name {
+    .horizontal-item-slide-wrapper .slide .item-wrapper .item .content .name {
       font-size: 1em; }
-    .product-wrapper .slide .item-wrapper .item .content .price {
+    .horizontal-item-slide-wrapper .slide .item-wrapper .item .content .price {
       font-size: 1em; }
-  .product-wrapper .slide .button-wrapper .button {
+  .horizontal-item-slide-wrapper .slide .button-wrapper .button {
     font-size: 1em; }
+  .example-wrapper {
+    padding: 100px; }
+  .mini-showcase-wrapper .img-wrapper {
+    width: 100px;
+    height: 100px; }
   .footer-wrapper .section-wrapper {
     display: block; }
     .footer-wrapper .section-wrapper .section {
       width: 100%; } }
 
 @media (min-width: 992px) {
-  .product-wrapper .slide .item-wrapper .item {
+  .horizontal-item-slide-wrapper .slide .item-wrapper .item {
     padding: 50px; }
-    .product-wrapper .slide .item-wrapper .item .img-wrapper {
+    .horizontal-item-slide-wrapper .slide .item-wrapper .item .img-wrapper {
       height: 150px;
       width: 150px; }
-    .product-wrapper .slide .item-wrapper .item .content .name {
+    .horizontal-item-slide-wrapper .slide .item-wrapper .item .content .name {
       font-size: 1em; }
-    .product-wrapper .slide .item-wrapper .item .content .price {
+    .horizontal-item-slide-wrapper .slide .item-wrapper .item .content .price {
       font-size: 1em; }
-  .product-wrapper .slide .button-wrapper .button {
+  .horizontal-item-slide-wrapper .slide .button-wrapper .button {
     font-size: 2em; }
   .footer-wrapper .section-wrapper {
     display: -webkit-inline-box; }

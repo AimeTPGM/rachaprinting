@@ -1,6 +1,6 @@
 div.example-wrapper(ng-controller="ExampleCtrl")
 	div.header
 		| ผลงานที่ผ่านมา
-	div.item-wrapper
-		div.item(ng-repeat="example in examples")
-			div.img-wrapper
+	div.mini-showcase-wrapper
+		div.img-wrapper(ng-repeat="example in examples")
+			| {{$index}}

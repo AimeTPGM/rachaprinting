@@ -46,6 +46,71 @@ angular.module('app')
 				"name": "",
 				"img": "",
 				"price": "100" 
+			},
+			{
+				"name": "",
+				"img": "",
+				"price": "100" 
+			},
+			{
+				"name": "",
+				"img": "",
+				"price": "100" 
+			},
+			{
+				"name": "",
+				"img": "",
+				"price": "100" 
+			},
+			{
+				"name": "",
+				"img": "",
+				"price": "100" 
+			},
+			{
+				"name": "",
+				"img": "",
+				"price": "100" 
+			},
+			{
+				"name": "",
+				"img": "",
+				"price": "100" 
+			},
+			{
+				"name": "",
+				"img": "",
+				"price": "100" 
+			},
+			{
+				"name": "",
+				"img": "",
+				"price": "100" 
+			},
+			{
+				"name": "",
+				"img": "",
+				"price": "100" 
+			},
+			{
+				"name": "",
+				"img": "",
+				"price": "100" 
+			},
+			{
+				"name": "",
+				"img": "",
+				"price": "100" 
+			},
+			{
+				"name": "",
+				"img": "",
+				"price": "100" 
+			},
+			{
+				"name": "",
+				"img": "",
+				"price": "100" 
 			}
 		]
 	}

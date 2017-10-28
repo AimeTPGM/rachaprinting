@@ -145,14 +145,9 @@ body
       background: rgba(255,255,255,1);
     a
       border-bottom: 0;
-.product-wrapper
+.horizontal-item-slide-wrapper
   padding: 100px;
   overflow-x: hidden;
-  .header
-    text-align: center;
-    line-height: 2em;
-    font-size: 2em;
-    font-weight: bold;
   .slide
     display: flex;
     .item-wrapper::-webkit-scrollbar
@@ -185,11 +180,6 @@ body
         font-size: 2em;
 .howto-wrapper
   padding: 100px;
-  .header
-    text-align: center;
-    line-height: 2em;
-    font-size: 2em;
-    font-weight: bold;
   .item-wrapper
     margin: auto;
     width: fit-content;
@@ -253,11 +243,6 @@ body
   padding: 100px;
   position: relative;
   height: 750px;
-  .header
-    text-align: center;
-    line-height: 2em;
-    font-size: 2em;
-    font-weight: bold;
   .bullet-wrapper
     position: absolute;
     bottom: 55px;
@@ -331,23 +316,29 @@ body
       width: 0px;
       background: transparent;
       display: none;
-.example-wrapper
-  padding: 100px;
-  .header
+.header
     text-align: center;
     line-height: 2em;
     font-size: 2em;
     font-weight: bold;
-  .item-wrapper
-    display: -webkit-box;
-    margin-top: 50px;
-    .item
-      padding: 20px;
-      .img-wrapper
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        background: $grey;
+.example-wrapper
+  padding: 100px;
+.mini-showcase-wrapper
+  margin-top: 50px;
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  color: white;
+  flex-flow: wrap;
+  .img-wrapper
+    width: 100px;
+    height: 100px;
+    background: $base-green;
+  .img-wrapper:hover
+    background: $grey;
+    transform: scale(2);
+    transition: .3s;
+
 .footer-wrapper
   padding: 100px;
   padding-top: 80px;
@@ -385,6 +376,7 @@ body
       .header
         margin-bottom: 20px;
         font-size: 2em;
+        text-align: left;
     .section:not(:last-child)
       padding-right: 30px;
 .credit-wrapper
@@ -396,7 +388,7 @@ body
 // xs
 @media (max-width: $break-xs)
   //product
-  .product-wrapper
+  .horizontal-item-slide-wrapper
     .slide
       .item-wrapper
         .item
@@ -418,10 +410,17 @@ body
       display: block;
       .section
         width: 100%;
+  .example-wrapper
+    padding: 50px;
+  //showcase
+  .mini-showcase-wrapper
+    .img-wrapper
+      width: 50px;
+      height: 50px;
 // s
 @media (min-width: $break-xs)
   //product
-  .product-wrapper
+  .horizontal-item-slide-wrapper
     .slide
       .item-wrapper
         .item
@@ -437,6 +436,13 @@ body
       .button-wrapper
         .button
           font-size: 1em;
+  .example-wrapper
+    padding: 50px;
+  //showcase
+  .mini-showcase-wrapper
+    .img-wrapper
+      width: 75px;
+      height: 75px;
   //footer
   .footer-wrapper
     .section-wrapper
@@ -446,7 +452,7 @@ body
 // md
 @media (min-width: $break-s)
   //product
-  .product-wrapper
+  .horizontal-item-slide-wrapper
     .slide
       .item-wrapper
         .item
@@ -462,6 +468,13 @@ body
       .button-wrapper
         .button
           font-size: 1em;
+  .example-wrapper
+    padding: 100px;
+  //showcase
+  .mini-showcase-wrapper
+    .img-wrapper
+      width: 100px;
+      height: 100px;
   //footer
   .footer-wrapper
     .section-wrapper
@@ -470,7 +483,7 @@ body
         width: 100%;
 // lg
 @media (min-width: $break-md)
-  .product-wrapper
+  .horizontal-item-slide-wrapper
     .slide
       .item-wrapper
         .item
