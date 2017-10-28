@@ -1,5 +1,14 @@
+@font-face {
+  font-family: bangna;
+  src: url("../fonts/bangna-new.ttf"); }
+
 html {
   color: #00B900; }
+  html a {
+    border-bottom: dashed 1px white; }
+
+body {
+  font-family: bangna; }
 
 .super-dark-grey-bg {
   background: #333; }
@@ -12,10 +21,12 @@ html {
   color: white; }
 
 .grey-bg {
-  background: #999; }
+  background: #999;
+  color: white; }
 
 .white-bg {
-  background: #FFF; }
+  background: #FFF;
+  color: #00B900; }
 
 .navbar {
   padding: 10px 15px 10px 15px;
@@ -61,6 +72,8 @@ html {
       background: white; }
     .banner-wrapper .btn-wrapper .btnactive {
       background: white; }
+    .banner-wrapper .btn-wrapper a {
+      border-bottom: 0; }
 
 .product-wrapper {
   padding: 100px;
@@ -68,7 +81,8 @@ html {
   .product-wrapper .header {
     text-align: center;
     line-height: 2em;
-    font-size: 2em; }
+    font-size: 2em;
+    font-weight: bold; }
   .product-wrapper .slide {
     display: flex; }
     .product-wrapper .slide .item-wrapper::-webkit-scrollbar {
@@ -255,6 +269,8 @@ html {
   padding-bottom: 10px; }
   .footer-wrapper .section-wrapper {
     vertical-align: top; }
+    .footer-wrapper .section-wrapper .section a {
+      color: white; }
     .footer-wrapper .section-wrapper .section .content .social-icon-wrapper {
       margin-top: 20px;
       padding-left: 0;
@@ -263,7 +279,8 @@ html {
         padding: 5px;
         display: inline-flex; }
         .footer-wrapper .section-wrapper .section .content .social-icon-wrapper .social-icon a {
-          display: inherit; }
+          display: inherit;
+          border-bottom: 0; }
           .footer-wrapper .section-wrapper .section .content .social-icon-wrapper .social-icon a .contact-icon {
             font-size: 1.5em;
             padding-right: 20px; }
