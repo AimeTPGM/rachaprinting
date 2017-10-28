@@ -9,7 +9,8 @@ angular.module('app')
 			'review' : '/views/review.html',
 			'example' : '/views/example.html',
 			'footer' : '/views/footer.html',
-			'credit' : '/views/credit.html'
+			'credit' : '/views/credit.html',
+			'toTop' : '/views/totop.html'
 		}
 	}
 ]);

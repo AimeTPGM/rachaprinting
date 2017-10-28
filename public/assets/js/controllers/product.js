@@ -1,6 +1,6 @@
 angular.module('app')
-.controller('ProductCtrl',['$scope', '$http','$window', '$document',
-	function($scope, $http, $window, $document){
+.controller('ProductCtrl',['$scope', '$http','$window', '$document', '$timeout',
+	function($scope, $http, $window, $document, $timeout){
 		$scope.products = [
 		{
 			"img": "",
@@ -40,20 +40,27 @@ angular.module('app')
 		]
 
 		$scope.currentProduct = 0;
+		var scrollPoint = 0;
 
 		$scope.right = function(){
 			if($scope.currentProduct == $scope.products.length-1)
 				$scope.currentProduct == $scope.products.length-1
-			else $scope.currentProduct++
-			document.querySelector('div.item-wrapper').scrollLeft += 150
-			console.log($scope.currentProduct)
+			else {
+				$scope.currentProduct++
+				scrollPoint += angular.element(document.getElementById('product'+$scope.currentProduct))[0].clientWidth
+			}
+			angular.element(document.querySelector('div.item-wrapper')).scrollLeftAnimated(scrollPoint)
 		}
 
 		$scope.left = function(){
 			if($scope.currentProduct == 0)
 				$scope.currentProduct == 0
-			else $scope.currentProduct--
-			document.querySelector('div.item-wrapper').scrollLeft -= 150
+			else {
+				$scope.currentProduct--
+				scrollPoint -= angular.element(document.getElementById('product'+$scope.currentProduct))[0].clientWidth
+			}
+			angular.element(document.querySelector('div.item-wrapper')).scrollLeftAnimated(scrollPoint)
 		}
+
 	}
 ]);

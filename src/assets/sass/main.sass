@@ -7,7 +7,7 @@ $break-lg: 1200px;
 // color palette
 $cyan: #999;
 $magenta: #666;
-$yellow: #333;
+$yellow: #FFFF00;
 $base-green: #00B900;
 $darker-green: #009800;
 $grey: #999;
@@ -34,6 +34,8 @@ html
   color: $base-green;
   a
     border-bottom: dashed 1px white;
+  a:hover
+    color: $yellow;
 
 body
   font-family: bangna;
@@ -56,6 +58,24 @@ body
   background: $white;
   color: $base-green;
 
+.navbar
+  padding: 10px 15px 10px 15px;
+  background: rgba(255,255,255,0.8);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  a:hover
+    color: $base-green;
+  a
+    color: $base-green;
+    border: 0;
+  .navbar-search
+    margin-top: 5px;
+    p
+      input
+        border-radius: 50px;
+
 .separator
   height: 2px;
   background: $base-green; /* For browsers that do not support gradients */
@@ -63,14 +83,10 @@ body
   background: -o-radial-gradient(rgba(0,185,0,1), transparent, transparent); /* For Opera 11.6 to 12.0 */
   background: -moz-radial-gradient(rgba(0,185,0,1), transparent, transparent); /* For Firefox 3.6 to 15 */
   background: radial-gradient(rgba(0,185,0,1), transparent, transparent); /* Standard syntax */
-
-.navbar
-  padding: 10px 15px 10px 15px;
-  background: rgba(255,255,255,0.5);
-  .navbar-search
-    margin-top: 5px;
+    
 
 .banner-wrapper
+  margin-top: 72px;
   height: 80vh;
   background: transparent;
   .slide
@@ -96,7 +112,7 @@ body
     left: 0;
     right: 0;
     z-index: 1;
-    margin-top: 70vh;
+    margin-top: 73vh;
     display: flex;
     .btn
       padding: 5px;
@@ -129,10 +145,10 @@ body
       display: inline-flex;
       width: 100%;
       .item
-        padding: 30px;
+        padding: 50px;
         .img-wrapper
-          height: 100px;
-          width: 100px;
+          height: 150px;
+          width: 150px;
           background: $magenta;
           margin: auto;
           border-radius: 50%;
@@ -320,6 +336,9 @@ body
   .section-wrapper
     vertical-align: top;
     .section
+      a:hover
+        color: $yellow;
+        border-bottom: dashed 1px $yellow;
       a
         color: white;
       .content
@@ -357,6 +376,23 @@ body
 
 // xs
 @media (max-width: $break-xs)
+  //product
+  .product-wrapper
+    .slide
+      .item-wrapper
+        .item
+          padding: 10px;
+          .img-wrapper
+            height: 80px;
+            width: 80px;
+          .content
+            .name
+              font-size: 1em;
+            .price
+              font-size: 1em;
+      .button-wrapper
+        .button
+          font-size: 1em;
   //footer
   .footer-wrapper
     .section-wrapper
@@ -365,6 +401,23 @@ body
         width: 100%;
 // s
 @media (min-width: $break-xs)
+  //product
+  .product-wrapper
+    .slide
+      .item-wrapper
+        .item
+          padding: 15px;
+          .img-wrapper
+            height: 100px;
+            width: 100px;
+          .content
+            .name
+              font-size: 1em;
+            .price
+              font-size: 1em;
+      .button-wrapper
+        .button
+          font-size: 1em;
   //footer
   .footer-wrapper
     .section-wrapper
@@ -373,6 +426,23 @@ body
         width: 100%;
 // md
 @media (min-width: $break-s)
+  //product
+  .product-wrapper
+    .slide
+      .item-wrapper
+        .item
+          padding: 20px;
+          .img-wrapper
+            height: 150px;
+            width: 150px;
+          .content
+            .name
+              font-size: 1em;
+            .price
+              font-size: 1em;
+      .button-wrapper
+        .button
+          font-size: 1em;
   //footer
   .footer-wrapper
     .section-wrapper
@@ -381,6 +451,22 @@ body
         width: 100%;
 // lg
 @media (min-width: $break-md)
+  .product-wrapper
+    .slide
+      .item-wrapper
+        .item
+          padding: 50px;
+          .img-wrapper
+            height: 150px;
+            width: 150px;
+          .content
+            .name
+              font-size: 1em;
+            .price
+              font-size: 1em;
+      .button-wrapper
+        .button
+          font-size: 2em;
   //footer
   .footer-wrapper
     .section-wrapper
