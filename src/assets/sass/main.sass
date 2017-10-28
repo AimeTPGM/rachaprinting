@@ -98,29 +98,36 @@ html
     text-align: center;
     line-height: 2em;
     font-size: 2em;
-  .item-wrapper::-webkit-scrollbar
-    width: 0px;
-    background: transparent;
-    display: none;
-  .item-wrapper
-    overflow-x: scroll;
-    display: inline-flex;
-    width: 100%;
-    .item
-      padding: 40px;
-      .img-wrapper
-        height: 200px;
-        width: 200px;
-        background: $magenta;
-        margin: auto;
-        border-radius: 50%;
-      .content
-        text-align: center;
-        margin-top: 20px;
-        .name
-          font-size: 1.5em;
-        .price
-          font-size: 2em;
+  .slide
+    display: flex;
+    .item-wrapper::-webkit-scrollbar
+      width: 0px;
+      background: transparent;
+      display: none;
+    .item-wrapper
+      overflow-x: scroll;
+      display: inline-flex;
+      width: 100%;
+      .item
+        padding: 70px;
+        .img-wrapper
+          height: 200px;
+          width: 200px;
+          background: $magenta;
+          margin: auto;
+          border-radius: 50%;
+        .content
+          text-align: center;
+          margin-top: 20px;
+          .name
+            font-size: 1.5em;
+          .price
+            font-size: 2em;
+    .button-wrapper
+      margin-top: 150px;
+      .button
+        border: 0;
+        font-size: 2em;
 .howto-wrapper
   padding: 100px;
   .item-wrapper
@@ -212,11 +219,11 @@ html
     left: 0;
     right: 0;
     margin: auto;
+    border: solid 1px $base-green;
     .img-wrapper
       height: 150px;
       width: 150px;
-      background: $darker-green;
-      border-radius: 50%;
+      background: white;
       position: absolute;
       top: -70px;
       margin: auto;
@@ -224,6 +231,9 @@ html
       right: 0;
       opacity: 0;
       z-index: 1;
+      img
+        border-radius: 50%;
+        opacity: 1;
     .comment-info-wrapper
       color: $base-green;
       position: absolute;

@@ -69,29 +69,36 @@ html {
     text-align: center;
     line-height: 2em;
     font-size: 2em; }
-  .product-wrapper .item-wrapper::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-    display: none; }
-  .product-wrapper .item-wrapper {
-    overflow-x: scroll;
-    display: inline-flex;
-    width: 100%; }
-    .product-wrapper .item-wrapper .item {
-      padding: 40px; }
-      .product-wrapper .item-wrapper .item .img-wrapper {
-        height: 200px;
-        width: 200px;
-        background: #666;
-        margin: auto;
-        border-radius: 50%; }
-      .product-wrapper .item-wrapper .item .content {
-        text-align: center;
-        margin-top: 20px; }
-        .product-wrapper .item-wrapper .item .content .name {
-          font-size: 1.5em; }
-        .product-wrapper .item-wrapper .item .content .price {
-          font-size: 2em; }
+  .product-wrapper .slide {
+    display: flex; }
+    .product-wrapper .slide .item-wrapper::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+      display: none; }
+    .product-wrapper .slide .item-wrapper {
+      overflow-x: scroll;
+      display: inline-flex;
+      width: 100%; }
+      .product-wrapper .slide .item-wrapper .item {
+        padding: 70px; }
+        .product-wrapper .slide .item-wrapper .item .img-wrapper {
+          height: 200px;
+          width: 200px;
+          background: #666;
+          margin: auto;
+          border-radius: 50%; }
+        .product-wrapper .slide .item-wrapper .item .content {
+          text-align: center;
+          margin-top: 20px; }
+          .product-wrapper .slide .item-wrapper .item .content .name {
+            font-size: 1.5em; }
+          .product-wrapper .slide .item-wrapper .item .content .price {
+            font-size: 2em; }
+    .product-wrapper .slide .button-wrapper {
+      margin-top: 150px; }
+      .product-wrapper .slide .button-wrapper .button {
+        border: 0;
+        font-size: 2em; }
 
 .howto-wrapper {
   padding: 100px; }
@@ -184,12 +191,12 @@ html {
     position: absolute;
     left: 0;
     right: 0;
-    margin: auto; }
+    margin: auto;
+    border: solid 1px #00B900; }
     .review-wrapper .content-wrapper .img-wrapper {
       height: 150px;
       width: 150px;
-      background: #009800;
-      border-radius: 50%;
+      background: white;
       position: absolute;
       top: -70px;
       margin: auto;
@@ -197,6 +204,9 @@ html {
       right: 0;
       opacity: 0;
       z-index: 1; }
+      .review-wrapper .content-wrapper .img-wrapper img {
+        border-radius: 50%;
+        opacity: 1; }
     .review-wrapper .content-wrapper .comment-info-wrapper {
       color: #00B900;
       position: absolute;

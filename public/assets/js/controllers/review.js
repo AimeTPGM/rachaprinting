@@ -2,36 +2,43 @@ angular.module('app')
 .controller('ReviewCtrl',['$scope', '$http','$window', '$timeout',
 	function($scope, $http, $window, $timeout){
 		$scope.activeIndex = 0;
+		var imgPath = "assets/img/review.png"
 		$scope.reviews = [
 		{
 			"customerName": "Aime",
 			"customerCompany" : "AGA",
-			"customerReview": "Good Service"
+			"customerReview": "Good Service",
+			"customerImg": imgPath
 		},
 		{
 			"customerName": "James",
 			"customerCompany" : "Agoda",
-			"customerReview": "Kinda Okay"
+			"customerReview": "Kinda Okay",
+			"customerImg": imgPath
 		},
 		{
 			"customerName": "John",
 			"customerCompany" : "Siam Paragon",
-			"customerReview": "Hmmmm"
+			"customerReview": "Hmmmm",
+			"customerImg": imgPath
 		},
 		{
 			"customerName": "Doe",
 			"customerCompany" : "Siam Discovery",
-			"customerReview": "Whaaat"
+			"customerReview": "Whaaat",
+			"customerImg": imgPath
 		},
 		{
 			"customerName": "Mary",
 			"customerCompany" : "siam Center",
-			"customerReview": "Helloooooo"
+			"customerReview": "Helloooooo",
+			"customerImg": imgPath
 		},
 		{
 			"customerName": "Sharetea",
 			"customerCompany" : "-",
-			"customerReview": "Choco Choco Cheese"
+			"customerReview": "Choco Choco Cheese",
+			"customerImg": imgPath
 		}
 		]
 

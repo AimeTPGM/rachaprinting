@@ -1,7 +1,7 @@
 div.review-wrapper(ng-controller="ReviewCtrl")
 	div.content-wrapper(ng-repeat="review in reviews")
 		div.img-wrapper(ng-class="{ active: $index == activeIndex }")
-			img
+			img(ng-src="{{review.customerImg}}")
 		div.comment-info-wrapper(ng-class="{ active: $index == activeIndex }")
 			div.comment-wrapper
 				div.comment

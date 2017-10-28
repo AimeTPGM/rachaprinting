@@ -1,10 +1,20 @@
 div.product-wrapper(ng-controller="ProductCtrl")
 	div.header
 		| บริการสิ่งพิมพ์ของเรา
-	div.item-wrapper
-		div.item(ng-repeat="product in products")
-			div.img-wrapper
-				img(src="product.img")
-			div.content
-				div.name {{product.name}}
-				div.price ราคาเริ่มต้นที่ {{product.price}}.-
+	div.slide
+		div.button-wrapper
+			a.button(ng-click="left()")
+				i
+					span.icon.fa.fa-angle-left
+		div.item-wrapper
+			div.item(ng-repeat="product in products", id="product{{$index}}")
+				div.img-wrapper
+					img(src="product.img")
+				div.content
+					div.name {{product.name}}
+					div.price ราคาเริ่มต้นที่ {{product.price}}.-
+		div.button-wrapper
+			a.button(ng-click="right()")
+				i
+					span.icon.fa.fa-angle-right
+
