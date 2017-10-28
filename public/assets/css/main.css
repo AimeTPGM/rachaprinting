@@ -44,8 +44,22 @@ body {
     border: 0; }
   .navbar .navbar-search {
     margin-top: 5px; }
+    .navbar .navbar-search p span i {
+      color: #00B900; }
     .navbar .navbar-search p input {
-      border-radius: 50px; }
+      border-radius: 50px;
+      color: #00B900; }
+    .navbar .navbar-search p input:hover {
+      outline-style: none;
+      box-shadow: none;
+      border-color: #00B900; }
+    .navbar .navbar-search p input:focus {
+      outline-style: none;
+      box-shadow: none;
+      border-color: #00B900; }
+    .navbar .navbar-search p input::placeholder {
+      color: #00B900;
+      font-family: bangna; }
 
 .to-top-wrapper {
   width: 50px;

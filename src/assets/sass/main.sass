@@ -73,9 +73,23 @@ body
   .navbar-search
     margin-top: 5px;
     p
+      span
+        i
+          color: $base-green;
       input
         border-radius: 50px;
-
+        color: $base-green;
+      input:hover
+        outline-style: none;
+        box-shadow: none;
+        border-color: $base-green;
+      input:focus
+        outline-style: none;
+        box-shadow: none;
+        border-color: $base-green;
+      input::placeholder
+        color: $base-green;
+        font-family: bangna;
 .to-top-wrapper
   width: 50px;
   height: 50px;
