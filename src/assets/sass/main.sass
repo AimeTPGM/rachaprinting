@@ -56,6 +56,14 @@ body
   background: $white;
   color: $base-green;
 
+.separator
+  height: 2px;
+  background: $base-green; /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(rgba(0,185,0,0.1), transparent, transparent); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(rgba(0,185,0,0.1), transparent, transparent); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(rgba(0,185,0,0.1), transparent, transparent); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(rgba(0,185,0,0.1), transparent, transparent); /* Standard syntax */
+
 .navbar
   padding: 10px 15px 10px 15px;
   background: rgba(255,255,255,0.5);
@@ -121,10 +129,10 @@ body
       display: inline-flex;
       width: 100%;
       .item
-        padding: 70px;
+        padding: 30px;
         .img-wrapper
-          height: 200px;
-          width: 200px;
+          height: 100px;
+          width: 100px;
           background: $magenta;
           margin: auto;
           border-radius: 50%;
@@ -132,20 +140,26 @@ body
           text-align: center;
           margin-top: 20px;
           .name
-            font-size: 1.5em;
+            font-size: 1em;
           .price
-            font-size: 2em;
+            font-size: 1em;
     .button-wrapper
-      margin-top: 150px;
+      margin-top: 100px;
       .button
         border: 0;
         font-size: 2em;
 .howto-wrapper
   padding: 100px;
+  .header
+    text-align: center;
+    line-height: 2em;
+    font-size: 2em;
+    font-weight: bold;
   .item-wrapper
     margin: auto;
     width: fit-content;
     display: flex;
+    padding-top: 50px;
     .step-wrapper
       display: flex;
       .item
@@ -201,12 +215,17 @@ body
             height: 2px;
             background: $cyan;
 .review-wrapper
-  padding: 150px;
+  padding: 100px;
   position: relative;
-  height: 600px;
+  height: 750px;
+  .header
+    text-align: center;
+    line-height: 2em;
+    font-size: 2em;
+    font-weight: bold;
   .bullet-wrapper
     position: absolute;
-    bottom: 120px;
+    bottom: 55px;
     margin: auto;
     left: 0;
     right: 0;
@@ -232,6 +251,7 @@ body
     right: 0;
     margin: auto;
     border: solid 1px $base-green;
+    margin-top: 100px;
     .img-wrapper
       height: 150px;
       width: 150px;
@@ -278,8 +298,14 @@ body
       display: none;
 .example-wrapper
   padding: 100px;
+  .header
+    text-align: center;
+    line-height: 2em;
+    font-size: 2em;
+    font-weight: bold;
   .item-wrapper
     display: -webkit-box;
+    margin-top: 50px;
     .item
       padding: 20px;
       .img-wrapper

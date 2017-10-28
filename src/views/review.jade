@@ -1,4 +1,6 @@
 div.review-wrapper(ng-controller="ReviewCtrl")
+	div.header
+		| การันตีรีวิวจากลูกค้า
 	div.content-wrapper(ng-repeat="review in reviews")
 		div.img-wrapper(ng-class="{ active: $index == activeIndex }")
 			img(ng-src="{{review.customerImg}}")

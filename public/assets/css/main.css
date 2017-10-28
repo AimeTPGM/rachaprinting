@@ -28,6 +28,19 @@ body {
   background: #FFF;
   color: #00B900; }
 
+.separator {
+  height: 2px;
+  background: #00B900;
+  /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(rgba(0, 185, 0, 0.1), transparent, transparent);
+  /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(rgba(0, 185, 0, 0.1), transparent, transparent);
+  /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(rgba(0, 185, 0, 0.1), transparent, transparent);
+  /* For Firefox 3.6 to 15 */
+  background: radial-gradient(rgba(0, 185, 0, 0.1), transparent, transparent);
+  /* Standard syntax */ }
+
 .navbar {
   padding: 10px 15px 10px 15px;
   background: rgba(255, 255, 255, 0.5); }
@@ -94,10 +107,10 @@ body {
       display: inline-flex;
       width: 100%; }
       .product-wrapper .slide .item-wrapper .item {
-        padding: 70px; }
+        padding: 30px; }
         .product-wrapper .slide .item-wrapper .item .img-wrapper {
-          height: 200px;
-          width: 200px;
+          height: 100px;
+          width: 100px;
           background: #666;
           margin: auto;
           border-radius: 50%; }
@@ -105,21 +118,27 @@ body {
           text-align: center;
           margin-top: 20px; }
           .product-wrapper .slide .item-wrapper .item .content .name {
-            font-size: 1.5em; }
+            font-size: 1em; }
           .product-wrapper .slide .item-wrapper .item .content .price {
-            font-size: 2em; }
+            font-size: 1em; }
     .product-wrapper .slide .button-wrapper {
-      margin-top: 150px; }
+      margin-top: 100px; }
       .product-wrapper .slide .button-wrapper .button {
         border: 0;
         font-size: 2em; }
 
 .howto-wrapper {
   padding: 100px; }
+  .howto-wrapper .header {
+    text-align: center;
+    line-height: 2em;
+    font-size: 2em;
+    font-weight: bold; }
   .howto-wrapper .item-wrapper {
     margin: auto;
     width: fit-content;
-    display: flex; }
+    display: flex;
+    padding-top: 50px; }
     .howto-wrapper .item-wrapper .step-wrapper {
       display: flex; }
       .howto-wrapper .item-wrapper .step-wrapper .item {
@@ -176,12 +195,17 @@ body {
             background: #999; }
 
 .review-wrapper {
-  padding: 150px;
+  padding: 100px;
   position: relative;
-  height: 600px; }
+  height: 750px; }
+  .review-wrapper .header {
+    text-align: center;
+    line-height: 2em;
+    font-size: 2em;
+    font-weight: bold; }
   .review-wrapper .bullet-wrapper {
     position: absolute;
-    bottom: 120px;
+    bottom: 55px;
     margin: auto;
     left: 0;
     right: 0;
@@ -206,7 +230,8 @@ body {
     left: 0;
     right: 0;
     margin: auto;
-    border: solid 1px #00B900; }
+    border: solid 1px #00B900;
+    margin-top: 100px; }
     .review-wrapper .content-wrapper .img-wrapper {
       height: 150px;
       width: 150px;
@@ -253,8 +278,14 @@ body {
 
 .example-wrapper {
   padding: 100px; }
+  .example-wrapper .header {
+    text-align: center;
+    line-height: 2em;
+    font-size: 2em;
+    font-weight: bold; }
   .example-wrapper .item-wrapper {
-    display: -webkit-box; }
+    display: -webkit-box;
+    margin-top: 50px; }
     .example-wrapper .item-wrapper .item {
       padding: 20px; }
       .example-wrapper .item-wrapper .item .img-wrapper {

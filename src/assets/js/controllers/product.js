@@ -42,18 +42,18 @@ angular.module('app')
 		$scope.currentProduct = 0;
 
 		$scope.right = function(){
-			if($scope.currentProduct == $scope.products.length-1)
-				$scope.currentProduct == $scope.products.length-1
-			else $scope.currentProduct++
-			document.querySelector('div.item-wrapper').scrollLeft += 350
+			// if($scope.currentProduct == $scope.products.length-1)
+			// 	$scope.currentProduct == $scope.products.length-1
+			// else $scope.currentProduct++
+			document.querySelector('div.item-wrapper').scrollLeft += 150
 			console.log($scope.currentProduct)
 		}
 
 		$scope.left = function(){
-			if($scope.currentProduct == 0)
-				$scope.currentProduct == 0
-			else $scope.currentProduct--
-			document.querySelector('div.item-wrapper').scrollLeft -= 350
+			// if($scope.currentProduct == 0)
+			// 	$scope.currentProduct == 0
+			// else $scope.currentProduct--
+			document.querySelector('div.item-wrapper').scrollLeft -= 150
 		}
 	}
 ]);

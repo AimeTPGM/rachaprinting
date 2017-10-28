@@ -1,4 +1,6 @@
 div.howto-wrapper(ng-controller="HowtoCtrl")
+	div.header
+		| สั่งง่ายๆ แค่ 4 ขั้นตอน!
 	div.item-wrapper
 		div.step-wrapper(ng-repeat="step in steps")
 			div.item(ng-click="showOverlay($index)")
@@ -9,10 +11,3 @@ div.howto-wrapper(ng-controller="HowtoCtrl")
 			div.arrow-wrapper(ng-if="!$last")
 				div.arrow-body
 					div.circle
-	//- div.item-wrapper-overlay
-	//- 	div.step-wrapper(ng-repeat="step in steps")
-	//- 		div.item(id="itemOverlay{{$step}}",ng-hide="true")
-	//- 			div.img-wrapper
-	//- 		div.arrow-wrapper(id="arrowOverlay{{$step}}", ng-if="!$last", ng-hide="true")
-	//- 			div.arrow-body
-	//- 				div.circle
