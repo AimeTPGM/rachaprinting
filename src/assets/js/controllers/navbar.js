@@ -1,24 +1,28 @@
 angular.module('app')
-.controller('NavbarCtrl',['$scope', '$http','$window',
-	function($scope, $http, $window){
+.controller('NavbarCtrl',['$scope', '$http','$window', '$document',
+	function($scope, $http, $window, $document){
 		$scope.menus = [
 			{
-				'name': 'Home',
-				'link': "#"
+				'name': 'บริการของเรา',
+				'section': 'service'
 			},
 			{
-				'name': 'Order',
-				'link': "#"
+				'name': 'วิธีสั่งซื้อ',
+				'section': 'howto'
 			},
 			{
-				'name': 'How to',
-				'link': "#"
+				'name': 'รีวิว',
+				'section': 'review'
 			},
 			{
-				'name': 'Contact us',
-				'link': "#"
+				'name': 'ผลงานที่ผ่านมา',
+				'section': 'example'
 			}
 		]
+		$scope.scrollTo = function(id){
+			$document.scrollToElementAnimated(angular.element(document.getElementById(id)))
+		}
+		
 
 	}
 ]);

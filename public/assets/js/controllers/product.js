@@ -1,6 +1,6 @@
 angular.module('app')
-.controller('ProductCtrl',['$scope', '$http','$window',
-	function($scope, $http, $window){
+.controller('ProductCtrl',['$scope', '$http','$window', '$document',
+	function($scope, $http, $window, $document){
 		$scope.products = [
 		{
 			"img": "",
@@ -42,17 +42,17 @@ angular.module('app')
 		$scope.currentProduct = 0;
 
 		$scope.right = function(){
-			// if($scope.currentProduct == $scope.products.length-1)
-			// 	$scope.currentProduct == $scope.products.length-1
-			// else $scope.currentProduct++
+			if($scope.currentProduct == $scope.products.length-1)
+				$scope.currentProduct == $scope.products.length-1
+			else $scope.currentProduct++
 			document.querySelector('div.item-wrapper').scrollLeft += 150
 			console.log($scope.currentProduct)
 		}
 
 		$scope.left = function(){
-			// if($scope.currentProduct == 0)
-			// 	$scope.currentProduct == 0
-			// else $scope.currentProduct--
+			if($scope.currentProduct == 0)
+				$scope.currentProduct == 0
+			else $scope.currentProduct--
 			document.querySelector('div.item-wrapper').scrollLeft -= 150
 		}
 	}

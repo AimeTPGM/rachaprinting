@@ -3,7 +3,7 @@ nav.navbar(ng-controller="NavbarCtrl")
 		a.navbar-item(href="http://bulma.io")
 			img(src="http://bulma.io/images/bulma-logo.png")
 	div.navbar-end
-		a.navbar-item(href="#", ng-repeat="menu in menus")
+		a.navbar-item(ng-click="scrollTo(menu.section)", ng-repeat="menu in menus")
 			span
 				| {{menu.name}}
 		div.navbar-search
