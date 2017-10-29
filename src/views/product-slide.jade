@@ -1,0 +1,17 @@
+div.horizontal-item-slide-wrapper(ng-controller="ProductCtrl", style="padding-bottom: 0; padding-top: 72px;")
+	div.slide
+		div.button-wrapper
+			a.button(ng-click="left()")
+				i
+					span.icon.fa.fa-angle-left
+		div.item-wrapper
+			div.item(ng-repeat="product in products", id="product{{$index}}")
+				div.img-wrapper
+					img(src="product.img")
+				div.content
+					div.name {{product.name}}
+		div.button-wrapper
+			a.button(ng-click="right()")
+				i
+					span.icon.fa.fa-angle-right
+

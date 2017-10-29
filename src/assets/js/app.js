@@ -10,10 +10,10 @@ app.config(['$routeProvider', '$locationProvider',
 			title : 'Main'
 			
 		})
-		.when('/second',{
-			templateUrl: '/views/second.html',
-			controller: 'SecondCtrl',
-			title : 'Second'
+		.when('/order',{
+			templateUrl: '/views/order.html',
+			controller: 'OrderCtrl',
+			title : 'Order'
 		})
 		
 		.otherwise({ redirectTo: '/'});
