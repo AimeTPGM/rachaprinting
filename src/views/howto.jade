@@ -12,6 +12,20 @@ div.howto-wrapper(ng-controller="HowtoCtrl")
 					img
 				div.description
 					| {{step.description}}
+				div.step-detail-desktop-wrapper.active(id="stepDetailDesktop{{$index}}", ng-if="$index === 0")
+					div.step-detail-desktop(ng-repeat="detail in step.details")
+						div.icon-wrapper
+							i.icon
+								span.fa(class="{{detail.icon}}")
+						div.content
+							| {{detail.content}}
+				div.step-detail-desktop-wrapper(id="stepDetailDesktop{{$index}}", ng-if="$index !== 0")
+					div.step-detail-desktop(ng-repeat="detail in step.details")
+						div.icon-wrapper
+							i.icon
+								span.fa(class="{{detail.icon}}")
+						div.content
+							| {{detail.content}}
 			div.arrow-wrapper(ng-if="!$last")
 				div.arrow-body
 					div.circle(id="stepArrow{{$index}}")
@@ -26,7 +40,7 @@ div.howto-wrapper(ng-controller="HowtoCtrl")
 							span.fa(class="{{detail.icon}}")
 					div.content
 						| {{detail.content}}
-			div.step-by-step-wrapper(id="stepDetail{{$index}}")
+			div.step-by-step-wrapper(id="stepDetail{{$index}}", ng-if="$index !== 0")
 				div.step-by-step(ng-repeat="detail in step.details")
 					div.icon-wrapper
 						i.icon

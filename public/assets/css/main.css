@@ -216,6 +216,15 @@ body {
           margin-top: 20px; }
         .howto-wrapper .item-wrapper .step-wrapper .item .description.active {
           border: 0; }
+        .howto-wrapper .item-wrapper .step-wrapper .item .step-detail-desktop-wrapper.active {
+          border: 0; }
+        .howto-wrapper .item-wrapper .step-wrapper .item .step-detail-desktop-wrapper {
+          margin-top: 20px;
+          text-align: left; }
+          .howto-wrapper .item-wrapper .step-wrapper .item .step-detail-desktop-wrapper .step-detail-desktop {
+            display: flex; }
+            .howto-wrapper .item-wrapper .step-wrapper .item .step-detail-desktop-wrapper .step-detail-desktop .icon-wrapper {
+              margin-right: 20px; }
       .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper {
         margin-top: 75px;
         display: flex; }
@@ -241,20 +250,25 @@ body {
     position: relative;
     height: 450px; }
     .howto-wrapper .step-detail-wrapper .step-detail-item {
-      position: absolute; }
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0; }
       .howto-wrapper .step-detail-wrapper .step-detail-item .img-wrapper {
-        width: 70%;
+        width: 700px;
+        left: 0;
+        right: 0;
         margin: auto; }
       .howto-wrapper .step-detail-wrapper .step-detail-item .step-by-step-wrapper {
         position: absolute;
         top: 70px;
-        width: 40%;
+        width: 30%;
         margin: auto;
         left: 0;
         right: 0;
         display: none; }
         .howto-wrapper .step-detail-wrapper .step-detail-item .step-by-step-wrapper .step-by-step {
-          margin-bottom: 20px;
+          margin-bottom: 10px;
           display: flex; }
           .howto-wrapper .step-detail-wrapper .step-detail-item .step-by-step-wrapper .step-by-step .icon-wrapper {
             margin-right: 20px;
@@ -443,8 +457,21 @@ body {
     bottom: 25px; }
   .howto-wrapper .item-wrapper {
     display: block; }
+    .howto-wrapper .item-wrapper .step-wrapper .step {
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 5px; }
+    .howto-wrapper .item-wrapper .step-wrapper .item {
+      width: 100%; }
     .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper {
-      display: none; } }
+      display: none; }
+    .howto-wrapper .item-wrapper .step-wrapper .step-detail-desktop-wrapper {
+      display: none; }
+    .howto-wrapper .item-wrapper .step-wrapper .step-detail-desktop-wrapper.active {
+      display: block; }
+  .howto-wrapper .step-detail-wrapper {
+    display: none; } }
 
 @media (min-width: 768px) {
   #nav-mobile {
@@ -479,7 +506,15 @@ body {
     .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper {
       display: flex; }
       .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper .arrow-body .active {
-        width: 30px; } }
+        width: 30px; }
+    .howto-wrapper .item-wrapper .step-detail-desktop-wrapper {
+      display: none; }
+  .howto-wrapper .step-detail-wrapper {
+    display: block; }
+    .howto-wrapper .step-detail-wrapper .step-detail-item .img-wrapper {
+      display: block; }
+    .howto-wrapper .step-detail-wrapper .step-detail-item .step-by-step-wrapper {
+      width: 50%; } }
 
 @media (min-width: 1023px) {
   #nav-mobile {
@@ -508,10 +543,20 @@ body {
       width: 100%; }
   .howto-wrapper .item-wrapper {
     display: flex; }
+    .howto-wrapper .item-wrapper .step-wrapper .item {
+      width: 150px; }
     .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper {
       display: flex; }
       .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper .arrow-body .active {
-        width: 70px; } }
+        width: 70px; }
+    .howto-wrapper .item-wrapper .step-detail-desktop-wrapper {
+      display: none; }
+  .howto-wrapper .step-detail-wrapper {
+    display: block; }
+    .howto-wrapper .step-detail-wrapper .step-detail-item .img-wrapper {
+      display: block; }
+    .howto-wrapper .step-detail-wrapper .step-detail-item .step-by-step-wrapper {
+      width: 30%; } }
 
 @media (min-width: 1215px) {
   .horizontal-item-slide-wrapper {

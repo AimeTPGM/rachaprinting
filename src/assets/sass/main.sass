@@ -240,6 +240,15 @@ body
           margin-top: 20px;
         .description.active
           border: 0;
+        .step-detail-desktop-wrapper.active
+          border: 0;
+        .step-detail-desktop-wrapper
+          margin-top: 20px;
+          text-align: left;
+          .step-detail-desktop
+            display: flex;
+            .icon-wrapper
+              margin-right: 20px;
       .arrow-wrapper
         margin-top: 75px;
         display: flex;
@@ -266,20 +275,25 @@ body
     height: 450px;
     .step-detail-item
       position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
       .img-wrapper
-        width: 70%;
+        width: 700px;
+        left: 0;
+        right: 0;
         margin: auto; 
         img
       .step-by-step-wrapper
         position: absolute;
         top: 70px;
-        width: 40%;
+        width: 30%;
         margin: auto;
         left: 0;
         right: 0;
         display: none;
         .step-by-step
-          margin-bottom: 20px;
+          margin-bottom: 10px;
           display: flex;
           .icon-wrapper
             margin-right: 20px;
@@ -289,7 +303,6 @@ body
             word-wrap: break;
       .active
         display: block;
-          
 .review-wrapper
   padding: 100px;
   position: relative;
@@ -482,8 +495,21 @@ body
     .item-wrapper
       display: block;
       .step-wrapper
+        .step
+          margin: auto;
+          left: 0;
+          right: 0;
+          top: 5px;
+        .item
+          width: 100%;
         .arrow-wrapper
           display: none;
+        .step-detail-desktop-wrapper
+          display: none;
+        .step-detail-desktop-wrapper.active
+          display: block;
+    .step-detail-wrapper
+      display: none;
 // s
 @media (min-width: $break-xs)
   #nav-mobile
@@ -533,6 +559,15 @@ body
             .circle
             .active  
               width: 30px;
+      .step-detail-desktop-wrapper
+        display: none;
+    .step-detail-wrapper
+      display: block;
+      .step-detail-item
+        .img-wrapper
+          display: block;
+        .step-by-step-wrapper
+          width: 50%;
 // md
 @media (min-width: $break-s)
   //product
@@ -573,12 +608,23 @@ body
     .item-wrapper
       display: flex;
       .step-wrapper
+        .item
+          width: 150px;
         .arrow-wrapper
           display: flex;
           .arrow-body
             .circle
             .active  
               width: 70px;
+      .step-detail-desktop-wrapper
+        display: none;
+    .step-detail-wrapper
+      display: block;
+      .step-detail-item
+        .img-wrapper
+          display: block;
+        .step-by-step-wrapper
+          width: 30%;
 // lg
 @media (min-width: $break-md)
   .horizontal-item-slide-wrapper

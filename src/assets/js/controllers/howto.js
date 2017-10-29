@@ -85,10 +85,14 @@ angular.module('app')
 		$scope.moveStep = function(index){
 			angular.element(document.querySelector('#stepDetail'+currentIndex)).removeClass('active')
 			angular.element(document.querySelector('#stepDetail'+index)).addClass('active')
+			angular.element(document.querySelector('#stepDetailDesktop'+currentIndex)).removeClass('active')
+			angular.element(document.querySelector('#stepDetailDesktop'+index)).addClass('active')
 
 			if(!angular.element(document.querySelector('#step'+index)).children().hasClass('active')){
 				for (var i = 0; i < index; i++) {
 					angular.element(document.querySelector('#step'+i)).children().addClass('active')
+					angular.element(document.querySelector('#stepDetailDesktop'+i)).removeClass('active')
+					angular.element(document.querySelector('#stepArrow'+i)).addClass('active')
 					angular.element(document.querySelector('#stepArrow'+i)).addClass('active')
 				}
 				angular.element(document.querySelector('#step'+index)).children().addClass('active')
