@@ -3,11 +3,15 @@ div.howto-wrapper(ng-controller="HowtoCtrl")
 		| สั่งง่ายๆ แค่ 4 ขั้นตอน!
 	div.item-wrapper
 		div.step-wrapper(ng-repeat="step in steps")
-			div.item(ng-click="showOverlay($index)")
-				div.img-wrapper
+			div.step
+				| {{$index+1}}
+			div.item(ng-click="moveStep($index)", id="step{{$index}}")
+				div.img-wrapper(ng-if="$index !== 0")
+					img
+				div.img-wrapper.active(ng-if="$index === 0")
 					img
 				div.description
 					| {{step.description}}
 			div.arrow-wrapper(ng-if="!$last")
 				div.arrow-body
-					div.circle
+					div.circle(id="stepArrow{{$index}}")

@@ -9,7 +9,7 @@ $magenta: #666;
 $yellow: #FFFF00;
 $base-green: #00B900;
 $darker-green: #009800;
-$grey: #999;
+$grey: #9F9F9F;
 $white: #FFF;
 $super-dark-grey: #333;
 $navbar-bg: rgba(255,255,255,0.8);
@@ -207,25 +207,50 @@ body
     padding-top: 50px;
     .step-wrapper
       display: flex;
+      position: relative;
+      .step
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        font-size: 0.8em;
+        line-height: 2.5em;
+        font-weight: bold;
+        background: $base-green;
+        color: white;
+        border-radius: 50%;
       .item
         padding: 20px;
         text-align: center;
+        width: 150px;
+        .active
+          border: solid 5px $base-green;
         .img-wrapper
-          width: 150px;
-          height: 150px;
-          background: $base-green;
+          width: 100px;
+          height: 100px;
+          background: $grey;
           border-radius: 50%;
+          margin: auto;
+        .img-wrapper:hover
+          border: solid 5px $base-green;
+          transition: 0.5s;
         .description
           margin-top: 20px;
+        .description.active
+          border: 0;
       .arrow-wrapper
-        margin-top: 90px;
+        margin-top: 75px;
         display: flex;
         .arrow-body
           display: flex;
           .circle
-            width: 100px;
-            height: 2px;
-            background: $base-green;
+            width: 80px;
+            border-top: 1px dashed $grey;
+          .active
+            transition: 1s ease;
+            border-top: 1px dashed $base-green;
         .arrow-head
           width: 0;
           height: 0;

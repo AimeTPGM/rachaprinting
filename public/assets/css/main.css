@@ -23,7 +23,7 @@ body {
   color: white; }
 
 .grey-bg {
-  background: #999;
+  background: #9F9F9F;
   color: white; }
 
 .white-bg {
@@ -182,26 +182,51 @@ body {
     display: flex;
     padding-top: 50px; }
     .howto-wrapper .item-wrapper .step-wrapper {
-      display: flex; }
+      display: flex;
+      position: relative; }
+      .howto-wrapper .item-wrapper .step-wrapper .step {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        font-size: 0.8em;
+        line-height: 2.5em;
+        font-weight: bold;
+        background: #00B900;
+        color: white;
+        border-radius: 50%; }
       .howto-wrapper .item-wrapper .step-wrapper .item {
         padding: 20px;
-        text-align: center; }
+        text-align: center;
+        width: 150px; }
+        .howto-wrapper .item-wrapper .step-wrapper .item .active {
+          border: solid 5px #00B900; }
         .howto-wrapper .item-wrapper .step-wrapper .item .img-wrapper {
-          width: 150px;
-          height: 150px;
-          background: #00B900;
-          border-radius: 50%; }
+          width: 100px;
+          height: 100px;
+          background: #9F9F9F;
+          border-radius: 50%;
+          margin: auto; }
+        .howto-wrapper .item-wrapper .step-wrapper .item .img-wrapper:hover {
+          border: solid 5px #00B900;
+          transition: 0.5s; }
         .howto-wrapper .item-wrapper .step-wrapper .item .description {
           margin-top: 20px; }
+        .howto-wrapper .item-wrapper .step-wrapper .item .description.active {
+          border: 0; }
       .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper {
-        margin-top: 90px;
+        margin-top: 75px;
         display: flex; }
         .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper .arrow-body {
           display: flex; }
           .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper .arrow-body .circle {
-            width: 100px;
-            height: 2px;
-            background: #00B900; }
+            width: 80px;
+            border-top: 1px dashed #9F9F9F; }
+          .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper .arrow-body .active {
+            transition: 1s ease;
+            border-top: 1px dashed #00B900; }
         .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper .arrow-head {
           width: 0;
           height: 0;
@@ -334,7 +359,7 @@ body {
     height: 100px;
     background: #00B900; }
   .mini-showcase-wrapper .img-wrapper:hover {
-    background: #999;
+    background: #9F9F9F;
     transform: scale(2);
     transition: .3s; }
 
