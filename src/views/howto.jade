@@ -1,6 +1,11 @@
 div.howto-wrapper(ng-controller="HowtoCtrl")
 	div.header
-		| สั่งง่ายๆ แค่ 4 ขั้นตอน!
+		span.hilight
+			| 4 ขั้นตอน สั่งง่าย 
+		span.lowlight
+			| สั่งพิมพ์ออนไลน์กับ 
+		span.hilight
+			| ราชาการพิมพ์
 	div.item-wrapper
 		div#stepDesktop.step-wrapper(ng-repeat="step in steps")
 			div.step

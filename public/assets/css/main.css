@@ -361,6 +361,10 @@ body {
   line-height: 2em;
   font-size: 2em;
   font-weight: bold; }
+  .header .hilight {
+    font-size: 1.2em; }
+  .header .lowlight {
+    color: #9F9F9F; }
 
 .example-wrapper {
   padding: 100px; }
