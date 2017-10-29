@@ -444,7 +444,13 @@ body {
   .footer-wrapper .section-wrapper {
     display: block; }
     .footer-wrapper .section-wrapper .section {
-      width: 100%; } }
+      width: 100%; }
+  .howto-wrapper .item-wrapper {
+    display: flex; }
+    .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper {
+      display: flex; }
+      .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper .arrow-body .active {
+        width: 30px; } }
 
 @media (min-width: 1023px) {
   #nav-mobile {
@@ -470,7 +476,13 @@ body {
   .footer-wrapper .section-wrapper {
     display: block; }
     .footer-wrapper .section-wrapper .section {
-      width: 100%; } }
+      width: 100%; }
+  .howto-wrapper .item-wrapper {
+    display: flex; }
+    .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper {
+      display: flex; }
+      .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper .arrow-body .active {
+        width: 70px; } }
 
 @media (min-width: 1215px) {
   .horizontal-item-slide-wrapper {
