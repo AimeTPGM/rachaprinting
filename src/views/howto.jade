@@ -15,3 +15,21 @@ div.howto-wrapper(ng-controller="HowtoCtrl")
 			div.arrow-wrapper(ng-if="!$last")
 				div.arrow-body
 					div.circle(id="stepArrow{{$index}}")
+	div.step-detail-wrapper
+		div.step-detail-item(ng-repeat="step in steps")
+			div.img-wrapper
+				img(ng-src="/assets/img/Macbook.png")
+			div.step-by-step-wrapper.active(ng-if="$index === 0", id="stepDetail{{$index}}")
+				div.step-by-step(ng-repeat="detail in step.details")
+					div.icon-wrapper
+						i.icon
+							span.fa(class="{{detail.icon}}")
+					div.content
+						| {{detail.content}}
+			div.step-by-step-wrapper(id="stepDetail{{$index}}")
+				div.step-by-step(ng-repeat="detail in step.details")
+					div.icon-wrapper
+						i.icon
+							span.fa(class="{{detail.icon}}")
+					div.content
+						| {{detail.content}}

@@ -259,6 +259,37 @@ body
           border-bottom: 15px solid transparent;
           border-left: 15px solid $base-green;
           margin-top: -10px;
+  .step-detail-wrapper
+    padding: 50px;
+    padding-bottom: 0;
+    position: relative;
+    height: 450px;
+    .step-detail-item
+      position: absolute;
+      .img-wrapper
+        width: 70%;
+        margin: auto; 
+        img
+      .step-by-step-wrapper
+        position: absolute;
+        top: 70px;
+        width: 40%;
+        margin: auto;
+        left: 0;
+        right: 0;
+        display: none;
+        .step-by-step
+          margin-bottom: 20px;
+          display: flex;
+          .icon-wrapper
+            margin-right: 20px;
+            font-size: 2em;
+          .content
+            margin-top: 1em;
+            word-wrap: break;
+      .active
+        display: block;
+          
 .review-wrapper
   padding: 100px;
   position: relative;

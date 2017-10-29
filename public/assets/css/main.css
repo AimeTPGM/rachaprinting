@@ -235,6 +235,35 @@ body {
           border-bottom: 15px solid transparent;
           border-left: 15px solid #00B900;
           margin-top: -10px; }
+  .howto-wrapper .step-detail-wrapper {
+    padding: 50px;
+    padding-bottom: 0;
+    position: relative;
+    height: 450px; }
+    .howto-wrapper .step-detail-wrapper .step-detail-item {
+      position: absolute; }
+      .howto-wrapper .step-detail-wrapper .step-detail-item .img-wrapper {
+        width: 70%;
+        margin: auto; }
+      .howto-wrapper .step-detail-wrapper .step-detail-item .step-by-step-wrapper {
+        position: absolute;
+        top: 70px;
+        width: 40%;
+        margin: auto;
+        left: 0;
+        right: 0;
+        display: none; }
+        .howto-wrapper .step-detail-wrapper .step-detail-item .step-by-step-wrapper .step-by-step {
+          margin-bottom: 20px;
+          display: flex; }
+          .howto-wrapper .step-detail-wrapper .step-detail-item .step-by-step-wrapper .step-by-step .icon-wrapper {
+            margin-right: 20px;
+            font-size: 2em; }
+          .howto-wrapper .step-detail-wrapper .step-detail-item .step-by-step-wrapper .step-by-step .content {
+            margin-top: 1em;
+            word-wrap: break; }
+      .howto-wrapper .step-detail-wrapper .step-detail-item .active {
+        display: block; }
 
 .review-wrapper {
   padding: 100px;
