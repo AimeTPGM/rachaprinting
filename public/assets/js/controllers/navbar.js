@@ -37,7 +37,7 @@ angular.module('app')
 		}
 
 		$scope.scrollTo = function(id){
-			$document.scrollToElementAnimated(angular.element(document.getElementById(id)))
+			$document.scrollToElementAnimated(angular.element(document.getElementById(id)), 72)
 		}
 
 		
