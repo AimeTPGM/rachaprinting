@@ -222,11 +222,12 @@ body {
         .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper .arrow-body {
           display: flex; }
           .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper .arrow-body .circle {
-            width: 80px;
-            border-top: 1px dashed #9F9F9F; }
+            border-top: 2px dashed #9F9F9F;
+            transition: width .5s ease-out, border-top .5s ease-out;
+            width: 0; }
           .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper .arrow-body .active {
-            transition: 1s ease;
-            border-top: 1px dashed #00B900; }
+            width: 70px;
+            border-top: 2px dashed #00B900; }
         .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper .arrow-head {
           width: 0;
           height: 0;
@@ -234,32 +235,6 @@ body {
           border-bottom: 15px solid transparent;
           border-left: 15px solid #00B900;
           margin-top: -10px; }
-  .howto-wrapper .item-wrapper-overlay {
-    margin: auto;
-    width: fit-content;
-    display: flex;
-    position: absolute; }
-    .howto-wrapper .item-wrapper-overlay .step-wrapper {
-      display: flex; }
-      .howto-wrapper .item-wrapper-overlay .step-wrapper .item {
-        padding: 20px;
-        text-align: center; }
-        .howto-wrapper .item-wrapper-overlay .step-wrapper .item .img-wrapper {
-          width: 150px;
-          height: 150px;
-          background: #999;
-          border-radius: 50%; }
-        .howto-wrapper .item-wrapper-overlay .step-wrapper .item .description {
-          margin-top: 20px; }
-      .howto-wrapper .item-wrapper-overlay .step-wrapper .arrow-wrapper {
-        margin-top: 90px;
-        display: flex; }
-        .howto-wrapper .item-wrapper-overlay .step-wrapper .arrow-wrapper .arrow-body {
-          display: flex; }
-          .howto-wrapper .item-wrapper-overlay .step-wrapper .arrow-wrapper .arrow-body .circle {
-            width: 100px;
-            height: 2px;
-            background: #999; }
 
 .review-wrapper {
   padding: 100px;
@@ -436,7 +411,11 @@ body {
     width: 50px;
     height: 50px; }
   .review-wrapper .bullet-wrapper {
-    bottom: 25px; } }
+    bottom: 25px; }
+  .howto-wrapper .item-wrapper {
+    display: block; }
+    .howto-wrapper .item-wrapper .step-wrapper .arrow-wrapper {
+      display: none; } }
 
 @media (min-width: 768px) {
   #nav-mobile {

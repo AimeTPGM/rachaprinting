@@ -246,11 +246,12 @@ body
         .arrow-body
           display: flex;
           .circle
-            width: 80px;
-            border-top: 1px dashed $grey;
-          .active
-            transition: 1s ease;
-            border-top: 1px dashed $base-green;
+            border-top: 2px dashed $grey;
+            transition: width .5s ease-out, border-top .5s ease-out;
+            width: 0;
+          .active  
+            width: 70px;
+            border-top: 2px dashed $base-green;
         .arrow-head
           width: 0;
           height: 0;
@@ -258,32 +259,6 @@ body
           border-bottom: 15px solid transparent;
           border-left: 15px solid $base-green;
           margin-top: -10px;
-  .item-wrapper-overlay
-    margin: auto;
-    width: fit-content;
-    display: flex;
-    position: absolute;
-    .step-wrapper
-      display: flex;
-      .item
-        padding: 20px;
-        text-align: center;
-        .img-wrapper
-          width: 150px;
-          height: 150px;
-          background: $cyan;
-          border-radius: 50%;
-        .description
-          margin-top: 20px;
-      .arrow-wrapper
-        margin-top: 90px;
-        display: flex;
-        .arrow-body
-          display: flex;
-          .circle
-            width: 100px;
-            height: 2px;
-            background: $cyan;
 .review-wrapper
   padding: 100px;
   position: relative;
@@ -471,6 +446,12 @@ body
   .review-wrapper
     .bullet-wrapper
       bottom: 25px;
+  .howto-wrapper
+    .item-wrapper
+      display: block;
+      .step-wrapper
+        .arrow-wrapper
+          display: none;
 // s
 @media (min-width: $break-xs)
   #nav-mobile

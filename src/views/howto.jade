@@ -2,7 +2,7 @@ div.howto-wrapper(ng-controller="HowtoCtrl")
 	div.header
 		| สั่งง่ายๆ แค่ 4 ขั้นตอน!
 	div.item-wrapper
-		div.step-wrapper(ng-repeat="step in steps")
+		div#stepDesktop.step-wrapper(ng-repeat="step in steps")
 			div.step
 				| {{$index+1}}
 			div.item(ng-click="moveStep($index)", id="step{{$index}}")
