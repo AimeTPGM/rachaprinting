@@ -1,8 +1,7 @@
 // responsive break points
-$break-xs: 576px;
-$break-s: 768px;
-$break-md: 992px;
-$break-lg: 1200px;
+$break-xs: 768px;
+$break-s: 1023px;
+$break-md: 1215px;
 
 // color palette
 $cyan: #999;
@@ -13,6 +12,7 @@ $darker-green: #009800;
 $grey: #999;
 $white: #FFF;
 $super-dark-grey: #333;
+$navbar-bg: rgba(255,255,255,0.8);
 
 // navbar
 $navbar-height: 50px;
@@ -60,11 +60,16 @@ body
 
 .navbar
   padding: 10px 15px 10px 15px;
-  background: rgba(255,255,255,0.8);
+  background: $navbar-bg;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 9999;
+  display: flex;
+  box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
+  .navbar-burger.burger
+    span
+      color: $base-green;
   a:hover
     color: $base-green;
   a
@@ -400,6 +405,11 @@ body
 
 // xs
 @media (max-width: $break-xs)
+  #nav-mobile
+    position: absolute;
+    top: 72px;
+    right: 0px;
+    background: $navbar-bg;
   //product
   .horizontal-item-slide-wrapper
     padding: 50px;
@@ -436,6 +446,11 @@ body
       bottom: 25px;
 // s
 @media (min-width: $break-xs)
+  #nav-mobile
+    position: absolute;
+    top: 72px;
+    right: 0px;
+    background: $navbar-bg;
   //product
   .horizontal-item-slide-wrapper
     padding: 50px;
@@ -470,6 +485,8 @@ body
 // md
 @media (min-width: $break-s)
   //product
+  #nav-mobile
+    display: none;
   .horizontal-item-slide-wrapper
     padding: 50px;
     .slide

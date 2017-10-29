@@ -19,9 +19,28 @@ angular.module('app')
 				'section': 'example'
 			}
 		]
+		var showMobile = false
+		$scope.navMobile = function(){
+			if(showMobile == false){
+				showMobile = true
+				$scope.show = function(){
+					return true;
+				}
+			}
+			else {
+				showMobile = false
+				$scope.show = function(){
+					return false;
+				}
+			}
+			
+		}
+
 		$scope.scrollTo = function(id){
 			$document.scrollToElementAnimated(angular.element(document.getElementById(id)))
 		}
+
+		
 		
 
 	}

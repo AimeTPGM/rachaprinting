@@ -2,7 +2,15 @@ nav.navbar(ng-controller="NavbarCtrl")
 	div.navbar-brand
 		a.navbar-item(href="http://bulma.io")
 			img(src="http://bulma.io/images/bulma-logo.png")
-	div.navbar-end
+	div.navbar-burger.burger(ng-click="navMobile()")
+			span
+			span
+			span
+	div#nav-mobile(ng-show="show()")
+		a.navbar-item(ng-click="scrollTo(menu.section)", ng-repeat="menu in menus")
+			span
+				| {{menu.name}}
+	div.navbar-menu.navbar-end
 		a.navbar-item(ng-click="scrollTo(menu.section)", ng-repeat="menu in menus")
 			span
 				| {{menu.name}}
@@ -11,3 +19,5 @@ nav.navbar(ng-controller="NavbarCtrl")
 				input.input(type="text", placeholder="ค้นหา")
 				span.icon.is-left
 					i.fa.fa-search
+
+	
