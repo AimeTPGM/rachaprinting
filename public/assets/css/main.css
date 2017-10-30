@@ -10,6 +10,7 @@ html {
     color: #FFFF00; }
 
 body {
+  overflow-x: hidden;
   font-family: bangna; }
 
 .super-dark-grey-bg {
@@ -30,6 +31,9 @@ body {
   background: #FFF;
   color: #00B900; }
 
+body {
+  width: 100%; }
+
 .navbar {
   padding: 10px 15px 10px 15px;
   background: rgba(255, 255, 255, 0.8);
@@ -38,7 +42,8 @@ body {
   width: 100%;
   z-index: 9999;
   display: flex;
-  box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1); }
+  box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
+  width: 100%; }
   .navbar .navbar-burger.burger span {
     color: #00B900; }
   .navbar a:hover {
@@ -464,6 +469,8 @@ body {
       height: 0;
       border-bottom: 60px solid white;
       border-right: 60px solid transparent; }
+  .order-form-wrapper .order-step-separator {
+    padding: 25px; }
   .order-form-wrapper .order-step-wrapper {
     background: white;
     padding: 50px;
@@ -603,7 +610,7 @@ body {
     .howto-wrapper .step-detail-wrapper .step-detail-item .step-by-step-wrapper {
       width: 30%; } }
 
-@media (min-width: 1215px) {
+@media (min-width: 1215px) and (min-device-width: 1215px) {
   .horizontal-item-slide-wrapper {
     padding: 100px; }
     .horizontal-item-slide-wrapper .slide .item-wrapper .item {
