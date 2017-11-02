@@ -1,20 +1,16 @@
-div.order-form-wrapper
+div.order-form-wrapper(ng-controller="OrderFormCtrl")
 	div.header-wrapper
 		| step 1 เลือกตัวเลือกของคุณ
 		//- div.header-triangle
-	div.order-step-wrapper
+	div.order-step-wrapper.form
 		div.topic
 			| รูปแบบ
 		div.selector
-			div.control
-				div.select
-					select
-						option
-							| กรุณาเลือก
-						option
-							| 1
-						option
-							| 2
+			div.control(ng-repeat="list in templateList")
+				label
+					input(type="radio", name="type")
+					i
+						| {{list.name}}
 	div.order-step-separator
 	div.header-wrapper
 		| step 2 เลือกจำนวนและความเร็วในการจัดส่ง

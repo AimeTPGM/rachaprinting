@@ -13,7 +13,7 @@ angular.module('app')
 		
 		angular.element($window).bind("scroll", function() {
 			var orderDetailPostion = angular.element(document.querySelector('#orderDetail'))[0].offsetHeight
-			console.log(orderDetailPostion)
+			// console.log(orderDetailPostion)
 			if (this.pageYOffset >= orderDetailPostion) {
 				angular.element(document.querySelector('#orderDetailFixed')).css('display', 'none')
 			}
