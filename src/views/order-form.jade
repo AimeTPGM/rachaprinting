@@ -7,10 +7,12 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 			| รูปแบบ
 		div.selector
 			div.control(ng-repeat="list in templateList")
-				label
+				label.option-content-wrapper
 					input(type="radio", name="type")
-					i
-						| {{list.name}}
+					div.content-wrapper
+						img(ng-src="")
+						content
+							| {{list.name}}
 	div.order-step-separator
 	div.header-wrapper
 		| step 2 เลือกจำนวนและความเร็วในการจัดส่ง

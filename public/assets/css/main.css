@@ -34,6 +34,11 @@ body {
 body {
   width: 100%; }
 
+.form .selector .control .option-content-wrapper {
+  display: flex; }
+  .form .selector .control .option-content-wrapper .content-wrapper {
+    display: flex; }
+
 .navbar {
   padding: 10px 15px 10px 15px;
   background: rgba(255, 255, 255, 0.8);
@@ -157,7 +162,8 @@ body {
     .horizontal-item-slide-wrapper .slide .item-wrapper {
       overflow-x: scroll;
       display: inline-flex;
-      width: 100%; }
+      width: 100%;
+      cursor: pointer; }
       .horizontal-item-slide-wrapper .slide .item-wrapper .item {
         padding: 50px; }
         .horizontal-item-slide-wrapper .slide .item-wrapper .item .img-wrapper {

@@ -63,6 +63,11 @@ body
 
 .form
   .selector
+    .control
+      .option-content-wrapper
+        display: flex;
+        .content-wrapper
+          display: flex;
 .navbar
   padding: 10px 15px 10px 15px;
   background: $navbar-bg;
@@ -184,6 +189,7 @@ body
       overflow-x: scroll;
       display: inline-flex;
       width: 100%;
+      cursor: pointer;
       .item
         padding: 50px;
         .img-wrapper

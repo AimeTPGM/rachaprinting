@@ -8,7 +8,7 @@ div.horizontal-item-slide-wrapper(ng-controller="ProductCtrl")
 				i
 					span.icon.fa.fa-angle-left
 		div.item-wrapper
-			div.item(ng-repeat="product in products", id="product{{$index}}")
+			div.item(ng-repeat="product in products", id="product{{$index}}", ng-click="log($index)")
 				div.img-wrapper
 					img(src="product.img")
 				div.content

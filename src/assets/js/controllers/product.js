@@ -41,7 +41,10 @@ angular.module('app')
 
 		$scope.currentProduct = 0;
 		var scrollPoint = 0;
-
+		$scope.log = function(index){
+			console.log('this product is '+$scope.products[index].name)
+			$window.location.href="/order"
+		}
 		$scope.right = function(){
 			if($scope.currentProduct == $scope.products.length-1)
 				$scope.currentProduct == $scope.products.length-1
