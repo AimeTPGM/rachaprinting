@@ -3,16 +3,102 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 		| step 1 เลือกตัวเลือกของคุณ
 		//- div.header-triangle
 	div.order-step-wrapper.form
-		div.topic
-			| รูปแบบ
-		div.selector
-			div.control(ng-repeat="list in templateList")
-				label.option-content-wrapper
-					input(type="radio", name="type")
-					div.content-wrapper
-						img(ng-src="")
-						content
-							| {{list.name}}
+		div.main-choice-wrapper
+			div.topic
+				| คุณมีแบบสิ่งพิมพ์ที่ต้องการแล้วหรือยัง?
+			div.choice-item
+				div.main-choice-item
+					div.option-content-wrapper
+						input(type="radio", name="main", id="choice1")
+						label.upload-file-wrapper(for="choice1")
+							label(for="file").upload-file-button
+								div.content
+									div.main
+										| มีแล้ว 
+									div.sub
+										| คลิ๊กเพื่ออัพโหลดรูปภาพ
+							input(type="file", name="file", id="file")		
+				div.main-choice-item
+					div.option-content-wrapper
+						input(type="radio", name="main", id="choice2")
+						label(for="choice2", style="padding:100px;")
+							div.content
+								div.main
+									| ให้เราออกแบบให้ 
+								div.sub
+									| ใช้บริการออกแบบของราชาการพิมพ์ในราคาที่คุ้มค่า!
+		div.property-wrapper
+			div.property-item
+				div.topic
+					| ขนาด
+				div.selector
+					div.control(ng-repeat="list in templateList")
+						div.option-content-wrapper
+							input(type="radio", name="type", id="option{{$index}}")
+							label(for="option{{$index}}")
+								img(ng-src="")
+								div.content
+									div.main
+										| {{list.name}}
+									div.sub
+										| {{list.name}}
+			div.property-item
+				div.topic
+					| พิมพ์หน้าหลัง
+				div.selector
+					div.control(ng-repeat="list in prints")
+						div.option-content-wrapper
+							input(type="radio", name="print", id="print{{$index}}")
+							label(for="print{{$index}}")
+								img(ng-src="")
+								div.content
+									div.main
+										| {{list.name}}
+									div.sub
+										| {{list.name}}
+			div.property-item
+				div.topic
+					| พิมพ์สี
+				div.selector
+					div.control(ng-repeat="list in printColors")
+						div.option-content-wrapper
+							input(type="radio", name="printColor", id="printColor{{$index}}")
+							label(for="printColor{{$index}}")
+								img(ng-src="")
+								div.content
+									div.main
+										| {{list.name}}
+									div.sub
+										| {{list.name}}
+		div.property-wrapper
+			div.property-item
+				div.topic
+					| ประเภทกระดาษ
+				div.selector
+					div.control(ng-repeat="list in paperTypes")
+						div.option-content-wrapper
+							input(type="radio", name="paperType", id="paperType{{$index}}")
+							label(for="paperType{{$index}}")
+								img(ng-src="")
+								div.content
+									div.main
+										| {{list.name}}
+									div.sub
+										| {{list.name}}
+			div.property-item
+				div.topic
+					| การเคลือบ
+				div.selector
+					div.control(ng-repeat="list in refinements")
+						div.option-content-wrapper
+							input(type="radio", name="refinement", id="refinement{{$index}}")
+							label(for="refinement{{$index}}")
+								img(ng-src="")
+								div.content
+									div.main
+										| {{list.name}}
+									div.sub
+										| {{list.name}}
 	div.order-step-separator
 	div.header-wrapper
 		| step 2 เลือกจำนวนและความเร็วในการจัดส่ง
