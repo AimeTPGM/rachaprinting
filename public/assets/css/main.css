@@ -571,10 +571,10 @@ body {
             font-weight: 100;
             font-size: 0.8em;
             color: #777; }
-        .order-form-wrapper .main-choice-wrapper .choice-item .main-choice-item .option-content-wrapper input[type="radio"]:checked + label {
+        .order-form-wrapper .main-choice-wrapper .choice-item .main-choice-item .option-content-wrapper label.selected {
           background: #00B900;
           color: white; }
-          .order-form-wrapper .main-choice-wrapper .choice-item .main-choice-item .option-content-wrapper input[type="radio"]:checked + label .content .sub {
+          .order-form-wrapper .main-choice-wrapper .choice-item .main-choice-item .option-content-wrapper label.selected .content .sub {
             color: white; }
   .order-form-wrapper .order-step-wrapper {
     background: white;

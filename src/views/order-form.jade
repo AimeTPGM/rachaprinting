@@ -9,8 +9,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 			div.choice-item
 				div.main-choice-item
 					div.option-content-wrapper
-						input(type="radio", name="main", id="choice1")
-						label.upload-file-wrapper(for="choice1")
+						label.upload-file-wrapper(ng-click="setMainChoice(0)")#choice1
 							label(for="file").upload-file-button
 								div.content
 									div.main
@@ -20,8 +19,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 							input(type="file", name="file", id="file")		
 				div.main-choice-item
 					div.option-content-wrapper
-						input(type="radio", name="main", id="choice2")
-						label(for="choice2", style="padding:100px;")
+						label(ng-click="setMainChoice(1)", style="padding:100px;")#choice2
 							div.content
 								div.main
 									| ให้เราออกแบบให้ 
@@ -32,9 +30,9 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 				div.topic
 					| ขนาด
 				div.selector
-					div.control(ng-repeat="list in templateList")
+					div.control(ng-repeat="list in formats")
 						div.option-content-wrapper
-							input(type="radio", name="type", id="option{{$index}}")
+							input(type="radio", name="type", id="option{{$index}}", ng-click="setFormat($index)")
 							label(for="option{{$index}}")
 								img(ng-src="")
 								div.content
@@ -48,7 +46,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 				div.selector
 					div.control(ng-repeat="list in prints")
 						div.option-content-wrapper
-							input(type="radio", name="print", id="print{{$index}}")
+							input(type="radio", name="print", id="print{{$index}}", ng-click="setPrint($index)")
 							label(for="print{{$index}}")
 								img(ng-src="")
 								div.content
@@ -62,7 +60,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 				div.selector
 					div.control(ng-repeat="list in printColors")
 						div.option-content-wrapper
-							input(type="radio", name="printColor", id="printColor{{$index}}")
+							input(type="radio", name="printColor", id="printColor{{$index}}", ng-click="setPrintColor($index)")
 							label(for="printColor{{$index}}")
 								img(ng-src="")
 								div.content
@@ -77,7 +75,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 				div.selector
 					div.control(ng-repeat="list in paperTypes")
 						div.option-content-wrapper
-							input(type="radio", name="paperType", id="paperType{{$index}}")
+							input(type="radio", name="paperType", id="paperType{{$index}}", ng-click="setPaperType($index)")
 							label(for="paperType{{$index}}")
 								img(ng-src="")
 								div.content
@@ -91,7 +89,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 				div.selector
 					div.control(ng-repeat="list in refinements")
 						div.option-content-wrapper
-							input(type="radio", name="refinement", id="refinement{{$index}}")
+							input(type="radio", name="refinement", id="refinement{{$index}}", ng-click="setRefinement($index)")
 							label(for="refinement{{$index}}")
 								img(ng-src="")
 								div.content
