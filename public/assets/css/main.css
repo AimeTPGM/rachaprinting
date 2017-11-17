@@ -454,6 +454,10 @@ body {
     background: #9F9F9F;
     transform: scale(2);
     transition: .3s; }
+  .mini-showcase-wrapper .img-wrapper.active {
+    background: #9F9F9F;
+    transform: scale(2);
+    transition: .3s; }
 
 .footer-wrapper {
   padding: 100px;

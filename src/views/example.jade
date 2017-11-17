@@ -3,5 +3,5 @@ div.example-wrapper(ng-controller="ExampleCtrl")
 		span.hilight
 			| ผลงานที่ผ่านมา
 	div.mini-showcase-wrapper
-		div.img-wrapper(ng-repeat="example in examples")
+		div.img-wrapper(ng-repeat="example in examples", id="showcase{{$index}}")
 			| {{$index}}
