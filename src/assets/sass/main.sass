@@ -594,6 +594,53 @@ body
         button:hover
           background: #333;
           cursor: pointer;
+  .summary-wrapper
+    text-align: center;
+    position: absolute;
+    background: white;
+    border-radius: 10px;
+    padding: 50px;
+    height: fit-content;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 70%;
+    margin: auto;
+    z-index: 2;
+    .header
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      .icon
+        font-size: 2em;
+        margin-right: 0.5em;
+      .content
+        color: $base-green;
+    .content
+      color: #333;
+      .hilight
+        color: $base-green;
+        font-weight: bold;
+      .super-hilight
+        color: $red;
+        font-size: 1.5em;
+        font-weight: bold;
+      .lowlight
+        font-size: 0.8em;
+        color: #777;
+    .end
+      margin-top: 50px;
+
+  .overlay
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.5);
+
         
 .order-form-wrapper
   padding: 100px;
