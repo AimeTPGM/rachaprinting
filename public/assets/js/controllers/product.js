@@ -1,49 +1,55 @@
 angular.module('app')
 .controller('ProductCtrl',['$scope', '$http','$window', '$document', '$timeout',
 	function($scope, $http, $window, $document, $timeout){
-		$scope.products = [
-		{
-			"img": "",
-			"name": "A",
-			"price": "100"	
-		},
-		{
-			"img": "",
-			"name": "B",
-			"price": "200"	
-		},
-		{
-			"img": "",
-			"name": "C",
-			"price": "300"	
-		},
-		{
-			"img": "",
-			"name": "D",
-			"price": "400"	
-		},
-		{
-			"img": "",
-			"name": "E",
-			"price": "400"	
-		},
-		{
-			"img": "",
-			"name": "F",
-			"price": "400"	
-		},
-		{
-			"img": "",
-			"name": "G",
-			"price": "400"	
-		}
-		]
+$scope.products = [
+    {
+      "id": "1",
+      "img": "",
+      "name": "A",
+      "price": "100"  
+    },
+    {
+      "id": "2",
+      "img": "",
+      "name": "B",
+      "price": "200"  
+    },
+    {
+      "id": "3",
+      "img": "",
+      "name": "C",
+      "price": "300"  
+    },
+    {
+      "id": "4",
+      "img": "",
+      "name": "D",
+      "price": "400"  
+    },
+    {
+      "id": "5",
+      "img": "",
+      "name": "E",
+      "price": "400"  
+    },
+    {
+      "id": "6",
+      "img": "",
+      "name": "F",
+      "price": "400"  
+    },
+    {
+      "id": "7",
+      "img": "",
+      "name": "G",
+      "price": "400"  
+    }
+    ]
 
 		$scope.currentProduct = 0;
 		var scrollPoint = 0;
-		$scope.order = function(index){
-			console.log('this product is '+$scope.products[index].name)
-			$window.location.href="/order/"+index+"/new"
+		$scope.order = function(id){
+			$window.location.href="/order/"+id+"/new"
 		}
 		$scope.right = function(){
 			if($scope.currentProduct == $scope.products.length-1)
