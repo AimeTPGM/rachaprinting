@@ -512,6 +512,8 @@ body {
 
 .order-form-wrapper {
   padding: 100px;
+  padding-right: 150px;
+  padding-left: 150px;
   color: #00B900; }
   .order-form-wrapper .header-wrapper {
     width: fit-content;
@@ -550,10 +552,11 @@ body {
           overflow: hidden; }
           .order-form-wrapper .main-choice-wrapper .choice-item .main-choice-item .option-content-wrapper label.upload-file-wrapper .upload-file-button {
             width: 100%;
-            height: 100%;
+            height: 200px;
             background: transparent;
             border: 0;
-            padding: 100px; }
+            align-items: center;
+            display: grid; }
           .order-form-wrapper .main-choice-wrapper .choice-item .main-choice-item .option-content-wrapper label.upload-file-wrapper input[type="file"] {
             position: absolute;
             left: 0;
@@ -571,6 +574,10 @@ body {
             font-weight: 100;
             font-size: 0.8em;
             color: #777; }
+        .order-form-wrapper .main-choice-wrapper .choice-item .main-choice-item .option-content-wrapper #choice2 {
+          height: 200px;
+          align-items: center;
+          display: grid; }
         .order-form-wrapper .main-choice-wrapper .choice-item .main-choice-item .option-content-wrapper label.selected {
           background: #00B900;
           color: white; }

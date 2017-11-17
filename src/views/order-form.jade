@@ -19,7 +19,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 							input(type="file", name="file", id="file")		
 				div.main-choice-item
 					div.option-content-wrapper
-						label(ng-click="setMainChoice(1)", style="padding:100px;")#choice2
+						label(ng-click="setMainChoice(1)")#choice2
 							div.content
 								div.main
 									| ให้เราออกแบบให้ 
@@ -102,4 +102,4 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 		| step 2 เลือกจำนวนและความเร็วในการจัดส่ง
 		//- div.header-triangle
 	div.order-step-wrapper
-		| 
+		div.delivery-choice-wrapper
