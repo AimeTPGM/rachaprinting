@@ -33,15 +33,16 @@ angular.module('app')
 					return false;
 				}
 			}
-			
+
 		}
 
 		$scope.scrollTo = function(id){
-			$document.scrollToElementAnimated(angular.element(document.getElementById(id)), 72)
+			//$document.scrollToElementAnimated(angular.element(document.getElementById(id)), 72)
+			window.location.replace("http://localhost:3000/#"+id)
 		}
 
-		
-		
+
+
 
 	}
 ]);
