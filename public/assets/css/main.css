@@ -588,11 +588,37 @@ body {
     padding: 50px;
     border-radius: 5px;
     margin-top: -10px; }
+    .order-form-wrapper .order-step-wrapper .order-step-header-wrapper .order-step-header-row {
+      display: flex;
+      font-weight: bold; }
+      .order-form-wrapper .order-step-wrapper .order-step-header-wrapper .order-step-header-row .order-step-header-column {
+        padding: 10px;
+        display: grid;
+        align-items: center; }
+      .order-form-wrapper .order-step-wrapper .order-step-header-wrapper .order-step-header-row .icon {
+        font-size: 2.5em; }
+      .order-form-wrapper .order-step-wrapper .order-step-header-wrapper .order-step-header-row .sub-order-step-header {
+        color: #333;
+        font-size: 0.8em; }
+      .order-form-wrapper .order-step-wrapper .order-step-header-wrapper .order-step-header-row .order-step-header {
+        font-size: 1em; }
+    .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper {
+      margin-top: 30px; }
     .order-form-wrapper .order-step-wrapper .property-wrapper {
       display: flex;
       margin-top: 50px; }
       .order-form-wrapper .order-step-wrapper .property-wrapper .property-item {
         width: calc(100%/2); }
+
+.row {
+  display: flex; }
+  .row .column {
+    padding: 10px; }
+
+.table-header {
+  font-weight: bold;
+  display: block;
+  text-align: center; }
 
 @media (max-width: 768px) {
   #nav-mobile {
