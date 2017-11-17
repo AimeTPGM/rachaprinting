@@ -160,12 +160,13 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 					div.delivery-date
 						|	27 พ.ย.
 			div.row(ng-repeat="item in prices")
-				div.column
+				div.column.table-header
 					| {{item.amount}} ชิ้น
 				div.column
 					| 
-				div.column(ng-repeat="price in item.priceOfDate")
-					input(type="radio", id="price{{$parent.$index}}_{{$index}}", name="price")
-					label(for="price{{$parent.$index}}_{{$index}}")
-						| {{price}}.-
+				div.column.price(ng-repeat="price in item.priceOfDate")
+					div.price-wrapper
+						input(type="radio", id="price{{$parent.$index}}_{{$index}}", name="price")
+						label(for="price{{$parent.$index}}_{{$index}}")
+							| {{price}}.-
 
