@@ -674,10 +674,20 @@ body
               width: 100%;
               padding: 10px;
               font-size: 1.2em;
+              display: flex;
+              .full-and-per-one-wrapper
+                .full-price
+                  font-weight: bold;
+                .per-one
+                  font-size: 0.8em;
+                  color: #333;
             input[type="radio"]:checked+label
               background: $base-green;
               color: white;
               border: 0;
+              .full-and-per-one-wrapper
+                .per-one
+                  color: white;
             input[type="radio"]:checked+label::before
               border: solid 1px $base-green;
               font-family: fontawesome;
@@ -697,6 +707,9 @@ body
               line-height: 1.1em;
               color: white;
               background: $base-green;
+        .urgent-delivery
+          font-size: 1.2em;
+          font-weight: bold;
         .no-border
           border: 0;
           border-left: 0;
@@ -716,6 +729,7 @@ body
           padding: 5px;
         .soft-table-header:nth-child(2)
           border-left: solid 1px $base-green;
+          background: $yellow;
         .soft-table-header:last-child
           border-right: solid 1px $base-green;
         .delivery-date-wrapper

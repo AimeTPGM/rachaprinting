@@ -1,6 +1,6 @@
 angular.module('app')
-.controller('OrderFormCtrl',['$scope', '$http','$window',
-	function($scope, $http, $window){
+.controller('OrderFormCtrl',['$scope', '$http','$window', '$document',
+	function($scope, $http, $window, $document){
 		$scope.show = function(id){
 			angular.element(document.querySelector('#type')).addClass('active')
 			$scope.selectedValue.id = list.id
@@ -18,39 +18,192 @@ angular.module('app')
 		$scope.prices = [
 			{
 				amount: '100',
-				priceOfDate: ['447', '414', '381', '331']
+				priceOfDate: [
+					{
+						fullprice: '447', 
+						perOne: '4.47'
+					},
+					{
+						fullprice: '414', 
+						perOne: '4.14'
+					},
+					{
+						fullprice: '381', 
+						perOne: '3.81'
+					},
+					{
+						fullprice: '331', 
+						perOne: '3.31'
+					}
+				]
 			},
 			{
 				amount: '200',
-				priceOfDate: ['730', '676', '622', '540']
+				priceOfDate: [
+					{
+						fullprice: '730', 
+						perOne: '3.65'
+					},
+					{
+						fullprice: '676', 
+						perOne: '3.38'
+					},
+					{
+						fullprice: '622', 
+						perOne: '3.11'
+					},
+					{
+						fullprice: '540', 
+						perOne: '2.70'
+					}
+				]
 			},
 			{
 				amount: '300',
-				priceOfDate: ['783', '723', '666', '579']
+				priceOfDate: [
+					{
+						fullprice: '783', 
+						perOne: '2.61'
+					},
+					{
+						fullprice: '723', 
+						perOne: '2.41'
+					},
+					{
+						fullprice: '666', 
+						perOne: '2.22'
+					},
+					{
+						fullprice: '579', 
+						perOne: '1.93'
+					}
+				]
 			},
 			{
 				amount: '500',
-				priceOfDate: ['1180', '1095', '1005', '875']
+				priceOfDate: [
+					{
+						fullprice: '1180', 
+						perOne: '2.36'
+					},
+					{
+						fullprice: '1095', 
+						perOne: '2.19'
+					},
+					{
+						fullprice: '1005', 
+						perOne: '2.01'
+					},
+					{
+						fullprice: '875', 
+						perOne: '1.75'
+					}
+				]
 			},
 			{
 				amount: '1000',
-				priceOfDate: ['1570', '1450', '1330', '1160']
+				priceOfDate: [
+					{
+						fullprice: '1570', 
+						perOne: '1.57'
+					},
+					{
+						fullprice: '1450', 
+						perOne: '1.45'
+					},
+					{
+						fullprice: '1330', 
+						perOne: '1.33'
+					},
+					{
+						fullprice: '1160', 
+						perOne: '1.16'
+					}
+				]
 			},
 			{
 				amount: '2000',
-				priceOfDate: ['2340', '2180', '2000', '1740']
+				priceOfDate: [
+					{
+						fullprice: '2340', 
+						perOne: '1.17'
+					},
+					{
+						fullprice: '2180', 
+						perOne: '1.09'
+					},
+					{
+						fullprice: '2000', 
+						perOne: '1.00'
+					},
+					{
+						fullprice: '1740', 
+						perOne: '0.87'
+					}
+				]
 			},
 			{
 				amount: '3000',
-				priceOfDate: ['3120', '2880', '2670', '2310']
+				priceOfDate: [
+					{
+						fullprice: '3120', 
+						perOne: '1.04'
+					},
+					{
+						fullprice: '2880', 
+						perOne: '0.96'
+					},
+					{
+						fullprice: '2670', 
+						perOne: '0.89'
+					},
+					{
+						fullprice: '2310', 
+						perOne: '0.97'
+					}
+				]
 			},
 			{
 				amount: '5000',
-				priceOfDate: ['4650', '4300', '3950', '3450']
+				priceOfDate: [
+					{
+						fullprice: '4650', 
+						perOne: '0.93'
+					},
+					{
+						fullprice: '4300', 
+						perOne: '0.86'
+					},
+					{
+						fullprice: '3950', 
+						perOne: '0.79'
+					},
+					{
+						fullprice: '3450', 
+						perOne: '0.69'
+					}
+				]
 			},
 			{
 				amount: '10000',
-				priceOfDate: ['8500', '7900', '7200', '6300']
+				priceOfDate: [
+					{
+						fullprice: '8500', 
+						perOne: '0.85'
+					},
+					{
+						fullprice: '7900', 
+						perOne: '0.79'
+					},
+					{
+						fullprice: '7200', 
+						perOne: '0.72'
+					},
+					{
+						fullprice: '6300', 
+						perOne: '0.63'
+					}
+				]
 			}
 		]
 
@@ -94,6 +247,12 @@ angular.module('app')
 		$scope.setRefinement = function(index){
 			$scope.selectedValue.refinement = $scope.refinements[index]
 			console.log($scope.selectedValue)
+		}
+
+		$scope.setPrice = function(i, j){
+			$scope.selectedValue.price = $scope.prices[i].priceOfDate[j]
+			console.log($scope.selectedValue)
+			$document.scrollToElementAnimated(angular.element(document.getElementById('orderDetail')), 72)
 		}
 
 	}

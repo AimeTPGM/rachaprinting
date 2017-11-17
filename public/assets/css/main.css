@@ -640,11 +640,19 @@ body {
           .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper .row .column .price-wrapper label {
             width: 100%;
             padding: 10px;
-            font-size: 1.2em; }
+            font-size: 1.2em;
+            display: flex; }
+            .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper .row .column .price-wrapper label .full-and-per-one-wrapper .full-price {
+              font-weight: bold; }
+            .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper .row .column .price-wrapper label .full-and-per-one-wrapper .per-one {
+              font-size: 0.8em;
+              color: #333; }
           .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper .row .column .price-wrapper input[type="radio"]:checked + label {
             background: #00B900;
             color: white;
             border: 0; }
+            .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper .row .column .price-wrapper input[type="radio"]:checked + label .full-and-per-one-wrapper .per-one {
+              color: white; }
           .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper .row .column .price-wrapper input[type="radio"]:checked + label::before {
             border: solid 1px #00B900;
             font-family: fontawesome;
@@ -663,6 +671,9 @@ body {
           line-height: 1.1em;
           color: white;
           background: #00B900; }
+      .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper .row .urgent-delivery {
+        font-size: 1.2em;
+        font-weight: bold; }
       .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper .row .no-border {
         border: 0;
         border-left: 0;
@@ -681,7 +692,8 @@ body {
         border-left: solid 1px #B5F4B5;
         padding: 5px; }
       .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper .row .soft-table-header:nth-child(2) {
-        border-left: solid 1px #00B900; }
+        border-left: solid 1px #00B900;
+        background: #FFFF00; }
       .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper .row .soft-table-header:last-child {
         border-right: solid 1px #00B900; }
       .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper .row .delivery-date-wrapper {

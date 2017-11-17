@@ -162,11 +162,17 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 			div.row(ng-repeat="item in prices")
 				div.column.table-header
 					| {{item.amount}} ชิ้น
-				div.column
+				div.column(ng-if="$index !== 0")
 					| 
+				div.column.urgent-delivery(ng-if="$index == 0")
+					| จัดส่งแบบด่วนพิเศษ?
 				div.column.price(ng-repeat="price in item.priceOfDate")
 					div.price-wrapper
-						input(type="radio", id="price{{$parent.$index}}_{{$index}}", name="price")
+						input(type="radio", id="price{{$parent.$index}}_{{$index}}", name="price", ng-click="setPrice($parent.$index,$index)")
 						label(for="price{{$parent.$index}}_{{$index}}")
-							| {{price}}.-
+							div.full-and-per-one-wrapper
+								div.full-price
+									| {{price.fullprice}} .-
+								div.per-one
+									| {{price.perOne}} บาทต่อชิ้น
 
