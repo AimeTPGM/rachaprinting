@@ -8,6 +8,7 @@ $cyan: #999;
 $magenta: #666;
 $yellow: #FFFF00;
 $base-green: #00B900;
+$soft-green: #B5F4B5;
 $darker-green: #009800;
 $grey: #9F9F9F;
 $white: #FFF;
@@ -633,20 +634,63 @@ body
           font-size: 1em;
     .delivery-choice-wrapper
       margin-top: 30px;
+      font-size: 0.8em;
+      .row
+        .column
+          border-left: solid 1px $soft-green;
+          max-width: calc(100%/6);
+        .no-border
+          border: 0;
+          border-left: 0;
+          border-right: 0;
+        .column:first-child
+          border-left: solid 1px $base-green;
+        .column:nth-child(2)
+          border-left: solid 1px $base-green;
+        .column:first-child.no-border
+          border-left: 0;
+        .column:last-child
+          border-right: solid 1px $base-green;
+        .soft-table-header
+          border-left: solid 1px $soft-green;
+        .soft-table-header:nth-child(2)
+          border-left: solid 1px $base-green;
+        .soft-table-header:last-child
+          border-right: solid 1px $base-green;
     .property-wrapper
       display: flex;
       margin-top: 50px;
       .property-item
         width: calc(100%/2);
 
+
 .row
   display: flex;
   .column
     padding: 10px;
+    text-align: center;
+    display: grid;
+    align-items: center;
+  .no-border
+    border: 0;
+    border-left: 0;
+    border-right: 0;
+.row:last-child
+  border-bottom: solid 1px $base-green;
 .table-header
   font-weight: bold;
   display: block;
   text-align: center;
+.dark-cell
+  background: $base-green;
+  color: white;
+.blank
+  max-width: calc(100%/6);
+.main-table-header
+  width: calc((100%/6)*5);
+.soft-table-header
+  background: $soft-green;
+  font-weight: bold;
 
 // xs
 @media (max-width: $break-xs)

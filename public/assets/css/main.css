@@ -603,7 +603,29 @@ body {
       .order-form-wrapper .order-step-wrapper .order-step-header-wrapper .order-step-header-row .order-step-header {
         font-size: 1em; }
     .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper {
-      margin-top: 30px; }
+      margin-top: 30px;
+      font-size: 0.8em; }
+      .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper .row .column {
+        border-left: solid 1px #B5F4B5;
+        max-width: calc(100%/6); }
+      .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper .row .no-border {
+        border: 0;
+        border-left: 0;
+        border-right: 0; }
+      .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper .row .column:first-child {
+        border-left: solid 1px #00B900; }
+      .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper .row .column:nth-child(2) {
+        border-left: solid 1px #00B900; }
+      .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper .row .column:first-child.no-border {
+        border-left: 0; }
+      .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper .row .column:last-child {
+        border-right: solid 1px #00B900; }
+      .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper .row .soft-table-header {
+        border-left: solid 1px #B5F4B5; }
+      .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper .row .soft-table-header:nth-child(2) {
+        border-left: solid 1px #00B900; }
+      .order-form-wrapper .order-step-wrapper .delivery-choice-wrapper .row .soft-table-header:last-child {
+        border-right: solid 1px #00B900; }
     .order-form-wrapper .order-step-wrapper .property-wrapper {
       display: flex;
       margin-top: 50px; }
@@ -613,12 +635,36 @@ body {
 .row {
   display: flex; }
   .row .column {
-    padding: 10px; }
+    padding: 10px;
+    text-align: center;
+    display: grid;
+    align-items: center; }
+  .row .no-border {
+    border: 0;
+    border-left: 0;
+    border-right: 0; }
+
+.row:last-child {
+  border-bottom: solid 1px #00B900; }
 
 .table-header {
   font-weight: bold;
   display: block;
   text-align: center; }
+
+.dark-cell {
+  background: #00B900;
+  color: white; }
+
+.blank {
+  max-width: calc(100%/6); }
+
+.main-table-header {
+  width: calc((100%/6)*5); }
+
+.soft-table-header {
+  background: #B5F4B5;
+  font-weight: bold; }
 
 @media (max-width: 768px) {
   #nav-mobile {

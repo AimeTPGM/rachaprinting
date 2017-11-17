@@ -15,6 +15,45 @@ angular.module('app')
 		$scope.paperTypes = [{id:1, name: '200 gram', description: '200 gram'},{id:2, name: '180 gram', description: '180 gram'},{id:3, name: '150 gram', description: '150 gram'},{id:4, name: '130 gram', description: '130 gram'},{id:5, name: '100 gram', description: '100 gram'},{id:6, name: '80 gram', description: '80 gram'}]
 		$scope.refinements = [{id:1, name: 'None', description: 'None'}, {id:2, name: 'UV', description: 'UV'}]
 		
+		$scope.prices = [
+			{
+				amount: '100',
+				priceOfDate: ['447', '414', '381', '331']
+			},
+			{
+				amount: '200',
+				priceOfDate: ['730', '676', '622', '540']
+			},
+			{
+				amount: '300',
+				priceOfDate: ['783', '723', '666', '579']
+			},
+			{
+				amount: '500',
+				priceOfDate: ['1180', '1095', '1005', '875']
+			},
+			{
+				amount: '1000',
+				priceOfDate: ['1570', '1450', '1330', '1160']
+			},
+			{
+				amount: '2000',
+				priceOfDate: ['2340', '2180', '2000', '1740']
+			},
+			{
+				amount: '3000',
+				priceOfDate: ['3120', '2880', '2670', '2310']
+			},
+			{
+				amount: '5000',
+				priceOfDate: ['4650', '4300', '3950', '3450']
+			},
+			{
+				amount: '10000',
+				priceOfDate: ['8500', '7900', '7200', '6300']
+			}
+		]
+
 		$scope.selectedValue = {}
 
 		$scope.setMainChoice = function(index){

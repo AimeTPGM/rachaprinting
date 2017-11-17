@@ -113,24 +113,27 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 					div.order-step-header
 						| กรุงเทพมหานคร
 		div.delivery-choice-wrapper
-			div.row.table-header
-				| ราคาสิ่งพิมพ์พร้อมค่าจัดส่ง
 			div.row
-				div.column
-					| X
-				div.column
-					|	วันรับสินค้า
-				div.column
+				div.column.blank.no-border
+					| 
+				div.cloumn.table-header.dark-cell.main-table-header
+					| ราคาสิ่งพิมพ์พร้อมค่าจัดส่ง
+			div.row
+				div.column.no-border
+					| 
+				div.column.soft-table-header
+					|	ด่วนพิเศษ
+				div.column.soft-table-header
 					| วันรับสินค้า
-				div.column
+				div.column.soft-table-header
 					| วันรับสินค้า
-				div.column
+				div.column.soft-table-header
 					| วันรับสินค้า
-				div.column
+				div.column.soft-table-header
 					| วันรับสินค้า
 			div.row
-				div.column
-					| X
+				div.column.table-header.dark-cell
+					| ปริมาณ
 				div.column.delivery-date-wrapper
 					div.delivery-day
 						| วันพฤหัสบดี
@@ -140,33 +143,29 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 					div.delivery-day
 						| วันศุกร์
 					div.delivery-date
-						|	23 พ.ย.
+						|	24 พ.ย.
 				div.column.delivery-date-wrapper
 					div.delivery-day
 						| วันเสาร์
 					div.delivery-date
-						|	23 พ.ย.
+						|	25 พ.ย.
 				div.column.delivery-date-wrapper
 					div.delivery-day
 						| วันอาทิตย์
 					div.delivery-date
-						|	23 พ.ย.
+						|	26 พ.ย.
 				div.column.delivery-date-wrapper
 					div.delivery-day
 						| วันจันทร์
 					div.delivery-date
-						|	23 พ.ย.
-			div.row
+						|	27 พ.ย.
+			div.row(ng-repeat="item in prices")
 				div.column
-					| 100 ชิ้น
+					| {{item.amount}} ชิ้น
 				div.column
-					| x บาท
-				div.column
-					| x บาท
-				div.column
-					| x บาท
-				div.column
-					| x บาท
-				div.column
-					| x บาท
+					| 
+				div.column(ng-repeat="price in item.priceOfDate")
+					input(type="radio", id="price{{$parent.$index}}_{{$index}}", name="price")
+					label(for="price{{$parent.$index}}_{{$index}}")
+						| {{price}}.-
 
