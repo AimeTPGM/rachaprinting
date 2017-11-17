@@ -10,7 +10,7 @@ app.config(['$routeProvider', '$locationProvider',
 			title : 'Main'
 			
 		})
-		.when('/order',{
+		.when('/order/:productId/new',{
 			templateUrl: '/views/order.html',
 			controller: 'OrderCtrl',
 			title : 'Order'
