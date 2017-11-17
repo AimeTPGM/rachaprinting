@@ -45,7 +45,6 @@ angular.module('app')
       "price": "400"  
     }
     ]
-    console.log($routeParams.productId)
     for (var i = 0; i < $scope.products.length; i++) {
       if($routeParams.productId == $scope.products[i].id){
         $scope.currentSelectedProduct = $scope.products[i]

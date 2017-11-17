@@ -1,6 +1,6 @@
 angular.module('app')
-.controller('OrderFormCtrl',['$scope', '$http','$window', '$document',
-	function($scope, $http, $window, $document){
+.controller('OrderFormCtrl',['$scope', '$http','$window', '$document', 'OrderDetailService', 
+	function($scope, $http, $window, $document, OrderDetailService){
 		$scope.show = function(id){
 			angular.element(document.querySelector('#type')).addClass('active')
 			$scope.selectedValue.id = list.id
@@ -226,31 +226,37 @@ angular.module('app')
 
 		$scope.setFormat = function(index){
 			$scope.selectedValue.format = $scope.formats[index]
+			OrderDetailService.orderDetail.format = $scope.formats[index]
 			console.log($scope.selectedValue)
 		}
 
 		$scope.setPrint = function(index){
 			$scope.selectedValue.print = $scope.prints[index]
+			OrderDetailService.orderDetail.print = $scope.prints[index]
 			console.log($scope.selectedValue)
 		}
 
 		$scope.setPrintColor = function(index){
 			$scope.selectedValue.printColor = $scope.printColors[index]
+			OrderDetailService.orderDetail.printColor = $scope.printColors[index]
 			console.log($scope.selectedValue)
 		}
 
 		$scope.setPaperType = function(index){
 			$scope.selectedValue.paperType = $scope.paperTypes[index]
+			OrderDetailService.orderDetail.paperType = $scope.paperTypes[index]
 			console.log($scope.selectedValue)
 		}
 
 		$scope.setRefinement = function(index){
 			$scope.selectedValue.refinement = $scope.refinements[index]
+			OrderDetailService.orderDetail.refinement = $scope.refinements[index]
 			console.log($scope.selectedValue)
 		}
 
 		$scope.setPrice = function(i, j){
 			$scope.selectedValue.price = $scope.prices[i].priceOfDate[j]
+			OrderDetailService.orderDetail.price = $scope.prices[i].priceOfDate[j]
 			console.log($scope.selectedValue)
 			$document.scrollToElementAnimated(angular.element(document.getElementById('orderDetail')), 72)
 		}

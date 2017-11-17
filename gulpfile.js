@@ -26,7 +26,7 @@ gulp.task('reloadSASS', ['font', 'sass'], function(){
   browserSync.reload()
 })
 
-gulp.task('reloadJS', ['js', 'controller'], function(){
+gulp.task('reloadJS', ['js', 'controller', 'service'], function(){
   browserSync.reload()
 })
 
@@ -48,6 +48,11 @@ gulp.task('js', function(){
 gulp.task('controller', function(){
   return gulp.src('./src/assets/js/controllers/**/*.js')
   .pipe(gulp.dest('./public/assets/js/controllers'))
+})
+
+gulp.task('service', function(){
+  return gulp.src('./src/assets/js/services/**/*.js')
+  .pipe(gulp.dest('./public/assets/js/services'))
 })
 
 gulp.task('font', function(){
@@ -72,11 +77,12 @@ gulp.task('img', function(){
   .pipe(gulp.dest('public/assets/img'))
 })
  
-gulp.task('watch', ['browserSync', 'index', 'jade', 'font', 'sass', 'js', 'controller', 'img'], function () {
+gulp.task('watch', ['browserSync', 'index', 'jade', 'font', 'sass', 'js', 'controller', 'service', 'img'], function () {
   gulp.watch('./src/assets/sass/**/*.sass', ['reloadSASS'])
   gulp.watch('./src/assets/fonts/**/*.*', ['reloadSASS'])
   gulp.watch('./src/assets/js/**/*.js', ['reloadJS'])
   gulp.watch('./src/assets/fonts/controllers/**/*.*', ['reloadJS'])
+  gulp.watch('./src/assets/fonts/services/**/*.*', ['reloadJS'])
   gulp.watch('./src/*.jade', ['reloadHTML'])
   gulp.watch('./src/views/**/*.jade', ['reloadHTML'])
   gulp.watch('./src/assets/img/*.*', ['reloadImg'])
