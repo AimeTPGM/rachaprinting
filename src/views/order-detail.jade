@@ -1,2 +1,76 @@
 div.order-detail-wrapper(ng-controller="OrderDetailCtrl")
-	| order detail
+	div.header
+		|สรุปรายการสั่งซื้อของคุณ
+	div.detail-wrapper
+		div.property
+			| คุณเลือก
+		div.value(ng-if="orderDetail.choice.name !== undefined")
+			| {{orderDetail.choice.name}}
+		div.value.undefined(ng-if="orderDetail.choice.name == undefined")
+			| กรุณาเลือก
+	div.detail-wrapper
+		div.property
+			| ขนาด
+		div.value(ng-if="orderDetail.format.name !== undefined")
+			| {{orderDetail.format.name}}
+		div.value.undefined(ng-if="orderDetail.format.name == undefined")
+			| กรุณาเลือก
+	div.detail-wrapper
+		div.property
+			| การพิมพ์
+		div.value(ng-if="orderDetail.printColor.name !== undefined")
+			| {{orderDetail.printColor.name}} {{orderDetail.print.name}}
+		div.value.undefined(ng-if="orderDetail.printColor.name == undefined")
+			| กรุณาเลือก
+	div.detail-wrapper
+		div.property
+			| ประเภทกระดาษ
+		div.value(ng-if="orderDetail.paperType.name !== undefined")
+			| {{orderDetail.paperType.name}}
+		div.value.undefined(ng-if="orderDetail.paperType.name == undefined")
+			| กรุณาเลือก
+	div.detail-wrapper
+		div.property
+			| การเคลือบ
+		div.value(ng-if="orderDetail.refinement.name !== undefined")
+			| {{orderDetail.refinement.name}}
+		div.value.undefined(ng-if="orderDetail.refinement.name == undefined")
+			| กรุณาเลือก
+	div.detail-wrapper
+		div.property
+			| จัดส่งวันที่
+		div.value
+			| xxx
+	div.total-wrapper(ng-if="orderDetail.price.fullprice !== undefined")
+		span
+			| ค่าใช้จ่ายสุทธิ
+		span.total
+			| {{orderDetail.price.fullprice}}.00
+		span
+			| บาท
+	div.order-detail-personal-detail-form
+		div.header
+			| โปรดกรอกข้อมูลของคุณเพื่อให้เราติดต่อกลับ
+		div.form-wrapper
+			div.form
+				input(type="text", placeholder="ชื่อ")
+				input(type="text", placeholder="เบอร์โทรศัพท์")
+				input(type="text", placeholder="อีเมลล์")
+				button(ng-click="placeOrder()")
+					| สั่งเลย
+	div.summary-wrapper
+		div.header
+			| เราได้รับออเดอร์ของคุณเรียบร้อยแล้ว!
+		div.content
+			| ขอบคุณค่ะ คุณ xxx ราชาการพิมพ์ได้รับคำสั่งซื้อของคุณเรียบร้อยแล้ว 
+		div.content
+			| พนักงานของเราจะทำการติดต่อกลับไปทางเบอร์ xxx ภายใน 24 ชั่วโมง
+		div.content
+			| (หากทำการติดต่อทางโทรศัพท์ไม่ได้ ราชาการพิมพ์จะติดต่อคุณผ่านทาง email ค่ะ)
+		div.content
+			span.hilight ต้องการพิมพ์ด่วน? 
+			span ติดต่อราชาการพิมพ์ได้ตามช่องทางต่อไปนี้
+		div.contact-wrapper
+			div.contact
+				div.icon
+				div.content
