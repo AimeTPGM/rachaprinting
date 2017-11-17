@@ -1,17 +1,21 @@
 angular.module('app')
-.controller('OrderDetailCtrl',['$scope', '$http','$window', '$timeout', 'OrderDetailService',
-	function($scope, $http, $window, $timeout, OrderDetailService){
+.controller('OrderDetailCtrl',['$scope', '$http','$window', '$timeout', 'OrderDetailService', '$interval', 
+	function($scope, $http, $window, $timeout, OrderDetailService, $interval){
 		$scope.orderDetail = OrderDetailService.orderDetail
 		console.log(OrderDetailService.orderDetail)
-		$scope.countdown = 5
+		$scope.countdown = 7
 		$scope.customer = {}
 		$scope.placeOrder = function(){
 			$scope.completedOrder = true
 			OrderDetailService.orderDetail.customer = $scope.customer
 			console.log(OrderDetailService.orderDetail)
-			$timeout(function() {
-				$window.location.href = "/"
-			}, 5000)
+			$interval(function(){
+				$scope.countdown--
+				$timeout(function() {
+					$window.location.href = "/"
+				}, $scope.countdown*1000)
+			}, 1000)
+			
 
 
 		}
