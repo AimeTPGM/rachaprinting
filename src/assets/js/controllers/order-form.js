@@ -221,6 +221,7 @@ angular.module('app')
 				angular.element(document.querySelector('#choice1')).removeClass('selected')
 				$scope.selectedValue.choice = { name: 'ให้ราชาปริ้นติ้งออกแบบ' }
 			}
+			OrderDetailService.orderDetail.choice = $scope.selectedValue.choice
 			console.log($scope.selectedValue)
 		}
 
