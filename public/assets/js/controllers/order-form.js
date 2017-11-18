@@ -1,15 +1,15 @@
 angular.module('app')
 .controller('OrderFormCtrl',['$scope', '$http','$window', '$document', 
 	'OrderDetailService', 
-	'FormatFactory', 'PrintFactory',
+	'FormatFactory', 'PrintFactory', 'PrintColorFactory',
 	function($scope, $http, $window, $document, 
 		OrderDetailService,
-		FormatFactory, PrintFactory){
+		FormatFactory, PrintFactory, PrintColorFactory){
 
 		$scope.formats = FormatFactory.getFormats()
 		$scope.prints = PrintFactory.getPrints()
-		$scope.printColors = [{id:1, name: 'Black & White', description: 'print black & white'},{id:2, name: 'Color', description: 'print color'}]
-		$scope.paperTypes = [{id:1, name: '200 gram', description: '200 gram'},{id:2, name: '180 gram', description: '180 gram'},{id:3, name: '150 gram', description: '150 gram'},{id:4, name: '130 gram', description: '130 gram'},{id:5, name: '100 gram', description: '100 gram'},{id:6, name: '80 gram', description: '80 gram'}]
+		$scope.printColors = PrintColorFactory.getPrintColors()
+		$scope.paperTypes = 
 		$scope.refinements = [{id:1, name: 'None', description: 'None'}, {id:2, name: 'UV', description: 'UV'}]
 		$scope.sortedPaperTypes = $scope.paperTypes
 		$scope.dayAndDate = [
