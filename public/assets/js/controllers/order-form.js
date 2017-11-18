@@ -14,7 +14,7 @@ angular.module('app')
 		$scope.printColors = [{id:1, name: 'Black & White', description: 'print black & white'},{id:2, name: 'Color', description: 'print color'}]
 		$scope.paperTypes = [{id:1, name: '200 gram', description: '200 gram'},{id:2, name: '180 gram', description: '180 gram'},{id:3, name: '150 gram', description: '150 gram'},{id:4, name: '130 gram', description: '130 gram'},{id:5, name: '100 gram', description: '100 gram'},{id:6, name: '80 gram', description: '80 gram'}]
 		$scope.refinements = [{id:1, name: 'None', description: 'None'}, {id:2, name: 'UV', description: 'UV'}]
-		
+		$scope.sortedPaperTypes = $scope.paperTypes
 		$scope.prices = [
 			{
 				amount: '100',
@@ -265,17 +265,14 @@ angular.module('app')
 		}
 
 		$scope.selecting = function(id){
-			console.log(id)
 			$scope.showPaperTypeList = true
 		}
-		$scope.selection = function(id){
-			
-			for (var i = 0; i < $scope.paperTypes.length; i++) {
-				if(id == $scope.paperTypes[i].id)
-					$scope.paperTypes.splice(0,0,$scope.paperTypes[i])
-					$scope.paperTypes.splice(i,1)
-			}
-			$scope.paperType
+
+		$scope.selectedPaperType = { name: "Please Select..."}
+
+		$scope.selection = function(id, index){
+			console.log('id='+id+" index="+index)
+			$scope.selectedPaperType = $scope.paperTypes[index]
 			$scope.showPaperTypeList = false
 		}
 

@@ -74,14 +74,14 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 					| ประเภทกระดาษ
 				div.dropdown
 					ul
-						li(ng-repeat="list in paperTypes", ng-click="selecting(list.id)", ng-show="showPaperType", ng-if="$index == 0")
+						li(ng-click="selecting()", ng-show="showPaperType")
 							img
 							div.content
 								div.main
-									| {{list.name}}
+									| {{selectedPaperType.name}} 
 								div.sub
-									| {{list.name}}
-						li(ng-repeat="list in paperTypes", ng-click="selection(list.id)", ng-show="showPaperTypeList", ng-if="$index !== 0")
+									| {{selectedPaperType.name}} 
+						li(ng-repeat="list in sortedPaperTypes | orderBy:'id'", ng-click="selection(list.id, $index)", ng-show="showPaperTypeList")
 							img
 							div.content
 								div.main
