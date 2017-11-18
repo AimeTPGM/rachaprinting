@@ -1,15 +1,8 @@
 angular.module('app')
-.controller('BannerCtrl',['$scope', '$http','$window', '$timeout',
-	function($scope, $http, $window, $timeout){
+.controller('BannerCtrl',['$scope', '$http','$window', '$timeout', 'BannerFactory',
+	function($scope, $http, $window, $timeout, BannerFactory){
 		$scope.activeIndex = 0;
-		$scope.banners = [
-			{
-			'img': 'Slide 1'
-			},
-			{
-			'img': 'Slide 2'
-			}
-		]
+		$scope.banners = BannerFactory.getBanners()
 		$scope.slideTo = function(index){
 			$scope.activeIndex = index
 		}
