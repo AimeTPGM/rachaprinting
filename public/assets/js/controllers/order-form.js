@@ -208,6 +208,8 @@ angular.module('app')
 		]
 
 		$scope.selectedValue = {}
+		$scope.showPaperType = true
+		$scope.showPaperTypeList = false
 
 		$scope.setMainChoice = function(index){
 
@@ -260,6 +262,21 @@ angular.module('app')
 			OrderDetailService.orderDetail.price = $scope.prices[i].priceOfDate[j]
 			console.log($scope.selectedValue)
 			$document.scrollToElementAnimated(angular.element(document.getElementById('orderDetail')), 72)
+		}
+
+		$scope.selecting = function(id){
+			console.log(id)
+			$scope.showPaperTypeList = true
+		}
+		$scope.selection = function(id){
+			
+			for (var i = 0; i < $scope.paperTypes.length; i++) {
+				if(id == $scope.paperTypes[i].id)
+					$scope.paperTypes.splice(0,0,$scope.paperTypes[i])
+					$scope.paperTypes.splice(i,1)
+			}
+			$scope.paperType
+			$scope.showPaperTypeList = false
 		}
 
 	}
