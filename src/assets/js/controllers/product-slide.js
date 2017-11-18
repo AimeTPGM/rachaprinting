@@ -9,7 +9,6 @@ angular.module('app')
         break
       }
     }
-    console.log($scope.products)
     $scope.currentProduct = 0
     var scrollPoint = 0
     $scope.order = function(id){
