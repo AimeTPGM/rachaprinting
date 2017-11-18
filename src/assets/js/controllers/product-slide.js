@@ -1,50 +1,7 @@
 angular.module('app')
-.controller('ProductSlideCtrl',['$scope', '$http','$window', '$document', '$timeout', '$routeParams', 
-  function($scope, $http, $window, $document, $timeout, $routeParams){
-    $scope.products = [
-    {
-      "id": "1",
-      "img": "",
-      "name": "A",
-      "price": "100"  
-    },
-    {
-      "id": "2",
-      "img": "",
-      "name": "B",
-      "price": "200"  
-    },
-    {
-      "id": "3",
-      "img": "",
-      "name": "C",
-      "price": "300"  
-    },
-    {
-      "id": "4",
-      "img": "",
-      "name": "D",
-      "price": "400"  
-    },
-    {
-      "id": "5",
-      "img": "",
-      "name": "E",
-      "price": "400"  
-    },
-    {
-      "id": "6",
-      "img": "",
-      "name": "F",
-      "price": "400"  
-    },
-    {
-      "id": "7",
-      "img": "",
-      "name": "G",
-      "price": "400"  
-    }
-    ]
+.controller('ProductSlideCtrl',['$scope', '$http','$window', '$document', '$timeout', '$routeParams', 'ProductFactory',
+  function($scope, $http, $window, $document, $timeout, $routeParams, ProductFactory){
+    $scope.products = ProductFactory.getProducts()
     for (var i = 0; i < $scope.products.length; i++) {
       if($routeParams.productId == $scope.products[i].id){
         $scope.currentSelectedProduct = $scope.products[i]
