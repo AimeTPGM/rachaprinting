@@ -1,6 +1,6 @@
 angular.module('app')
-.controller('ProductCtrl',['$scope', '$http','$window', '$document', '$timeout', 'ProductFactory',
-	function($scope, $http, $window, $document, $timeout, ProductFactory){
+.controller('ProductCtrl',['$scope', '$http','$window', '$document', '$timeout', 'ProductFactory', 'ScrollService',
+	function($scope, $http, $window, $document, $timeout, ProductFactory, ScrollService){
   $scope.products = ProductFactory.getProducts()
 		$scope.currentProduct = 0;
 		var scrollPoint = 0;
@@ -14,7 +14,7 @@ angular.module('app')
 				$scope.currentProduct++
 				scrollPoint += angular.element(document.getElementById('product'+$scope.currentProduct))[0].clientWidth
 			}
-			angular.element(document.querySelector('div.item-wrapper')).scrollLeftAnimated(scrollPoint)
+			scrollLeft(angular.element(document.querySelector('div.item-wrapper')),scrollPoint)
 		}
 
 		$scope.left = function(){
@@ -24,7 +24,7 @@ angular.module('app')
 				$scope.currentProduct--
 				scrollPoint -= angular.element(document.getElementById('product'+$scope.currentProduct))[0].clientWidth
 			}
-			angular.element(document.querySelector('div.item-wrapper')).scrollLeftAnimated(scrollPoint)
+			scrollLeft(angular.element(document.querySelector('div.item-wrapper')), scrollPoint)
 		}
 
 	}

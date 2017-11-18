@@ -37,7 +37,6 @@ angular.module('app')
 		}
 
 		$scope.scrollTo = function(id){
-			// $document.scrollToElementAnimated(angular.element(document.getElementById(id)), 72)
 			$window.location.href = '/#'+id
 		}
 

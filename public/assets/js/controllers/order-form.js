@@ -1,9 +1,9 @@
 angular.module('app')
 .controller('OrderFormCtrl',['$scope', '$http','$window', '$document', 
-	'OrderDetailService', 
+	'OrderDetailService', 'ScrollService',
 	'FormatFactory', 'PrintFactory', 'PrintColorFactory', 'PaperTypesFactory', 'RefinementFactory', 'DeliveryFactory', 'OrderFactory',
 	function($scope, $http, $window, $document, 
-		OrderDetailService,
+		OrderDetailService, ScrollService,
 		FormatFactory, PrintFactory, PrintColorFactory, PaperTypesFactory, RefinementFactory, DeliveryFactory, OrderFactory){
 
 		$scope.formats = FormatFactory.getFormats()
@@ -74,7 +74,7 @@ angular.module('app')
 		$scope.setPrice = function(i, j){
 			order.price = $scope.prices[i].priceOfDate[j]
 			order.deliveryDayAndDate = $scope.deliveryDayAndDate[j+1]
-			$document.scrollToElementAnimated(angular.element(document.getElementById('orderDetail')), 72)
+			ScrollService.scrollToID('orderDetail')
 		}
 
 		// Format
