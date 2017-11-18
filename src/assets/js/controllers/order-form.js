@@ -1,17 +1,16 @@
 angular.module('app')
 .controller('OrderFormCtrl',['$scope', '$http','$window', '$document', 
 	'OrderDetailService', 
-	'FormatFactory', 'PrintFactory', 'PrintColorFactory', 'PaperTypesFactory',
+	'FormatFactory', 'PrintFactory', 'PrintColorFactory', 'PaperTypesFactory', 'RefinementFactory',
 	function($scope, $http, $window, $document, 
 		OrderDetailService,
-		FormatFactory, PrintFactory, PrintColorFactory, PaperTypesFactory){
+		FormatFactory, PrintFactory, PrintColorFactory, PaperTypesFactory, RefinementFactory){
 
 		$scope.formats = FormatFactory.getFormats()
 		$scope.prints = PrintFactory.getPrints()
 		$scope.printColors = PrintColorFactory.getPrintColors()
 		$scope.paperTypes = PaperTypesFactory.getPaperTypes()
-		$scope.refinements = [{id:1, name: 'None', description: 'None'}, {id:2, name: 'UV', description: 'UV'}]
-		$scope.sortedPaperTypes = $scope.paperTypes
+		$scope.refinements = RefinementFactory.getRefinements()
 		$scope.dayAndDate = [
 			{
 				day: 'วันพฤหัสบดี',
