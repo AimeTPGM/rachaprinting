@@ -2,7 +2,6 @@ angular.module('app')
 .controller('OrderDetailCtrl',['$scope', '$http','$window', '$timeout', 'OrderDetailService', '$interval', '$document', 
 	function($scope, $http, $window, $timeout, OrderDetailService, $interval, $document){
 		$scope.orderDetail = OrderDetailService.orderDetail
-		console.log(OrderDetailService.orderDetail)
 		$scope.countdown = 7
 		$scope.customer = {}
 		$scope.placeOrder = function(){

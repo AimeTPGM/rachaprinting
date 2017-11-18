@@ -28,7 +28,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 		div.property-wrapper
 			div.property-item
 				div.topic#size
-					| ขนาด
+					| เลือกขนาด
 				div.dropdown-wrapper
 					ul
 						li.dropdown-header
@@ -49,23 +49,24 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 											| {{list.name}}
 										div.sub
 											| {{list.name}}
-								li(ng-click="setAdjustFormat()", ng-show="showFormatList")
+								li(ng-show="showFormatList", ng-click="setFormat(-1, -1)")
 									img
 									div.content
 										div.main
 											| กำหนดขนาดเอง
-								
-			//- div.property-item
-			//- 	div.topic
-			//- 		| กำหนดขนาดเอง
-			//- 	div.form
-			//- 		input(type="text")
-			//- 		span  X 
-			//- 		input(type="text")
+			div.property-item
+				div.topic
+					| ขนาดของสิ่งพิมพ์
+				div.form
+					div.input-wrapper
+						input(type="text", disabled, ng-model="formatSize.width", ng-change="setWidth()", placeholder="กว้าง")#width
+						span  X 
+						input(type="text", disabled, ng-model="formatSize.height", ng-change="setHeight()", placeholder="ยาว")#height
+						span  mm
 		div.property-wrapper
 			div.property-item
 				div.topic#print
-					| พิมพ์หน้าหลัง
+					| เลือกประเภทการพิมพ์
 				div.selector
 					div.control(ng-repeat="list in prints")
 						div.option-content-wrapper
@@ -79,7 +80,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 										| {{list.name}}
 			div.property-item
 				div.topic#printColor
-					| พิมพ์สี
+					| เลือกสีที่ใช้พิมพ์
 				div.selector
 					div.control(ng-repeat="list in printColors")
 						div.option-content-wrapper
@@ -94,7 +95,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 		div.property-wrapper
 			div.property-item
 				div.topic#paperType
-					| ประเภทกระดาษ
+					| เลือกประเภทกระดาษ
 				div.dropdown-wrapper
 					ul
 						li.dropdown-header
@@ -117,7 +118,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 											| {{list.name}}
 			div.property-item
 				div.topic#refinement
-					| การเคลือบ
+					| เลือกการเคลือบ
 				div.dropdown-wrapper
 					ul
 						li.dropdown-header

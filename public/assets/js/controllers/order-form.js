@@ -9,7 +9,35 @@ angular.module('app')
 			console.log($scope.selectedValue)
 		}
 
-		$scope.formats = [{id:1, name: 'A4', description: 'print as A4'}, {id:2, name: 'A3', description: 'print as A3'}, {id:3, name: 'A5', description: 'print as A5'}]
+		$scope.formats = [
+			{
+				id:1, 
+				name: 'A4', 
+				description: '210 x 297 mm',
+				formatSize: {
+					width: 210,
+					height: 297
+				}
+			}, 
+			{
+				id:2, 
+				name: 'A3', 
+				description: '297 x 240 mm',
+				formatSize: {
+					width: 297,
+					height: 240
+				}
+			}, 
+			{
+				id:3, 
+				name: 'A5', 
+				description: '148 x 120 mm',
+				formatSize: {
+					width: 148,
+					height: 120
+				}
+			}
+		]
 		$scope.prints = [{id:1, name: 'One-side', description: 'print one side'},{id:2, name: 'Two-side', description: 'print two side'}]
 		$scope.printColors = [{id:1, name: 'Black & White', description: 'print black & white'},{id:2, name: 'Color', description: 'print color'}]
 		$scope.paperTypes = [{id:1, name: '200 gram', description: '200 gram'},{id:2, name: '180 gram', description: '180 gram'},{id:3, name: '150 gram', description: '150 gram'},{id:4, name: '130 gram', description: '130 gram'},{id:5, name: '100 gram', description: '100 gram'},{id:6, name: '80 gram', description: '80 gram'}]
@@ -273,49 +301,100 @@ angular.module('app')
 		// Format
 
 		$scope.selectedFormat = { name: 'Please Select...' }
+		$scope.showFormatList = false
+		$scope.formatSize = {}
 
 		$scope.showFormat = function(){
-			$scope.showFormatList = true
+			if($scope.showFormatList == true) $scope.showFormatList = false
+			else if($scope.showFormatList == false) $scope.showFormatList = true
+		}
+
+		$scope.setWidth = function(){
+			setSize($scope.formatSize.width, $scope.formatSize.height)
+			if($scope.formatSize.width != undefined){
+				if($scope.formatSize.width == '') angular.element(document.querySelector('#width')).attr('required', true)
+				else angular.element(document.querySelector('#width')).removeAttr('required')
+			}
+		}
+
+		$scope.setHeight = function(){
+			setSize($scope.formatSize.width, $scope.formatSize.height)
+			if($scope.formatSize.height != undefined){
+				if($scope.formatSize.height == '') angular.element(document.querySelector('#height')).attr('required', true)
+				else angular.element(document.querySelector('#height')).removeAttr('required')
+			}
+		}
+
+		function setSize(w, h){
+			var description = w+" X "+h+" mm"
+			$scope.selectedFormat = { 
+				name: 'กำหนดขนาดเอง', 
+				description: description, 
+				formatSize: {
+					width: w,
+					height: h
+				}
+			}
+			$scope.selectedValue.format = $scope.selectedFormat
+			OrderDetailService.orderDetail.format = $scope.selectedFormat
 		}
 
 		$scope.setFormat = function(id, index){
-			$scope.selectedFormat = $scope.formats[index]
-			$scope.selectedValue.format = $scope.formats[index]
-			OrderDetailService.orderDetail.format = $scope.formats[index]
+			if(index == -1){
+				angular.element(document.querySelector('#width')).removeAttr('disabled')
+				angular.element(document.querySelector('#height')).removeAttr('disabled')
+				angular.element(document.querySelector('#width')).attr('required', true)
+				angular.element(document.querySelector('#height')).attr('required', true)
+				console.log(angular.element(document.querySelector('#width')))
+				$scope.formatSize = {}
+				var description = $scope.formatSize.width+" x "+$scope.formatSize.height
+				$scope.selectedFormat = { name: 'กำหนดขนาดเอง', description: description }
+			} 
+			else {
+				angular.element(document.querySelector('#width')).removeAttr('required')
+				angular.element(document.querySelector('#height')).removeAttr('required')
+				angular.element(document.querySelector('#width')).attr('disabled', true)
+				angular.element(document.querySelector('#height')).attr('disabled', true)
+				$scope.selectedFormat = $scope.formats[index]
+				$scope.formatSize = $scope.formats[index].formatSize
+				console.log($scope.formatSize)
+			}
+			$scope.selectedValue.format = $scope.selectedFormat
+			OrderDetailService.orderDetail.format = $scope.selectedFormat
 			console.log($scope.selectedValue)
 			angular.element(document.querySelector('#selectedFormat')).addClass('active')
 			$scope.showFormatList = false
 		}
 
 		// Refinement
-
 		$scope.selectedRefinement = { name: 'Please Select...' }
-
+		$scope.showRefinementList = false
 		$scope.showRefinement = function(){
-			$scope.showRefinementList = true
+			if($scope.showRefinementList == true) $scope.showRefinementList = false
+			else if($scope.showRefinementList == false) $scope.showRefinementList = true
 		}
 
 		$scope.setRefinement = function(id, index){
 			$scope.selectedRefinement = $scope.refinements[index]
-			$scope.selectedValue.refinement = $scope.refinements[index]
-			OrderDetailService.orderDetail.refinement = $scope.refinements[index]
+			$scope.selectedValue.refinement = $scope.selectedRefinement
+			OrderDetailService.orderDetail.refinement = $scope.selectedRefinement
 			console.log($scope.selectedValue)
 			angular.element(document.querySelector('#selectedRefinement')).addClass('active')
 			$scope.showRefinementList = false
 		}
 		
 		// PaperType
-
 		$scope.selectedPaperType = { name: 'Please Select...' }
-
+		$scope.showPaperTypeList = false
 		$scope.showSelectPaperType = function(){
-			$scope.showPaperTypeList = true
+			if($scope.showPaperTypeList == true) $scope.showPaperTypeList = false
+			else if($scope.showPaperTypeList == false) $scope.showPaperTypeList = true
 		}
 
 		$scope.setPaperType = function(id, index){
 			$scope.selectedPaperType = $scope.paperTypes[index]
-			$scope.selectedValue.paperType = $scope.paperTypes[index]
-			OrderDetailService.orderDetail.paperType = $scope.paperTypes[index]
+			$scope.selectedValue.paperType = $scope.selectedPaperType
+			OrderDetailService.orderDetail.paperType = $scope.selectedPaperType
 			console.log($scope.selectedValue)
 			angular.element(document.querySelector('#selectedPaperType')).addClass('active')
 			$scope.showPaperTypeList = false

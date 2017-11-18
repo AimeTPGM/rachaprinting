@@ -12,7 +12,16 @@ div.order-detail-wrapper(ng-controller="OrderDetailCtrl")
 		div.property
 			| ขนาด
 		div.value(ng-if="orderDetail.format.name !== undefined")
-			| {{orderDetail.format.name}}
+			div
+				| {{orderDetail.format.name}} 
+			div.undefined(ng-if="orderDetail.format.formatSize == undefined")
+				| กรุณาใส่ขนาดที่ต้องการ
+			div.undefined(ng-if="orderDetail.format.formatSize.width == '' || orderDetail.format.formatSize.width == undefined")
+				| กรุณาใส่ความกว้าง
+			div.undefined(ng-if="orderDetail.format.formatSize.height == '' || orderDetail.format.formatSize.height == undefined")
+				| กรุณาใส่ความยาว
+			div(ng-if="orderDetail.format.formatSize !== undefined && orderDetail.format.formatSize.width !== '' && orderDetail.format.formatSize.height !== '' && orderDetail.format.formatSize.width !== undefined && orderDetail.format.formatSize.height !== undefined")
+				| ({{orderDetail.format.description}})
 		div.value.undefined(ng-if="orderDetail.format.name == undefined")
 			| กรุณาเลือกขนาด
 	div.detail-wrapper
