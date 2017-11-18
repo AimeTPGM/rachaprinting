@@ -1,10 +1,19 @@
 angular.module('app')
-.controller('OrderFormCtrl',['$scope', '$http','$window', '$document', 
+.controller('OrderFormCtrl',['$scope', '$http','$window', '$document', '$routeParams',
+	'LanguageConfig',
 	'OrderDetailService', 'ScrollService', 'AngularService',
 	'FormatFactory', 'PrintFactory', 'PrintColorFactory', 'PaperTypesFactory', 'RefinementFactory', 'DeliveryFactory', 'OrderFactory', 
-	function($scope, $http, $window, $document, 
+	function($scope, $http, $window, $document, $routeParams,
+		LanguageConfig, 
 		OrderDetailService, ScrollService, AngularService,
 		FormatFactory, PrintFactory, PrintColorFactory, PaperTypesFactory, RefinementFactory, DeliveryFactory, OrderFactory){
+
+		if($routeParams.lang == 'th'){
+			$scope.webContent = LanguageConfig.thai.orderForm
+		}
+		else if($routeParams.lang == 'eng'){
+			$scope.webContent = LanguageConfig.eng.orderForm
+		}
 
 		$scope.formats = FormatFactory.getFormats()
 		$scope.prints = PrintFactory.getPrints()

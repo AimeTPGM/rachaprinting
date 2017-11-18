@@ -1,41 +1,37 @@
 div.order-detail-wrapper(ng-controller="OrderDetailCtrl")
 	div.header
-		|สรุปรายการสั่งซื้อของคุณ
+		| {{webContent.summary}}
 	div.detail-wrapper(ng-click="scrollToID('mainOption')")
 		div.property
-			| คุณเลือก
+			| {{webContent.mainOption.property}}
 		div.value(ng-if="orderDetail.choice.name !== undefined")
 			| {{orderDetail.choice.name}}
 		div.value.undefined(ng-if="orderDetail.choice.name == undefined")
-			| กรุณาเลือกตัวเลือกการออกแบบ
+			| {{webContent.mainOption.unselectedValue}}
 	div.detail-wrapper(ng-click="scrollToID('size')")
 		div.property
-			| ขนาด
+			| {{webContent.format.property}}
 		div.value(ng-if="orderDetail.format.name !== undefined")
 			div
 				| {{orderDetail.format.name}} 
-			div.undefined(ng-if="orderDetail.format.formatSize == undefined")
-				| กรุณาใส่ขนาดที่ต้องการ
-			div.undefined(ng-if="orderDetail.format.formatSize.width == '' || orderDetail.format.formatSize.width == undefined")
-				| กรุณาใส่ความกว้าง
-			div.undefined(ng-if="orderDetail.format.formatSize.height == '' || orderDetail.format.formatSize.height == undefined")
-				| กรุณาใส่ความยาว
+			div.undefined(ng-if="orderDetail.format.formatSize == undefined || orderDetail.format.formatSize.width == '' || orderDetail.format.formatSize.width == undefined || orderDetail.format.formatSize.height == '' || orderDetail.format.formatSize.height == undefined")
+				| {{webContent.format.size.unselectedValue}}
 			div(ng-if="orderDetail.format.formatSize !== undefined && orderDetail.format.formatSize.width !== '' && orderDetail.format.formatSize.height !== '' && orderDetail.format.formatSize.width !== undefined && orderDetail.format.formatSize.height !== undefined")
 				| ({{orderDetail.format.description}})
 		div.value.undefined(ng-if="orderDetail.format.name == undefined")
-			| กรุณาเลือกขนาด
+			| {{webContent.format.unselectedValue}}
 	div.detail-wrapper
 		div.property
-			| การพิมพ์
+			| {{webContent.print.property}}
 		div.value
 			div(ng-if="orderDetail.printColor.name !== undefined", ng-click="scrollToID('printColor')")
 				| {{orderDetail.printColor.name}}
 			div(ng-if="orderDetail.print.name !== undefined", ng-click="scrollToID('print')")
 				| {{orderDetail.print.name}} 
 			div.undefined(ng-if="orderDetail.print.name == undefined", ng-click="scrollToID('printColor')")
-				| กรุณาเลือกสีที่ใช้พิมพ์
+				| {{webContent.print.printColor.unselectedValue}}
 			div.undefined(ng-if="orderDetail.printColor.name == undefined", ng-click="scrollToID('print')")
-				| กรุณาเลือกการพิมพ์หน้าหลัง
+				| {{webContent.print.print.unselectedValue}}
 	div.detail-wrapper(ng-click="scrollToID('paperType')")
 		div.property
 			| ประเภทกระดาษ

@@ -1,6 +1,14 @@
 angular.module('app')
-.controller('ProductSlideCtrl',['$scope', '$http','$window', '$document', '$timeout', '$routeParams', 'ProductFactory', 'AngularServiceFactory', 'ScrollService',
-  function($scope, $http, $window, $document, $timeout, $routeParams, ProductFactory, AngularServiceFactory, ScrollService){
+.controller('ProductSlideCtrl',['$scope', '$http','$window', '$document', '$timeout', '$routeParams', 'ProductFactory', 'AngularServiceFactory', 'ScrollService', 'LanguageConfig',
+  function($scope, $http, $window, $document, $timeout, $routeParams, ProductFactory, AngularServiceFactory, ScrollService, LanguageConfig){
+
+    if($routeParams.lang == 'th'){
+      $scope.webContent = LanguageConfig.thai.product
+    }
+    else if($routeParams.lang == 'eng'){
+      $scope.webContent = LanguageConfig.eng.product
+    }
+
     $scope.products = ProductFactory.getProducts()
     for (var i = 0; i < $scope.products.length; i++) {
       if($routeParams.productId == $scope.products[i].id){
@@ -12,7 +20,7 @@ angular.module('app')
     $scope.currentProduct = 0
     var scrollPoint = 0
     $scope.order = function(id){
-      $window.location.href="/order/"+id+"/new"
+      $window.location.href = $routeParams.lang+"/order/"+id+"/new"
     }
     $scope.right = function(){
       if($scope.currentProduct == $scope.products.length-1)
