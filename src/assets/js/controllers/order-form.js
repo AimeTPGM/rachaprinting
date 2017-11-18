@@ -14,7 +14,7 @@ angular.module('app')
 		$scope.printColors = [{id:1, name: 'Black & White', description: 'print black & white'},{id:2, name: 'Color', description: 'print color'}]
 		$scope.paperTypes = [{id:1, name: '200 gram', description: '200 gram'},{id:2, name: '180 gram', description: '180 gram'},{id:3, name: '150 gram', description: '150 gram'},{id:4, name: '130 gram', description: '130 gram'},{id:5, name: '100 gram', description: '100 gram'},{id:6, name: '80 gram', description: '80 gram'}]
 		$scope.refinements = [{id:1, name: 'None', description: 'None'}, {id:2, name: 'UV', description: 'UV'}]
-		
+		$scope.sortedPaperTypes = $scope.paperTypes
 		$scope.prices = [
 			{
 				amount: '100',
@@ -208,6 +208,8 @@ angular.module('app')
 		]
 
 		$scope.selectedValue = {}
+		$scope.showPaperType = true
+		$scope.showPaperTypeList = false
 
 		$scope.setMainChoice = function(index){
 
@@ -219,15 +221,9 @@ angular.module('app')
 			else if(index == 1){
 				angular.element(document.querySelector('#choice2')).addClass('selected')
 				angular.element(document.querySelector('#choice1')).removeClass('selected')
-				$scope.selectedValue.choice = { name: 'ให้ราชาปริ้นติ้งออกแบบ' }
+				$scope.selectedValue.choice = { name: 'ให้ราชาปริ้นติ้งออกแบบให้' }
 			}
 			OrderDetailService.orderDetail.choice = $scope.selectedValue.choice
-			console.log($scope.selectedValue)
-		}
-
-		$scope.setFormat = function(index){
-			$scope.selectedValue.format = $scope.formats[index]
-			OrderDetailService.orderDetail.format = $scope.formats[index]
 			console.log($scope.selectedValue)
 		}
 
@@ -243,23 +239,62 @@ angular.module('app')
 			console.log($scope.selectedValue)
 		}
 
-		$scope.setPaperType = function(index){
-			$scope.selectedValue.paperType = $scope.paperTypes[index]
-			OrderDetailService.orderDetail.paperType = $scope.paperTypes[index]
-			console.log($scope.selectedValue)
-		}
-
-		$scope.setRefinement = function(index){
-			$scope.selectedValue.refinement = $scope.refinements[index]
-			OrderDetailService.orderDetail.refinement = $scope.refinements[index]
-			console.log($scope.selectedValue)
-		}
-
 		$scope.setPrice = function(i, j){
 			$scope.selectedValue.price = $scope.prices[i].priceOfDate[j]
 			OrderDetailService.orderDetail.price = $scope.prices[i].priceOfDate[j]
 			console.log($scope.selectedValue)
 			$document.scrollToElementAnimated(angular.element(document.getElementById('orderDetail')), 72)
+		}
+
+		// Format
+
+		$scope.selectedFormat = { name: 'Please Select...' }
+
+		$scope.showFormat = function(){
+			$scope.showFormatList = true
+		}
+
+		$scope.setFormat = function(id, index){
+			$scope.selectedFormat = $scope.formats[index]
+			$scope.selectedValue.format = $scope.formats[index]
+			OrderDetailService.orderDetail.format = $scope.formats[index]
+			console.log($scope.selectedValue)
+			angular.element(document.querySelector('#selectedFormat')).addClass('active')
+			$scope.showFormatList = false
+		}
+
+		// Refinement
+
+		$scope.selectedRefinement = { name: 'Please Select...' }
+
+		$scope.showRefinement = function(){
+			$scope.showRefinementList = true
+		}
+
+		$scope.setRefinement = function(id, index){
+			$scope.selectedRefinement = $scope.refinements[index]
+			$scope.selectedValue.refinement = $scope.refinements[index]
+			OrderDetailService.orderDetail.refinement = $scope.refinements[index]
+			console.log($scope.selectedValue)
+			angular.element(document.querySelector('#selectedRefinement')).addClass('active')
+			$scope.showRefinementList = false
+		}
+		
+		// PaperType
+
+		$scope.selectedPaperType = { name: 'Please Select...' }
+
+		$scope.showSelectPaperType = function(){
+			$scope.showPaperTypeList = true
+		}
+
+		$scope.setPaperType = function(id, index){
+			$scope.selectedPaperType = $scope.paperTypes[index]
+			$scope.selectedValue.paperType = $scope.paperTypes[index]
+			OrderDetailService.orderDetail.paperType = $scope.paperTypes[index]
+			console.log($scope.selectedValue)
+			angular.element(document.querySelector('#selectedPaperType')).addClass('active')
+			$scope.showPaperTypeList = false
 		}
 
 	}
