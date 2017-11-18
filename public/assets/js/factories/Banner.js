@@ -3,7 +3,7 @@ angular.module('app')
   function(){
     var banner = {}
 
-    banner.getRefinements = function(){
+    banner.getBanners = function(){
       var banners = [
         {
         'img': 'Slide 1'
