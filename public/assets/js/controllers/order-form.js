@@ -1,9 +1,9 @@
 angular.module('app')
 .controller('OrderFormCtrl',['$scope', '$http','$window', '$document', 
-	'OrderDetailService', 'ScrollService',
-	'FormatFactory', 'PrintFactory', 'PrintColorFactory', 'PaperTypesFactory', 'RefinementFactory', 'DeliveryFactory', 'OrderFactory',
+	'OrderDetailService', 'ScrollService', 'AngularService',
+	'FormatFactory', 'PrintFactory', 'PrintColorFactory', 'PaperTypesFactory', 'RefinementFactory', 'DeliveryFactory', 'OrderFactory', 
 	function($scope, $http, $window, $document, 
-		OrderDetailService, ScrollService,
+		OrderDetailService, ScrollService, AngularService,
 		FormatFactory, PrintFactory, PrintColorFactory, PaperTypesFactory, RefinementFactory, DeliveryFactory, OrderFactory){
 
 		$scope.formats = FormatFactory.getFormats()
@@ -16,24 +16,23 @@ angular.module('app')
 
 		var order = OrderDetailService.orderDetail
 
-		function selectAngularElementByID(id){
-			return angular.element(document.querySelector('#'+id))
+		function addActiveClassByID(id){
+			AngularService.addActiveClassByID(id)
+		}
+		function addClassByID(id, className){
+			AngularService.addClassByID(id, className)
 		}
 
-		function addClass(element, className){
-			element.addClass(className)
+		function removeClassByID(id, className){
+			AngularService.removeClassByID(id, className)
 		}
 
-		function removeClass(element, className){
-			element.removeClass(className)
+		function addAttrByID(id, attr, value){
+			AngularService.addAttrByID(id, attr, value)
 		}
 
-		function addAttr(element, attr, value){
-			element.attr(attr, value)
-		}
-
-		function removeAttr(element, attr){
-			element.removeAttr(attr)
+		function removeAttrByID(id, attr){
+			AngularService.removeAttrByID(id, attr)
 		}
 
 		function isUndefined(element){
@@ -49,16 +48,14 @@ angular.module('app')
 		var pleaseSelect = { name: 'กรุณาเลือก...' }
 
 		$scope.setMainChoice = function(index){
-			var choice1Element = selectAngularElementByID('choice1')
-			var choice2Element = selectAngularElementByID('choice2')
 			if(index == 0){
-				addClass(choice1Element, 'selected')
-				removeClass(choice2Element, 'selected')
+				addClassByID('choice1', 'selected')
+				removeClassByID('choice2', 'selected')
 				order.choice = { name: 'ออกแบบเอง' }
 			}
 			else if(index == 1){
-				addClass(choice2Element, 'selected')
-				removeClass(choice1Element, 'selected')
+				addClassByID('choice2', 'selected')
+				removeClassByID('choice1', 'selected')
 				order.choice = { name: 'ให้ราชาปริ้นติ้งออกแบบให้' }
 			}
 		}
@@ -81,8 +78,8 @@ angular.module('app')
 		$scope.selectedFormat = pleaseSelect
 		$scope.showFormatList = false
 		$scope.formatSize = {}
-		var widthElement = selectAngularElementByID('width')
-		var heightElement = selectAngularElementByID('height')
+		var width = 'width'
+		var height = 'height'
 
 		$scope.showFormat = function(){
 			if($scope.showFormatList == true) $scope.showFormatList = false
@@ -92,16 +89,16 @@ angular.module('app')
 		$scope.setWidth = function(){
 			setSize($scope.formatSize.width, $scope.formatSize.height)
 			if(!isUndefined($scope.formatSize.width)){
-				if(isEmpty($scope.formatSize.width)) addAttr(widthElement, 'required', true)
-				else removeAttr(widthElement, 'required')
+				if(isEmpty($scope.formatSize.width)) addAttrByID(width, 'required', true)
+				else removeAttrByID(width, 'required')
 			}
 		}
 
 		$scope.setHeight = function(){
 			setSize($scope.formatSize.width, $scope.formatSize.height)
 			if(!isUndefined($scope.formatSize.height)){
-				if(isEmpty($scope.formatSize.height)) addAttr(heightElement, 'required', true)
-				else removeAttr(heightElement, 'required')
+				if(isEmpty($scope.formatSize.height)) addAttrByID(height, 'required', true)
+				else removeAttrByID(height, 'required')
 			}
 		}
 
@@ -120,25 +117,24 @@ angular.module('app')
 
 		$scope.setFormat = function(id, index){
 			if(index == -1){
-				removeAttr(widthElement, 'disabled')
-				removeAttr(heightElement, 'disabled')
-				addAttr(widthElement, 'required', true)
-				addAttr(heightElement, 'required', true)
+				removeAttrByID(width, 'disabled')
+				removeAttrByID(height, 'disabled')
+				addAttrByID(width, 'required', true)
+				addAttrByID(height, 'required', true)
 				$scope.formatSize = {}
 				var description = $scope.formatSize.width+" x "+$scope.formatSize.height
 				$scope.selectedFormat = { name: 'กำหนดขนาดเอง', description: description }
 			} 
 			else {
-				removeAttr(widthElement, 'required')
-				removeAttr(heightElement, 'required')
-				addAttr(widthElement, 'disabled', true)
-				addAttr(heightElement, 'disabled', true)
+				removeAttrByID(width, 'required')
+				removeAttrByID(height, 'required')
+				addAttrByID(width, 'disabled', true)
+				addAttrByID(height, 'disabled', true)
 				$scope.selectedFormat = $scope.formats[index]
 				$scope.formatSize = $scope.formats[index].formatSize
-				console.log($scope.formatSize)
 			}
 			order.format = $scope.selectedFormat
-			addClass(selectAngularElementByID('selectedFormat'), 'active')
+			addActiveClassByID('selectedFormat')
 			$scope.showFormatList = false
 		}
 
@@ -153,7 +149,7 @@ angular.module('app')
 		$scope.setRefinement = function(id, index){
 			$scope.selectedRefinement = $scope.refinements[index]
 			order.refinement = $scope.refinements[index]
-			addClass(selectAngularElementByID('selectedRefinement'),'active')
+			addActiveClassByID('selectedRefinement')
 			$scope.showRefinementList = false
 		}
 		
@@ -169,7 +165,7 @@ angular.module('app')
 		$scope.setPaperType = function(id, index){
 			$scope.selectedPaperType = $scope.paperTypes[index]
 			order.paperType = $scope.paperTypes[index]
-			addClass(selectAngularElementByID('selectedPaperType'), 'active')
+			addActiveClassByID('selectedPaperType')
 			$scope.showPaperTypeList = false
 		}
 

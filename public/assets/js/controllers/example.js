@@ -1,6 +1,6 @@
 angular.module('app')
-.controller('ExampleCtrl',['$scope', '$http','$window', '$interval',
-	function($scope, $http, $window, $interval){
+.controller('ExampleCtrl',['$scope', '$http','$window', '$interval', 'AngularService',
+	function($scope, $http, $window, $interval, AngularService){
 		$scope.examples = [
 			{
 				"name": "",
@@ -115,10 +115,10 @@ angular.module('app')
 		]
 		var randomNumber = 0;
 		function random(){
-			angular.element(document.getElementById('showcase'+randomNumber)).removeClass('active')
+			AngularService.removeActiveClassByID('showcase'+randomNumber)
 			randomNumber = Math.floor(Math.random() * $scope.examples.length) + 0
 			console.log(randomNumber)
-			angular.element(document.getElementById('showcase'+randomNumber)).addClass('active')
+			AngularService.addActiveClassByID('showcase'+randomNumber)
 		}
 		$interval(function(){
 			random()

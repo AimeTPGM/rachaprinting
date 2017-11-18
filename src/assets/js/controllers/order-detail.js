@@ -9,7 +9,6 @@ angular.module('app')
 		$scope.placeOrder = function(){
 			$scope.completedOrder = true
 			OrderDetailService.orderDetail.customer = $scope.customer
-			console.log(OrderDetailService.orderDetail)
 			$interval(function(){
 				$scope.countdown--
 				$timeout(function() {

@@ -1,6 +1,6 @@
 angular.module('app')
-.controller('HowtoCtrl',['$scope', '$http','$window',
-	function($scope, $http, $window){
+.controller('HowtoCtrl',['$scope', '$http','$window', 'AngularServiceFactory', 'AngularService',
+	function($scope, $http, $window, AngularServiceFactory, AngularService){
 
 		$scope.steps = [
 		{
@@ -83,27 +83,27 @@ angular.module('app')
 		var currentIndex = 0;
 		
 		$scope.moveStep = function(index){
-			angular.element(document.querySelector('#stepDetail'+currentIndex)).removeClass('active')
-			angular.element(document.querySelector('#stepDetail'+index)).addClass('active')
-			angular.element(document.querySelector('#stepDetailDesktop'+currentIndex)).removeClass('active')
-			angular.element(document.querySelector('#stepDetailDesktop'+index)).addClass('active')
+			AngularService.removeActiveClassByID('stepDetail'+currentIndex)
+			AngularService.removeActiveClassByID('stepDetailDesktop'+currentIndex)
+			AngularService.addActiveClassByID('stepDetail'+index)
+			AngularService.addActiveClassByID('stepDetailDesktop'+index)
 
-			if(!angular.element(document.querySelector('#step'+index)).children().hasClass('active')){
+			if(!AngularServiceFactory.selectByID('step'+index).children().hasClass('active')){
 				for (var i = 0; i < index; i++) {
-					angular.element(document.querySelector('#step'+i)).children().addClass('active')
-					angular.element(document.querySelector('#stepDetailDesktop'+i)).removeClass('active')
-					angular.element(document.querySelector('#stepArrow'+i)).addClass('active')
-					angular.element(document.querySelector('#stepArrow'+i)).addClass('active')
+					AngularService.addActiveClassOnChildrenByID('step'+i)
+					AngularService.removeActiveClassByID('stepDetailDesktop'+i)
+					AngularService.addActiveClassByID('stepArrow'+i)
+					AngularService.addActiveClassByID('stepArrow'+i)
 				}
-				angular.element(document.querySelector('#step'+index)).children().addClass('active')
+				AngularService.addActiveClassOnChildrenByID('step'+index)
 				currentIndex = index;
 			}
-			else if(angular.element(document.querySelector('#step'+index)).children().hasClass('active')){
+			else if(AngularServiceFactory.selectByID('step'+index).children().hasClass('active')){
 				for (var i = currentIndex; i > index; i--) {
-					angular.element(document.querySelector('#step'+i)).children().removeClass('active')
-					angular.element(document.querySelector('#stepArrow'+i)).removeClass('active')
+					AngularService.removeActiveClassOnChildrenByID('step'+i)
+					AngularService.removeActiveClassByID('stepArrow'+i)
 				}
-				angular.element(document.querySelector('#stepArrow'+index)).removeClass('active')
+				AngularService.removeActiveClassByID('stepArrow'+index)
 				currentIndex = index;
 			}
 			
