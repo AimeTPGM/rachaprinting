@@ -4,7 +4,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 		//- div.header-triangle
 	div.order-step-wrapper.form
 		div.main-choice-wrapper
-			div.topic
+			div.topic#mainOption
 				| คุณมีแบบสิ่งพิมพ์ที่ต้องการแล้วหรือยัง?
 			div.choice-item
 				div.main-choice-item
@@ -27,7 +27,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 									| ใช้บริการออกแบบของราชาการพิมพ์ในราคาที่คุ้มค่า!
 		div.property-wrapper
 			div.property-item
-				div.topic
+				div.topic#size
 					| ขนาด
 				div.dropdown-wrapper
 					ul
@@ -64,7 +64,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 			//- 		input(type="text")
 		div.property-wrapper
 			div.property-item
-				div.topic
+				div.topic#print
 					| พิมพ์หน้าหลัง
 				div.selector
 					div.control(ng-repeat="list in prints")
@@ -78,7 +78,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 									div.sub
 										| {{list.name}}
 			div.property-item
-				div.topic
+				div.topic#printColor
 					| พิมพ์สี
 				div.selector
 					div.control(ng-repeat="list in printColors")
@@ -93,7 +93,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 										| {{list.name}}
 		div.property-wrapper
 			div.property-item
-				div.topic
+				div.topic#paperType
 					| ประเภทกระดาษ
 				div.dropdown-wrapper
 					ul
@@ -116,7 +116,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 										div.sub
 											| {{list.name}}
 			div.property-item
-				div.topic
+				div.topic#refinement
 					| การเคลือบ
 				div.dropdown-wrapper
 					ul
@@ -143,7 +143,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 		| step 2 เลือกจำนวนและความเร็วในการจัดส่ง
 		//- div.header-triangle
 	div.order-step-wrapper
-		div.order-step-header-wrapper
+		div.order-step-header-wrapper#delivery
 			div.order-step-header-row
 				div.order-step-header-column
 					div.icon

@@ -1,6 +1,6 @@
 angular.module('app')
-.controller('OrderDetailCtrl',['$scope', '$http','$window', '$timeout', 'OrderDetailService', '$interval', 
-	function($scope, $http, $window, $timeout, OrderDetailService, $interval){
+.controller('OrderDetailCtrl',['$scope', '$http','$window', '$timeout', 'OrderDetailService', '$interval', '$document', 
+	function($scope, $http, $window, $timeout, OrderDetailService, $interval, $document){
 		$scope.orderDetail = OrderDetailService.orderDetail
 		console.log(OrderDetailService.orderDetail)
 		$scope.countdown = 7
@@ -15,9 +15,11 @@ angular.module('app')
 					$window.location.href = "/"
 				}, $scope.countdown*1000)
 			}, 1000)
-			
+		}
 
-
+		$scope.scrollToID = function(id){
+			console.log(id)
+			$document.scrollToElementAnimated(angular.element(document.getElementById(id)), 72)
 		}
 	}
 ]);

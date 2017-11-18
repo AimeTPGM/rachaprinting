@@ -628,7 +628,6 @@ body
   .detail-wrapper
     display: flex;
     padding: 10px;
-    align-items: flex-end;
     .property
       min-width: calc(100%/2);
       text-align: right;
@@ -639,14 +638,16 @@ body
       text-align: left;
       font-weight: bold;
       font-size: 1.2em;
+      cursor: pointer;
     .undefined
       color: $red;
-      font-size: 1em;
+      margin-bottom: 5px;
   .total-wrapper
     text-align: center;
     font-size: 1.5em;
     color: #333;
     margin-top: 10px;
+    cursor: pointer;
     .total
       font-size: 2em;
       font-weight: bold;
@@ -867,6 +868,7 @@ body
               padding: 10px;
               font-size: 1.2em;
               display: flex;
+              cursor: pointer;
               .full-and-per-one-wrapper
                 .full-price
                   font-weight: bold;

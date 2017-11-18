@@ -264,6 +264,8 @@ angular.module('app')
 		$scope.setPrice = function(i, j){
 			$scope.selectedValue.price = $scope.prices[i].priceOfDate[j]
 			OrderDetailService.orderDetail.price = $scope.prices[i].priceOfDate[j]
+			$scope.selectedValue.dayAndDate = $scope.dayAndDate[j+1]
+			OrderDetailService.orderDetail.dayAndDate = $scope.dayAndDate[j+1]
 			console.log($scope.selectedValue)
 			$document.scrollToElementAnimated(angular.element(document.getElementById('orderDetail')), 72)
 		}

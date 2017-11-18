@@ -1,50 +1,57 @@
 div.order-detail-wrapper(ng-controller="OrderDetailCtrl")
 	div.header
 		|สรุปรายการสั่งซื้อของคุณ
-	div.detail-wrapper
+	div.detail-wrapper(ng-click="scrollToID('mainOption')")
 		div.property
 			| คุณเลือก
 		div.value(ng-if="orderDetail.choice.name !== undefined")
 			| {{orderDetail.choice.name}}
 		div.value.undefined(ng-if="orderDetail.choice.name == undefined")
-			| กรุณาเลือก
-	div.detail-wrapper
+			| กรุณาเลือกตัวเลือกการออกแบบ
+	div.detail-wrapper(ng-click="scrollToID('size')")
 		div.property
 			| ขนาด
 		div.value(ng-if="orderDetail.format.name !== undefined")
 			| {{orderDetail.format.name}}
 		div.value.undefined(ng-if="orderDetail.format.name == undefined")
-			| กรุณาเลือก
+			| กรุณาเลือกขนาด
 	div.detail-wrapper
 		div.property
 			| การพิมพ์
-		div.value(ng-if="orderDetail.printColor.name !== undefined")
-			| {{orderDetail.printColor.name}} {{orderDetail.print.name}}
-		div.value.undefined(ng-if="orderDetail.printColor.name == undefined")
-			| กรุณาเลือก
-	div.detail-wrapper
+		div.value
+			div(ng-if="orderDetail.printColor.name !== undefined", ng-click="scrollToID('printColor')")
+				| {{orderDetail.printColor.name}}
+			div(ng-if="orderDetail.print.name !== undefined", ng-click="scrollToID('print')")
+				| {{orderDetail.print.name}} 
+			div.undefined(ng-if="orderDetail.print.name == undefined", ng-click="scrollToID('printColor')")
+				| กรุณาเลือกสีที่ใช้พิมพ์
+			div.undefined(ng-if="orderDetail.printColor.name == undefined", ng-click="scrollToID('print')")
+				| กรุณาเลือกการพิมพ์หน้าหลัง
+	div.detail-wrapper(ng-click="scrollToID('paperType')")
 		div.property
 			| ประเภทกระดาษ
 		div.value(ng-if="orderDetail.paperType.name !== undefined")
 			| {{orderDetail.paperType.name}}
 		div.value.undefined(ng-if="orderDetail.paperType.name == undefined")
-			| กรุณาเลือก
-	div.detail-wrapper
+			| กรุณาเลือกประเภทกระดาษ
+	div.detail-wrapper(ng-click="scrollToID('refinement')")
 		div.property
 			| การเคลือบ
 		div.value(ng-if="orderDetail.refinement.name !== undefined")
 			| {{orderDetail.refinement.name}}
 		div.value.undefined(ng-if="orderDetail.refinement.name == undefined")
-			| กรุณาเลือก
-	div.detail-wrapper
+			| กรุณาเลือกการเคลือบ
+	div.detail-wrapper(ng-click="scrollToID('delivery')")
 		div.property
 			| จัดส่งวันที่
-		div.value
-			| xxx
-	div.total-wrapper(ng-if="orderDetail.price.fullprice == undefined")
+		div.value.undefined(ng-if="orderDetail.dayAndDate == undefined")
+			| กรุณาเลือกวันจัดส่ง
+		div.value(ng-if="orderDetail.dayAndDate !== undefined")
+			| {{orderDetail.dayAndDate.day}}ที่ {{orderDetail.dayAndDate.date}}
+	div.total-wrapper(ng-if="orderDetail.price.fullprice == undefined", ng-click="scrollToID('delivery')")
 		span.undefined
 			| กรุณาเลือกราคาด้านบน
-	div.total-wrapper(ng-if="orderDetail.price.fullprice !== undefined")
+	div.total-wrapper(ng-if="orderDetail.price.fullprice !== undefined", ng-click="scrollToID('delivery')")
 		span
 			| ค่าใช้จ่ายสุทธิ
 		span.total
