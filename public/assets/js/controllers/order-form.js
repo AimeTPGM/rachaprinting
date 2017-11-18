@@ -1,44 +1,13 @@
 angular.module('app')
-.controller('OrderFormCtrl',['$scope', '$http','$window', '$document', 'OrderDetailService', 
-	function($scope, $http, $window, $document, OrderDetailService){
-		$scope.show = function(id){
-			angular.element(document.querySelector('#type')).addClass('active')
-			$scope.selectedValue.id = list.id
-			$scope.selectedValue.name = list.name
-			angular.element(document.querySelector('#type')).removeClass('active')
-			console.log($scope.selectedValue)
-		}
+.controller('OrderFormCtrl',['$scope', '$http','$window', '$document', 
+	'OrderDetailService', 
+	'FormatFactory', 'PrintFactory',
+	function($scope, $http, $window, $document, 
+		OrderDetailService,
+		FormatFactory, PrintFactory){
 
-		$scope.formats = [
-			{
-				id:1, 
-				name: 'A4', 
-				description: '210 x 297 mm',
-				formatSize: {
-					width: 210,
-					height: 297
-				}
-			}, 
-			{
-				id:2, 
-				name: 'A3', 
-				description: '297 x 240 mm',
-				formatSize: {
-					width: 297,
-					height: 240
-				}
-			}, 
-			{
-				id:3, 
-				name: 'A5', 
-				description: '148 x 120 mm',
-				formatSize: {
-					width: 148,
-					height: 120
-				}
-			}
-		]
-		$scope.prints = [{id:1, name: 'One-side', description: 'print one side'},{id:2, name: 'Two-side', description: 'print two side'}]
+		$scope.formats = FormatFactory.getFormats()
+		$scope.prints = PrintFactory.getPrints()
 		$scope.printColors = [{id:1, name: 'Black & White', description: 'print black & white'},{id:2, name: 'Color', description: 'print color'}]
 		$scope.paperTypes = [{id:1, name: '200 gram', description: '200 gram'},{id:2, name: '180 gram', description: '180 gram'},{id:3, name: '150 gram', description: '150 gram'},{id:4, name: '130 gram', description: '130 gram'},{id:5, name: '100 gram', description: '100 gram'},{id:6, name: '80 gram', description: '80 gram'}]
 		$scope.refinements = [{id:1, name: 'None', description: 'None'}, {id:2, name: 'UV', description: 'UV'}]
