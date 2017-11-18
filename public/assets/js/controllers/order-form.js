@@ -1,38 +1,17 @@
 angular.module('app')
 .controller('OrderFormCtrl',['$scope', '$http','$window', '$document', 
 	'OrderDetailService', 
-	'FormatFactory', 'PrintFactory', 'PrintColorFactory', 'PaperTypesFactory', 'RefinementFactory',
+	'FormatFactory', 'PrintFactory', 'PrintColorFactory', 'PaperTypesFactory', 'RefinementFactory', 'DeliveryFactory',
 	function($scope, $http, $window, $document, 
 		OrderDetailService,
-		FormatFactory, PrintFactory, PrintColorFactory, PaperTypesFactory, RefinementFactory){
+		FormatFactory, PrintFactory, PrintColorFactory, PaperTypesFactory, RefinementFactory, DeliveryFactory){
 
 		$scope.formats = FormatFactory.getFormats()
 		$scope.prints = PrintFactory.getPrints()
 		$scope.printColors = PrintColorFactory.getPrintColors()
 		$scope.paperTypes = PaperTypesFactory.getPaperTypes()
 		$scope.refinements = RefinementFactory.getRefinements()
-		$scope.dayAndDate = [
-			{
-				day: 'วันพฤหัสบดี',
-				date: '23 พ.ย.'
-			},
-			{
-				day: 'วันศุกร์',
-				date: '24 พ.ย.'
-			},
-			{
-				day: 'วันเสาร์',
-				date: '25 พ.ย.'
-			},
-			{
-				day: 'วันอาทิตย์',
-				date: '26 พ.ย.'
-			},
-			{
-				day: 'วันจันทร์',
-				date: '27 พ.ย.'
-			}
-		]
+		$scope.deliveryDayAndDate = DeliveryFactory.getAvailableDeliveryDayAndDates()
 		$scope.prices = [
 			{
 				amount: '100',

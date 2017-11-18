@@ -176,7 +176,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 			div.row
 				div.column.table-header.dark-cell
 					| ปริมาณ
-				div.column.delivery-date-wrapper(ng-repeat="dayAndDate in dayAndDate")
+				div.column.delivery-date-wrapper(ng-repeat="dayAndDate in deliveryDayAndDate")
 					div.delivery-day
 						| {{dayAndDate.day}}
 					div.delivery-date
