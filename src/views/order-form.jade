@@ -29,22 +29,32 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 			div.property-item
 				div.topic
 					| ขนาด
-				div.dropdown
+				div.dropdown-wrapper
 					ul
-						li(ng-click="showFormat()")#selectedFormat
-							img
-							div.content
-								div.main
-									| {{selectedFormat.name}} 
-								div.sub
-									| {{selectedFormat.name}} 
-						li(ng-repeat="list in formats", ng-click="setFormat(list.id, $index)", ng-show="showFormatList")
-							img
-							div.content
-								div.main
-									| {{list.name}}
-								div.sub
-									| {{list.name}}
+						li.dropdown-header
+							ul
+								li(ng-click="showFormat()")#selectedFormat
+									img
+									div.content
+										div.main
+											| {{selectedFormat.name}} 
+										div.sub
+											| {{selectedFormat.name}} 
+						li.dropdown-selector
+							ul
+								li(ng-repeat="list in formats", ng-click="setFormat(list.id, $index)", ng-show="showFormatList")
+									img
+									div.content
+										div.main
+											| {{list.name}}
+										div.sub
+											| {{list.name}}
+								li(ng-click="setAdjustFormat()", ng-show="showFormatList")
+									img
+									div.content
+										div.main
+											| กำหนดขนาดเอง
+								
 			//- div.property-item
 			//- 	div.topic
 			//- 		| กำหนดขนาดเอง
@@ -85,41 +95,49 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 			div.property-item
 				div.topic
 					| ประเภทกระดาษ
-				div.dropdown
+				div.dropdown-wrapper
 					ul
-						li(ng-click="showSelectPaperType()")#selectedPaperType
-							img
-							div.content
-								div.main
-									| {{selectedPaperType.name}} 
-								div.sub
-									| {{selectedPaperType.name}} 
-						li(ng-repeat="list in paperTypes | orderBy:'id'", ng-click="setPaperType(list.id, $index)", ng-show="showPaperTypeList")
-							img
-							div.content
-								div.main
-									| {{list.name}}
-								div.sub
-									| {{list.name}}
+						li.dropdown-header
+							ul
+								li(ng-click="showSelectPaperType()")#selectedPaperType
+									img
+									div.content
+										div.main
+											| {{selectedPaperType.name}} 
+										div.sub
+											| {{selectedPaperType.name}} 
+						li.dropdown-selector
+							ul
+								li(ng-repeat="list in paperTypes | orderBy:'id'", ng-click="setPaperType(list.id, $index)", ng-show="showPaperTypeList")
+									img
+									div.content
+										div.main
+											| {{list.name}}
+										div.sub
+											| {{list.name}}
 			div.property-item
 				div.topic
 					| การเคลือบ
-				div.dropdown
+				div.dropdown-wrapper
 					ul
-						li(ng-click="showRefinement()")#selectedRefinement
-							img
-							div.content
-								div.main
-									| {{selectedRefinement.name}} 
-								div.sub
-									| {{selectedRefinement.name}} 
-						li(ng-repeat="list in refinements | orderBy:'id'", ng-click="setRefinement(list.id, $index)", ng-show="showRefinementList")
-							img
-							div.content
-								div.main
-									| {{list.name}}
-								div.sub
-									| {{list.name}}
+						li.dropdown-header
+							ul
+								li(ng-click="showRefinement()")#selectedRefinement
+									img
+									div.content
+										div.main
+											| {{selectedRefinement.name}} 
+										div.sub
+											| {{selectedRefinement.name}} 
+						li.dropdown-selector
+							ul
+								li(ng-repeat="list in refinements | orderBy:'id'", ng-click="setRefinement(list.id, $index)", ng-show="showRefinementList")
+									img
+									div.content
+										div.main
+											| {{list.name}}
+										div.sub
+											| {{list.name}}
 	div.order-step-separator
 	div.header-wrapper
 		| step 2 เลือกจำนวนและความเร็วในการจัดส่ง
@@ -157,31 +175,11 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 			div.row
 				div.column.table-header.dark-cell
 					| ปริมาณ
-				div.column.delivery-date-wrapper
+				div.column.delivery-date-wrapper(ng-repeat="dayAndDate in dayAndDate")
 					div.delivery-day
-						| วันพฤหัสบดี
+						| {{dayAndDate.day}}
 					div.delivery-date
-						|	23 พ.ย.
-				div.column.delivery-date-wrapper
-					div.delivery-day
-						| วันศุกร์
-					div.delivery-date
-						|	24 พ.ย.
-				div.column.delivery-date-wrapper
-					div.delivery-day
-						| วันเสาร์
-					div.delivery-date
-						|	25 พ.ย.
-				div.column.delivery-date-wrapper
-					div.delivery-day
-						| วันอาทิตย์
-					div.delivery-date
-						|	26 พ.ย.
-				div.column.delivery-date-wrapper
-					div.delivery-day
-						| วันจันทร์
-					div.delivery-date
-						|	27 พ.ย.
+						|	{{dayAndDate.date}}
 			div.row(ng-repeat="item in prices")
 				div.column.table-header
 					| {{item.amount}} ชิ้น

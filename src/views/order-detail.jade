@@ -41,6 +41,9 @@ div.order-detail-wrapper(ng-controller="OrderDetailCtrl")
 			| จัดส่งวันที่
 		div.value
 			| xxx
+	div.total-wrapper(ng-if="orderDetail.price.fullprice == undefined")
+		span.undefined
+			| กรุณาเลือกราคาด้านบน
 	div.total-wrapper(ng-if="orderDetail.price.fullprice !== undefined")
 		span
 			| ค่าใช้จ่ายสุทธิ

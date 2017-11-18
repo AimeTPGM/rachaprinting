@@ -15,6 +15,28 @@ angular.module('app')
 		$scope.paperTypes = [{id:1, name: '200 gram', description: '200 gram'},{id:2, name: '180 gram', description: '180 gram'},{id:3, name: '150 gram', description: '150 gram'},{id:4, name: '130 gram', description: '130 gram'},{id:5, name: '100 gram', description: '100 gram'},{id:6, name: '80 gram', description: '80 gram'}]
 		$scope.refinements = [{id:1, name: 'None', description: 'None'}, {id:2, name: 'UV', description: 'UV'}]
 		$scope.sortedPaperTypes = $scope.paperTypes
+		$scope.dayAndDate = [
+			{
+				day: 'วันพฤหัสบดี',
+				date: '23 พ.ย.'
+			},
+			{
+				day: 'วันศุกร์',
+				date: '24 พ.ย.'
+			},
+			{
+				day: 'วันเสาร์',
+				date: '25 พ.ย.'
+			},
+			{
+				day: 'วันอาทิตย์',
+				date: '26 พ.ย.'
+			},
+			{
+				day: 'วันจันทร์',
+				date: '27 พ.ย.'
+			}
+		]
 		$scope.prices = [
 			{
 				amount: '100',
