@@ -39,7 +39,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 										div.main
 											| {{selectedFormat.name}} 
 										div.sub
-											| {{selectedFormat.name}} 
+											| {{selectedFormat.description}} 
 						li.dropdown-selector
 							ul
 								li(ng-repeat="list in formats", ng-click="setFormat(list.id, $index)", ng-show="showFormatList")
@@ -48,7 +48,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 										div.main
 											| {{list.name}}
 										div.sub
-											| {{list.name}}
+											| {{list.description}}
 								li(ng-show="showFormatList", ng-click="setFormat(-1, -1)")
 									img
 									div.content
@@ -77,7 +77,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 									div.main
 										| {{list.name}}
 									div.sub
-										| {{list.name}}
+										| {{list.description}}
 			div.property-item
 				div.topic#printColor
 					| เลือกสีที่ใช้พิมพ์
@@ -91,7 +91,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 									div.main
 										| {{list.name}}
 									div.sub
-										| {{list.name}}
+										| {{list.description}}
 		div.property-wrapper
 			div.property-item
 				div.topic#paperType
@@ -106,7 +106,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 										div.main
 											| {{selectedPaperType.name}} 
 										div.sub
-											| {{selectedPaperType.name}} 
+											| {{selectedPaperType.description}} 
 						li.dropdown-selector
 							ul
 								li(ng-repeat="list in paperTypes | orderBy:'id'", ng-click="setPaperType(list.id, $index)", ng-show="showPaperTypeList")
@@ -115,7 +115,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 										div.main
 											| {{list.name}}
 										div.sub
-											| {{list.name}}
+											| {{list.description}}
 			div.property-item
 				div.topic#refinement
 					| เลือกการเคลือบ
@@ -129,7 +129,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 										div.main
 											| {{selectedRefinement.name}} 
 										div.sub
-											| {{selectedRefinement.name}} 
+											| {{selectedRefinement.description}} 
 						li.dropdown-selector
 							ul
 								li(ng-repeat="list in refinements | orderBy:'id'", ng-click="setRefinement(list.id, $index)", ng-show="showRefinementList")
@@ -138,7 +138,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 										div.main
 											| {{list.name}}
 										div.sub
-											| {{list.name}}
+											| {{list.description}}
 	div.order-step-separator
 	div.header-wrapper
 		| step 2 เลือกจำนวนและความเร็วในการจัดส่ง

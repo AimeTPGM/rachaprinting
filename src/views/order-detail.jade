@@ -53,10 +53,10 @@ div.order-detail-wrapper(ng-controller="OrderDetailCtrl")
 	div.detail-wrapper(ng-click="scrollToID('delivery')")
 		div.property
 			| จัดส่งวันที่
-		div.value.undefined(ng-if="orderDetail.dayAndDate == undefined")
+		div.value.undefined(ng-if="orderDetail.deliveryDayAndDate == undefined")
 			| กรุณาเลือกวันจัดส่ง
-		div.value(ng-if="orderDetail.dayAndDate !== undefined")
-			| {{orderDetail.dayAndDate.day}}ที่ {{orderDetail.dayAndDate.date}}
+		div.value(ng-if="orderDetail.deliveryDayAndDate !== undefined")
+			| {{orderDetail.deliveryDayAndDate.day}}ที่ {{orderDetail.deliveryDayAndDate.date}}
 	div.total-wrapper(ng-if="orderDetail.price.fullprice == undefined", ng-click="scrollToID('delivery')")
 		span.undefined
 			| กรุณาเลือกราคาด้านบน
