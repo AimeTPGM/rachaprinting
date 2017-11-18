@@ -40,7 +40,9 @@ body {
   width: 100%; }
 
 .form .dropdown {
-  width: 100%; }
+  width: 100%;
+  padding: 10px;
+  padding-left: 0; }
   .form .dropdown ul {
     width: inherit;
     cursor: pointer; }
@@ -50,6 +52,10 @@ body {
       right: 20px;
       font-family: fontawesome;
       color: rgba(0, 0, 0, 0.3); }
+    .form .dropdown ul li.active:first-child::after {
+      color: white; }
+    .form .dropdown ul li.active:first-child:hover::after {
+      color: white; }
     .form .dropdown ul li:first-child:hover::after {
       color: #00B900; }
     .form .dropdown ul li:first-child {
@@ -75,7 +81,9 @@ body {
       padding: 10px;
       width: 100%;
       display: flex;
-      align-items: center; }
+      align-items: center;
+      padding: 10px;
+      margin-left: 0; }
       .form .dropdown ul li img {
         height: 50px;
         width: 50px;
@@ -85,8 +93,7 @@ body {
         .form .dropdown ul li .content .main {
           font-weight: bold; }
         .form .dropdown ul li .content .sub {
-          font-size: 0.8em;
-          margin-top: 10px; }
+          font-size: 0.8em; }
 
 .form .selector .control {
   line-height: 1; }

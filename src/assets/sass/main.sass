@@ -71,6 +71,8 @@ body
 .form
   .dropdown
     width: 100%;
+    padding: 10px;
+    padding-left: 0;
     ul
       width: inherit;
       cursor: pointer;
@@ -80,6 +82,10 @@ body
         right: 20px;
         font-family: fontawesome;
         color: rgba(0,0,0,0.3);
+      li.active:first-child::after
+        color: white;
+      li.active:first-child:hover::after
+        color: white;
       li:first-child:hover::after
         color: $base-green;
       li:first-child
@@ -106,6 +112,8 @@ body
         width: 100%;
         display: flex;
         align-items: center;
+        padding: 10px;
+        margin-left: 0;
         img
           height: 50px;
           width: 50px;
@@ -116,7 +124,6 @@ body
             font-weight: bold;
           .sub
             font-size: 0.8em;
-            margin-top: 10px;
 
   .selector
     .control

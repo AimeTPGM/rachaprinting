@@ -29,17 +29,30 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 			div.property-item
 				div.topic
 					| ขนาด
-				div.selector
-					div.control(ng-repeat="list in formats")
-						div.option-content-wrapper
-							input(type="radio", name="type", id="option{{$index}}", ng-click="setFormat($index)")
-							label(for="option{{$index}}")
-								img(ng-src="")
-								div.content
-									div.main
-										| {{list.name}}
-									div.sub
-										| {{list.name}}
+				div.dropdown
+					ul
+						li(ng-click="showFormat()")#selectedFormat
+							img
+							div.content
+								div.main
+									| {{selectedFormat.name}} 
+								div.sub
+									| {{selectedFormat.name}} 
+						li(ng-repeat="list in formats", ng-click="setFormat(list.id, $index)", ng-show="showFormatList")
+							img
+							div.content
+								div.main
+									| {{list.name}}
+								div.sub
+									| {{list.name}}
+			//- div.property-item
+			//- 	div.topic
+			//- 		| กำหนดขนาดเอง
+			//- 	div.form
+			//- 		input(type="text")
+			//- 		span  X 
+			//- 		input(type="text")
+		div.property-wrapper
 			div.property-item
 				div.topic
 					| พิมพ์หน้าหลัง
@@ -74,50 +87,39 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 					| ประเภทกระดาษ
 				div.dropdown
 					ul
-						li(ng-click="selecting()", ng-show="showPaperType")
+						li(ng-click="showSelectPaperType()")#selectedPaperType
 							img
 							div.content
 								div.main
 									| {{selectedPaperType.name}} 
 								div.sub
 									| {{selectedPaperType.name}} 
-						li(ng-repeat="list in sortedPaperTypes | orderBy:'id'", ng-click="selection(list.id, $index)", ng-show="showPaperTypeList")
+						li(ng-repeat="list in paperTypes | orderBy:'id'", ng-click="setPaperType(list.id, $index)", ng-show="showPaperTypeList")
 							img
 							div.content
 								div.main
 									| {{list.name}}
 								div.sub
 									| {{list.name}}
-
-		div.property-wrapper
-			div.property-item
-				div.topic
-					| ประเภทกระดาษ
-				div.selector
-					div.control(ng-repeat="list in paperTypes")
-						div.option-content-wrapper
-							input(type="radio", name="paperType", id="paperType{{$index}}", ng-click="setPaperType($index)")
-							label(for="paperType{{$index}}")
-								img(ng-src="")
-								div.content
-									div.main
-										| {{list.name}}
-									div.sub
-										| {{list.name}}
 			div.property-item
 				div.topic
 					| การเคลือบ
-				div.selector
-					div.control(ng-repeat="list in refinements")
-						div.option-content-wrapper
-							input(type="radio", name="refinement", id="refinement{{$index}}", ng-click="setRefinement($index)")
-							label(for="refinement{{$index}}")
-								img(ng-src="")
-								div.content
-									div.main
-										| {{list.name}}
-									div.sub
-										| {{list.name}}
+				div.dropdown
+					ul
+						li(ng-click="showRefinement()")#selectedRefinement
+							img
+							div.content
+								div.main
+									| {{selectedRefinement.name}} 
+								div.sub
+									| {{selectedRefinement.name}} 
+						li(ng-repeat="list in refinements | orderBy:'id'", ng-click="setRefinement(list.id, $index)", ng-show="showRefinementList")
+							img
+							div.content
+								div.main
+									| {{list.name}}
+								div.sub
+									| {{list.name}}
 	div.order-step-separator
 	div.header-wrapper
 		| step 2 เลือกจำนวนและความเร็วในการจัดส่ง
