@@ -1,9 +1,9 @@
 angular.module('app')
-.controller('toTopCtrl',['$scope', '$document',
-	function($scope, $document){
+.controller('toTopCtrl',['$scope', '$document', 'ScrollService',
+	function($scope, $document, ScrollService){
 
 		$scope.scrollTop = function(){
-			$document.scrollTopAnimated(0)
+			ScrollService.scrollTop()
 		}
 
 	}

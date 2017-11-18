@@ -1,6 +1,6 @@
 angular.module('app')
-.controller('NavbarHomeCtrl',['$scope', '$http','$window', '$document',
-	function($scope, $http, $window, $document){
+.controller('NavbarHomeCtrl',['$scope', '$http','$window', '$document', 'ScrollService',
+	function($scope, $http, $window, $document, ScrollService){
 		$scope.menus = [
 			{
 				'name': 'บริการของเรา',
@@ -37,7 +37,7 @@ angular.module('app')
 		}
 
 		$scope.scrollTo = function(id){
-			$document.scrollToElementAnimated(angular.element(document.getElementById(id)), 72)
+			ScrollService.scrollToID(id)
 		}
 
 		

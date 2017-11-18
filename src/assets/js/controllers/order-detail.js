@@ -1,13 +1,14 @@
 angular.module('app')
-.controller('OrderDetailCtrl',['$scope', '$http','$window', '$timeout', 'OrderDetailService', '$interval', '$document', 
-	function($scope, $http, $window, $timeout, OrderDetailService, $interval, $document){
+.controller('OrderDetailCtrl',['$scope', '$http','$window', '$timeout', '$interval', '$document', 
+	'OrderDetailService', 'ScrollService',
+	function($scope, $http, $window, $timeout, $interval, $document,
+		OrderDetailService, ScrollService){
 		$scope.orderDetail = OrderDetailService.orderDetail
-		$scope.countdown = 7
+		$scope.countdown = 10
 		$scope.customer = {}
 		$scope.placeOrder = function(){
 			$scope.completedOrder = true
 			OrderDetailService.orderDetail.customer = $scope.customer
-			console.log(OrderDetailService.orderDetail)
 			$interval(function(){
 				$scope.countdown--
 				$timeout(function() {
@@ -17,8 +18,7 @@ angular.module('app')
 		}
 
 		$scope.scrollToID = function(id){
-			console.log(id)
-			$document.scrollToElementAnimated(angular.element(document.getElementById(id)), 72)
+			ScrollService.scrollToID(id)
 		}
 	}
 ]);

@@ -1,124 +1,13 @@
 angular.module('app')
-.controller('ExampleCtrl',['$scope', '$http','$window', '$interval',
-	function($scope, $http, $window, $interval){
-		$scope.examples = [
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			},
-			{
-				"name": "",
-				"img": "",
-				"price": "100" 
-			}
-		]
+.controller('ExampleCtrl',['$scope', '$http','$window', '$interval', 'AngularService', 'ExampleFactory',
+	function($scope, $http, $window, $interval, AngularService, ExampleFactory){
+		$scope.examples = ExampleFactory.getExamples()
 		var randomNumber = 0;
 		function random(){
-			angular.element(document.getElementById('showcase'+randomNumber)).removeClass('active')
+			AngularService.removeActiveClassByID('showcase'+randomNumber)
 			randomNumber = Math.floor(Math.random() * $scope.examples.length) + 0
 			console.log(randomNumber)
-			angular.element(document.getElementById('showcase'+randomNumber)).addClass('active')
+			AngularService.addActiveClassByID('showcase'+randomNumber)
 		}
 		$interval(function(){
 			random()

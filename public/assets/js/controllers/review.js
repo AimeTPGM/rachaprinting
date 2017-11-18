@@ -1,46 +1,8 @@
 angular.module('app')
-.controller('ReviewCtrl',['$scope', '$http','$window', '$timeout',
-	function($scope, $http, $window, $timeout){
+.controller('ReviewCtrl',['$scope', '$http','$window', '$timeout', 'ReviewFactory',
+	function($scope, $http, $window, $timeout, ReviewFactory){
 		$scope.activeIndex = 0;
-		var imgPath = "assets/img/review.png"
-		$scope.reviews = [
-		{
-			"customerName": "Aime",
-			"customerCompany" : "AGA",
-			"customerReview": "Good Service",
-			"customerImg": imgPath
-		},
-		{
-			"customerName": "James",
-			"customerCompany" : "Agoda",
-			"customerReview": "Kinda Okay",
-			"customerImg": imgPath
-		},
-		{
-			"customerName": "John",
-			"customerCompany" : "Siam Paragon",
-			"customerReview": "Hmmmm",
-			"customerImg": imgPath
-		},
-		{
-			"customerName": "Doe",
-			"customerCompany" : "Siam Discovery",
-			"customerReview": "Whaaat",
-			"customerImg": imgPath
-		},
-		{
-			"customerName": "Mary",
-			"customerCompany" : "siam Center",
-			"customerReview": "Helloooooo",
-			"customerImg": imgPath
-		},
-		{
-			"customerName": "Sharetea",
-			"customerCompany" : "-",
-			"customerReview": "Choco Choco Cheese",
-			"customerImg": imgPath
-		}
-		]
+		$scope.reviews = ReviewFactory.getReviews()
 
 		var reviewAutoChange = function() {
 

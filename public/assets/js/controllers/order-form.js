@@ -1,308 +1,85 @@
 angular.module('app')
-.controller('OrderFormCtrl',['$scope', '$http','$window', '$document', 'OrderDetailService', 
-	function($scope, $http, $window, $document, OrderDetailService){
-		$scope.show = function(id){
-			angular.element(document.querySelector('#type')).addClass('active')
-			$scope.selectedValue.id = list.id
-			$scope.selectedValue.name = list.name
-			angular.element(document.querySelector('#type')).removeClass('active')
-			console.log($scope.selectedValue)
+.controller('OrderFormCtrl',['$scope', '$http','$window', '$document', 
+	'OrderDetailService', 'ScrollService', 'AngularService',
+	'FormatFactory', 'PrintFactory', 'PrintColorFactory', 'PaperTypesFactory', 'RefinementFactory', 'DeliveryFactory', 'OrderFactory', 
+	function($scope, $http, $window, $document, 
+		OrderDetailService, ScrollService, AngularService,
+		FormatFactory, PrintFactory, PrintColorFactory, PaperTypesFactory, RefinementFactory, DeliveryFactory, OrderFactory){
+
+		$scope.formats = FormatFactory.getFormats()
+		$scope.prints = PrintFactory.getPrints()
+		$scope.printColors = PrintColorFactory.getPrintColors()
+		$scope.paperTypes = PaperTypesFactory.getPaperTypes()
+		$scope.refinements = RefinementFactory.getRefinements()
+		$scope.deliveryDayAndDate = DeliveryFactory.getAvailableDeliveryDayAndDates()
+		$scope.prices = OrderFactory.getPrices()
+
+		var order = OrderDetailService.orderDetail
+
+		function addActiveClassByID(id){
+			AngularService.addActiveClassByID(id)
+		}
+		function addClassByID(id, className){
+			AngularService.addClassByID(id, className)
 		}
 
-		$scope.formats = [
-			{
-				id:1, 
-				name: 'A4', 
-				description: '210 x 297 mm',
-				formatSize: {
-					width: 210,
-					height: 297
-				}
-			}, 
-			{
-				id:2, 
-				name: 'A3', 
-				description: '297 x 240 mm',
-				formatSize: {
-					width: 297,
-					height: 240
-				}
-			}, 
-			{
-				id:3, 
-				name: 'A5', 
-				description: '148 x 120 mm',
-				formatSize: {
-					width: 148,
-					height: 120
-				}
-			}
-		]
-		$scope.prints = [{id:1, name: 'One-side', description: 'print one side'},{id:2, name: 'Two-side', description: 'print two side'}]
-		$scope.printColors = [{id:1, name: 'Black & White', description: 'print black & white'},{id:2, name: 'Color', description: 'print color'}]
-		$scope.paperTypes = [{id:1, name: '200 gram', description: '200 gram'},{id:2, name: '180 gram', description: '180 gram'},{id:3, name: '150 gram', description: '150 gram'},{id:4, name: '130 gram', description: '130 gram'},{id:5, name: '100 gram', description: '100 gram'},{id:6, name: '80 gram', description: '80 gram'}]
-		$scope.refinements = [{id:1, name: 'None', description: 'None'}, {id:2, name: 'UV', description: 'UV'}]
-		$scope.sortedPaperTypes = $scope.paperTypes
-		$scope.dayAndDate = [
-			{
-				day: 'วันพฤหัสบดี',
-				date: '23 พ.ย.'
-			},
-			{
-				day: 'วันศุกร์',
-				date: '24 พ.ย.'
-			},
-			{
-				day: 'วันเสาร์',
-				date: '25 พ.ย.'
-			},
-			{
-				day: 'วันอาทิตย์',
-				date: '26 พ.ย.'
-			},
-			{
-				day: 'วันจันทร์',
-				date: '27 พ.ย.'
-			}
-		]
-		$scope.prices = [
-			{
-				amount: '100',
-				priceOfDate: [
-					{
-						fullprice: '447', 
-						perOne: '4.47'
-					},
-					{
-						fullprice: '414', 
-						perOne: '4.14'
-					},
-					{
-						fullprice: '381', 
-						perOne: '3.81'
-					},
-					{
-						fullprice: '331', 
-						perOne: '3.31'
-					}
-				]
-			},
-			{
-				amount: '200',
-				priceOfDate: [
-					{
-						fullprice: '730', 
-						perOne: '3.65'
-					},
-					{
-						fullprice: '676', 
-						perOne: '3.38'
-					},
-					{
-						fullprice: '622', 
-						perOne: '3.11'
-					},
-					{
-						fullprice: '540', 
-						perOne: '2.70'
-					}
-				]
-			},
-			{
-				amount: '300',
-				priceOfDate: [
-					{
-						fullprice: '783', 
-						perOne: '2.61'
-					},
-					{
-						fullprice: '723', 
-						perOne: '2.41'
-					},
-					{
-						fullprice: '666', 
-						perOne: '2.22'
-					},
-					{
-						fullprice: '579', 
-						perOne: '1.93'
-					}
-				]
-			},
-			{
-				amount: '500',
-				priceOfDate: [
-					{
-						fullprice: '1180', 
-						perOne: '2.36'
-					},
-					{
-						fullprice: '1095', 
-						perOne: '2.19'
-					},
-					{
-						fullprice: '1005', 
-						perOne: '2.01'
-					},
-					{
-						fullprice: '875', 
-						perOne: '1.75'
-					}
-				]
-			},
-			{
-				amount: '1000',
-				priceOfDate: [
-					{
-						fullprice: '1570', 
-						perOne: '1.57'
-					},
-					{
-						fullprice: '1450', 
-						perOne: '1.45'
-					},
-					{
-						fullprice: '1330', 
-						perOne: '1.33'
-					},
-					{
-						fullprice: '1160', 
-						perOne: '1.16'
-					}
-				]
-			},
-			{
-				amount: '2000',
-				priceOfDate: [
-					{
-						fullprice: '2340', 
-						perOne: '1.17'
-					},
-					{
-						fullprice: '2180', 
-						perOne: '1.09'
-					},
-					{
-						fullprice: '2000', 
-						perOne: '1.00'
-					},
-					{
-						fullprice: '1740', 
-						perOne: '0.87'
-					}
-				]
-			},
-			{
-				amount: '3000',
-				priceOfDate: [
-					{
-						fullprice: '3120', 
-						perOne: '1.04'
-					},
-					{
-						fullprice: '2880', 
-						perOne: '0.96'
-					},
-					{
-						fullprice: '2670', 
-						perOne: '0.89'
-					},
-					{
-						fullprice: '2310', 
-						perOne: '0.97'
-					}
-				]
-			},
-			{
-				amount: '5000',
-				priceOfDate: [
-					{
-						fullprice: '4650', 
-						perOne: '0.93'
-					},
-					{
-						fullprice: '4300', 
-						perOne: '0.86'
-					},
-					{
-						fullprice: '3950', 
-						perOne: '0.79'
-					},
-					{
-						fullprice: '3450', 
-						perOne: '0.69'
-					}
-				]
-			},
-			{
-				amount: '10000',
-				priceOfDate: [
-					{
-						fullprice: '8500', 
-						perOne: '0.85'
-					},
-					{
-						fullprice: '7900', 
-						perOne: '0.79'
-					},
-					{
-						fullprice: '7200', 
-						perOne: '0.72'
-					},
-					{
-						fullprice: '6300', 
-						perOne: '0.63'
-					}
-				]
-			}
-		]
+		function removeClassByID(id, className){
+			AngularService.removeClassByID(id, className)
+		}
 
-		$scope.selectedValue = {}
-		$scope.showPaperType = true
-		$scope.showPaperTypeList = false
+		function addAttrByID(id, attr, value){
+			AngularService.addAttrByID(id, attr, value)
+		}
+
+		function removeAttrByID(id, attr){
+			AngularService.removeAttrByID(id, attr)
+		}
+
+		function isUndefined(element){
+			if (element == undefined) return true
+			return false
+		}
+
+		function isEmpty(element){
+			if(element == '') return true
+			return false
+		}
+
+		var pleaseSelect = { name: 'กรุณาเลือก...' }
 
 		$scope.setMainChoice = function(index){
-
 			if(index == 0){
-				angular.element(document.querySelector('#choice1')).addClass('selected')
-				angular.element(document.querySelector('#choice2')).removeClass('selected')
-				$scope.selectedValue.choice = { name: 'ออกแบบเอง' }
+				addClassByID('choice1', 'selected')
+				removeClassByID('choice2', 'selected')
+				order.choice = { name: 'ออกแบบเอง' }
 			}
 			else if(index == 1){
-				angular.element(document.querySelector('#choice2')).addClass('selected')
-				angular.element(document.querySelector('#choice1')).removeClass('selected')
-				$scope.selectedValue.choice = { name: 'ให้ราชาปริ้นติ้งออกแบบให้' }
+				addClassByID('choice2', 'selected')
+				removeClassByID('choice1', 'selected')
+				order.choice = { name: 'ให้ราชาปริ้นติ้งออกแบบให้' }
 			}
-			OrderDetailService.orderDetail.choice = $scope.selectedValue.choice
-			console.log($scope.selectedValue)
 		}
 
 		$scope.setPrint = function(index){
-			$scope.selectedValue.print = $scope.prints[index]
-			OrderDetailService.orderDetail.print = $scope.prints[index]
-			console.log($scope.selectedValue)
+			order.print = $scope.prints[index]
 		}
 
 		$scope.setPrintColor = function(index){
-			$scope.selectedValue.printColor = $scope.printColors[index]
-			OrderDetailService.orderDetail.printColor = $scope.printColors[index]
-			console.log($scope.selectedValue)
+			order.printColor = $scope.printColors[index]
 		}
 
 		$scope.setPrice = function(i, j){
-			$scope.selectedValue.price = $scope.prices[i].priceOfDate[j]
-			OrderDetailService.orderDetail.price = $scope.prices[i].priceOfDate[j]
-			$scope.selectedValue.dayAndDate = $scope.dayAndDate[j+1]
-			OrderDetailService.orderDetail.dayAndDate = $scope.dayAndDate[j+1]
-			console.log($scope.selectedValue)
-			$document.scrollToElementAnimated(angular.element(document.getElementById('orderDetail')), 72)
+			order.price = $scope.prices[i].priceOfDate[j]
+			order.deliveryDayAndDate = $scope.deliveryDayAndDate[j+1]
+			ScrollService.scrollToID('orderDetail')
 		}
 
 		// Format
-
-		$scope.selectedFormat = { name: 'Please Select...' }
+		$scope.selectedFormat = pleaseSelect
 		$scope.showFormatList = false
 		$scope.formatSize = {}
+		var width = 'width'
+		var height = 'height'
 
 		$scope.showFormat = function(){
 			if($scope.showFormatList == true) $scope.showFormatList = false
@@ -311,17 +88,17 @@ angular.module('app')
 
 		$scope.setWidth = function(){
 			setSize($scope.formatSize.width, $scope.formatSize.height)
-			if($scope.formatSize.width != undefined){
-				if($scope.formatSize.width == '') angular.element(document.querySelector('#width')).attr('required', true)
-				else angular.element(document.querySelector('#width')).removeAttr('required')
+			if(!isUndefined($scope.formatSize.width)){
+				if(isEmpty($scope.formatSize.width)) addAttrByID(width, 'required', true)
+				else removeAttrByID(width, 'required')
 			}
 		}
 
 		$scope.setHeight = function(){
 			setSize($scope.formatSize.width, $scope.formatSize.height)
-			if($scope.formatSize.height != undefined){
-				if($scope.formatSize.height == '') angular.element(document.querySelector('#height')).attr('required', true)
-				else angular.element(document.querySelector('#height')).removeAttr('required')
+			if(!isUndefined($scope.formatSize.height)){
+				if(isEmpty($scope.formatSize.height)) addAttrByID(height, 'required', true)
+				else removeAttrByID(height, 'required')
 			}
 		}
 
@@ -335,39 +112,34 @@ angular.module('app')
 					height: h
 				}
 			}
-			$scope.selectedValue.format = $scope.selectedFormat
-			OrderDetailService.orderDetail.format = $scope.selectedFormat
+			order.format = $scope.selectedFormat
 		}
 
 		$scope.setFormat = function(id, index){
 			if(index == -1){
-				angular.element(document.querySelector('#width')).removeAttr('disabled')
-				angular.element(document.querySelector('#height')).removeAttr('disabled')
-				angular.element(document.querySelector('#width')).attr('required', true)
-				angular.element(document.querySelector('#height')).attr('required', true)
-				console.log(angular.element(document.querySelector('#width')))
+				removeAttrByID(width, 'disabled')
+				removeAttrByID(height, 'disabled')
+				addAttrByID(width, 'required', true)
+				addAttrByID(height, 'required', true)
 				$scope.formatSize = {}
 				var description = $scope.formatSize.width+" x "+$scope.formatSize.height
 				$scope.selectedFormat = { name: 'กำหนดขนาดเอง', description: description }
 			} 
 			else {
-				angular.element(document.querySelector('#width')).removeAttr('required')
-				angular.element(document.querySelector('#height')).removeAttr('required')
-				angular.element(document.querySelector('#width')).attr('disabled', true)
-				angular.element(document.querySelector('#height')).attr('disabled', true)
+				removeAttrByID(width, 'required')
+				removeAttrByID(height, 'required')
+				addAttrByID(width, 'disabled', true)
+				addAttrByID(height, 'disabled', true)
 				$scope.selectedFormat = $scope.formats[index]
 				$scope.formatSize = $scope.formats[index].formatSize
-				console.log($scope.formatSize)
 			}
-			$scope.selectedValue.format = $scope.selectedFormat
-			OrderDetailService.orderDetail.format = $scope.selectedFormat
-			console.log($scope.selectedValue)
-			angular.element(document.querySelector('#selectedFormat')).addClass('active')
+			order.format = $scope.selectedFormat
+			addActiveClassByID('selectedFormat')
 			$scope.showFormatList = false
 		}
 
 		// Refinement
-		$scope.selectedRefinement = { name: 'Please Select...' }
+		$scope.selectedRefinement = pleaseSelect
 		$scope.showRefinementList = false
 		$scope.showRefinement = function(){
 			if($scope.showRefinementList == true) $scope.showRefinementList = false
@@ -376,15 +148,14 @@ angular.module('app')
 
 		$scope.setRefinement = function(id, index){
 			$scope.selectedRefinement = $scope.refinements[index]
-			$scope.selectedValue.refinement = $scope.selectedRefinement
-			OrderDetailService.orderDetail.refinement = $scope.selectedRefinement
-			console.log($scope.selectedValue)
-			angular.element(document.querySelector('#selectedRefinement')).addClass('active')
+			order.refinement = $scope.refinements[index]
+			addActiveClassByID('selectedRefinement')
 			$scope.showRefinementList = false
 		}
 		
 		// PaperType
-		$scope.selectedPaperType = { name: 'Please Select...' }
+		$scope.selectedPaperType = pleaseSelect
+		$scope.showPaperType = true
 		$scope.showPaperTypeList = false
 		$scope.showSelectPaperType = function(){
 			if($scope.showPaperTypeList == true) $scope.showPaperTypeList = false
@@ -393,10 +164,8 @@ angular.module('app')
 
 		$scope.setPaperType = function(id, index){
 			$scope.selectedPaperType = $scope.paperTypes[index]
-			$scope.selectedValue.paperType = $scope.selectedPaperType
-			OrderDetailService.orderDetail.paperType = $scope.selectedPaperType
-			console.log($scope.selectedValue)
-			angular.element(document.querySelector('#selectedPaperType')).addClass('active')
+			order.paperType = $scope.paperTypes[index]
+			addActiveClassByID('selectedPaperType')
 			$scope.showPaperTypeList = false
 		}
 
