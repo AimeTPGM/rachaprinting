@@ -13,7 +13,7 @@ angular.module('app')
         {
           id:2, 
           name: 'UV', 
-          description: 'UV'
+          description: 'เคลือบ UV'
         }
       ]
       return refinements
