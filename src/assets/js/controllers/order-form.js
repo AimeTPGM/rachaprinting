@@ -2,16 +2,16 @@ angular.module('app')
 .controller('OrderFormCtrl',['$scope', '$http','$window', '$document', '$routeParams',
 	'LanguageConfig',
 	'OrderDetailService', 'ScrollService', 'AngularService',
-	'FormatFactory', 'PrintFactory', 'PrintColorFactory', 'PaperTypesFactory', 'RefinementFactory', 'DeliveryFactory', 'OrderFactory', 
+	'FormatFactory', 'PrintFactory', 'PrintColorFactory', 'PaperTypesFactory', 'RefinementFactory', 'DeliveryFactory', 'OrderFactory',
 	function($scope, $http, $window, $document, $routeParams,
-		LanguageConfig, 
+		LanguageConfig,
 		OrderDetailService, ScrollService, AngularService,
 		FormatFactory, PrintFactory, PrintColorFactory, PaperTypesFactory, RefinementFactory, DeliveryFactory, OrderFactory){
 
 		if($routeParams.lang == 'th'){
 			$scope.webContent = LanguageConfig.thai.orderForm
 		}
-		else if($routeParams.lang == 'eng'){
+		else if($routeParams.lang == 'en'){
 			$scope.webContent = LanguageConfig.eng.orderForm
 		}
 
@@ -113,9 +113,9 @@ angular.module('app')
 
 		function setSize(w, h){
 			var description = w+" X "+h+" mm"
-			$scope.selectedFormat = { 
-				name: 'กำหนดขนาดเอง', 
-				description: description, 
+			$scope.selectedFormat = {
+				name: 'กำหนดขนาดเอง',
+				description: description,
 				formatSize: {
 					width: w,
 					height: h
@@ -133,7 +133,7 @@ angular.module('app')
 				$scope.formatSize = {}
 				var description = $scope.formatSize.width+" x "+$scope.formatSize.height
 				$scope.selectedFormat = { name: 'กำหนดขนาดเอง', description: description }
-			} 
+			}
 			else {
 				removeAttrByID(width, 'required')
 				removeAttrByID(height, 'required')
@@ -161,7 +161,7 @@ angular.module('app')
 			addActiveClassByID('selectedRefinement')
 			$scope.showRefinementList = false
 		}
-		
+
 		// PaperType
 		$scope.selectedPaperType = pleaseSelect
 		$scope.showPaperType = true

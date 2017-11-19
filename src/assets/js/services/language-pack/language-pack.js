@@ -28,7 +28,38 @@ angular.module('app')
             }
           }
         }
-    var orderFormTH = {}
+    var orderFormTH = {
+			firstStep: 'Step 1 : ตัวเลือกการพิมพ์',
+			printOption:{
+				printOption:'คุณมีแบบสิ่งพิมพ์ที่ต้องการแล้วหรือยัง?',
+				designedOption:'มีแล้ว',
+				upload:'คลิ๊กเพื่ออัพโหลดรูปภาพ',
+				undesignedOption:'ให้เราออกแบบให้',
+				rachaDesignOption:'ใช้บริการออกแบบของราชาการพิมพ์ในราคาที่คุ้มค่า!',
+			},
+			sizeOption:{
+				sizeOption:'กำหนดขนาดเอง',
+				designedOption:'กำหนดขนาดเอง',
+				printingSizeOption:{
+					printingSizeOption:'ขนาดของสิ่งพิมพ์',
+					width:'กว้าง',
+					height:'ยาว',
+				},
+			},
+			sideOption:'เลือกประเภทการพิมพ์',
+			colorOption:'เลือกสีที่ใช้พิมพ์',
+			paperOption:'เลือกประเภทกระดาษ',
+			refinementOption:'เลือกการเคลือบ',
+			secondStep:'Step 2 เลือกจำนวนและความเร็วในการจัดส่ง',
+			deliveryLocation:'จัดส่งไปที่',
+			bangkok:'กรุงเทพมหานคร',
+			totalPrice:'ราคาสิ่งพิมพ์พร้อมค่าจัดส่ง',
+			fastestDelivery:'จัดส่งแบบด่วนพิเศษ?',
+			deliveredDate:'วันรับสินค้า',
+			quantity:'ปริมาณ',
+			pieces:'ชิ้น',
+			bahtPerPcs:'บาทต่อชิ้น'
+		}
     var ProductTH = {}
     var reviewTH = {}
 
@@ -67,7 +98,37 @@ angular.module('app')
             }
           }
         }
-    var orderFormEN = {}
+    var orderFormEN = {			firstStep: 'Step 1 : Select printing options',
+					printOption:{
+						printOption:'Do you have a printing design?',
+						designedOption:'Yes, I do.',
+						upload:'Click to upload',
+						undesignedOption:'Let us design.',
+						rachaDesignOption:'RachaPrinting design service.',
+					},
+					sizeOption:{
+						sizeOption:'Printing size options.',
+						designedOption:'My printing size.',
+						printingSizeOption:{
+							printingSizeOption:'Printing size.',
+							width:'Width',
+							height:'Heigh',
+						},
+					},
+					sideOption:'Printing side options',
+					colorOption:'Printing color options',
+					paperOption:'Paper type options',
+					refinementOption:'Refinement options',
+					secondStep:'Step 2 : Select quantity and delivered date',
+					deliveryLocation:'Delivery location',
+					bangkok:'Bangkok',
+					totalPrice:'Total price',
+					fastestDelivery:'Fastest Delivery',
+					deliveredDate:'Delivired date',
+					quantity:'Quantity',
+					pieces:'pcs.',
+					bahtPerPcs:'Bht/pc'
+				}
     var ProductEN = {}
     var reviewEN = {}
     this.eng = {

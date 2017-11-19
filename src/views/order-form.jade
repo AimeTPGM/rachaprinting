@@ -1,11 +1,11 @@
 div.order-form-wrapper(ng-controller="OrderFormCtrl")
 	div.header-wrapper
-		| step 1 เลือกตัวเลือกของคุณ
+		| {{webContent.firstStep}}
 		//- div.header-triangle
 	div.order-step-wrapper.form
 		div.main-choice-wrapper
 			div.topic#mainOption
-				| คุณมีแบบสิ่งพิมพ์ที่ต้องการแล้วหรือยัง?
+				| {{webContent.printOption.printOption}}
 			div.choice-item
 				div.main-choice-item
 					div.option-content-wrapper
@@ -13,22 +13,22 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 							label(for="file").upload-file-button
 								div.content
 									div.main
-										| มีแล้ว 
+										| {{webContent.printOption.designedOption}}
 									div.sub
-										| คลิ๊กเพื่ออัพโหลดรูปภาพ
-							input(type="file", name="file", id="file")		
+										| {{webContent.printOption.upload}}
+							input(type="file", name="file", id="file")
 				div.main-choice-item
 					div.option-content-wrapper
 						label(ng-click="setMainChoice(1)")#choice2
 							div.content
 								div.main
-									| ให้เราออกแบบให้ 
+									| {{webContent.printOption.undesignedOption}}
 								div.sub
-									| ใช้บริการออกแบบของราชาการพิมพ์ในราคาที่คุ้มค่า!
+									| {{webContent.printOption.rachaDesignOption}}
 		div.property-wrapper
 			div.property-item
 				div.topic#size
-					| เลือกขนาด
+					| {{webContent.sizeOption.sizeOption}}
 				div.dropdown-wrapper
 					ul
 						li.dropdown-header
@@ -37,9 +37,9 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 									img
 									div.content
 										div.main
-											| {{selectedFormat.name}} 
+											| {{selectedFormat.name}}
 										div.sub
-											| {{selectedFormat.description}} 
+											| {{selectedFormat.description}}
 						li.dropdown-selector
 							ul
 								li(ng-repeat="list in formats", ng-click="setFormat(list.id, $index)", ng-show="showFormatList")
@@ -53,20 +53,20 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 									img
 									div.content
 										div.main
-											| กำหนดขนาดเอง
+											| {{webContent.sizeOption.designedOption}}
 			div.property-item
 				div.topic
-					| ขนาดของสิ่งพิมพ์
+					| {{webContent.sizeOption.printingSizeOption.printingSizeOption}}
 				div.form
 					div.input-wrapper
-						input(type="text", disabled, ng-model="formatSize.width", ng-change="setWidth()", placeholder="กว้าง")#width
-						span  X 
-						input(type="text", disabled, ng-model="formatSize.height", ng-change="setHeight()", placeholder="ยาว")#height
+						input(type="text", disabled, ng-model="formatSize.width", ng-change="setWidth()", placeholder="{{webContent.sizeOption.printingSizeOption.width}}")#width
+						span  X
+						input(type="text", disabled, ng-model="formatSize.height", ng-change="setHeight()", placeholder="{{webContent.sizeOption.printingSizeOption.height}}")#height
 						span  mm
 		div.property-wrapper
 			div.property-item
 				div.topic#print
-					| เลือกประเภทการพิมพ์
+					| {{webContent.sideOption}}
 				div.selector
 					div.control(ng-repeat="list in prints")
 						div.option-content-wrapper
@@ -80,7 +80,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 										| {{list.description}}
 			div.property-item
 				div.topic#printColor
-					| เลือกสีที่ใช้พิมพ์
+					| {{webContent.colorOption}}
 				div.selector
 					div.control(ng-repeat="list in printColors")
 						div.option-content-wrapper
@@ -95,7 +95,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 		div.property-wrapper
 			div.property-item
 				div.topic#paperType
-					| เลือกประเภทกระดาษ
+					| {{webContent.paperOption}}
 				div.dropdown-wrapper
 					ul
 						li.dropdown-header
@@ -104,9 +104,9 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 									img
 									div.content
 										div.main
-											| {{selectedPaperType.name}} 
+											| {{selectedPaperType.name}}
 										div.sub
-											| {{selectedPaperType.description}} 
+											| {{selectedPaperType.description}}
 						li.dropdown-selector
 							ul
 								li(ng-repeat="list in paperTypes | orderBy:'id'", ng-click="setPaperType(list.id, $index)", ng-show="showPaperTypeList")
@@ -118,7 +118,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 											| {{list.description}}
 			div.property-item
 				div.topic#refinement
-					| เลือกการเคลือบ
+					| {{webContent.refinementOption}}
 				div.dropdown-wrapper
 					ul
 						li.dropdown-header
@@ -127,9 +127,9 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 									img
 									div.content
 										div.main
-											| {{selectedRefinement.name}} 
+											| {{selectedRefinement.name}}
 										div.sub
-											| {{selectedRefinement.description}} 
+											| {{selectedRefinement.description}}
 						li.dropdown-selector
 							ul
 								li(ng-repeat="list in refinements | orderBy:'id'", ng-click="setRefinement(list.id, $index)", ng-show="showRefinementList")
@@ -141,7 +141,7 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 											| {{list.description}}
 	div.order-step-separator
 	div.header-wrapper
-		| step 2 เลือกจำนวนและความเร็วในการจัดส่ง
+		| {{webContent.secondStep}}
 		//- div.header-triangle
 	div.order-step-wrapper
 		div.order-step-header-wrapper#delivery
@@ -153,29 +153,27 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 					div.sub-order-step-header
 						| จัดส่งไปที่
 					div.order-step-header
-						| กรุงเทพมหานคร
+						| {{webContent.bangkok}}
 		div.delivery-choice-wrapper
 			div.row
 				div.column.blank.no-border
-					| 
 				div.cloumn.table-header.dark-cell.main-table-header
-					| ราคาสิ่งพิมพ์พร้อมค่าจัดส่ง
+					| {{webContent.totalPrice}}
 			div.row
 				div.column.no-border
-					| 
 				div.column.soft-table-header
-					|	ด่วนพิเศษ
+					|	{{webContent.fastestDelivery}}
 				div.column.soft-table-header
-					| วันรับสินค้า
+					| {{webContent.deliveredDate}}
 				div.column.soft-table-header
-					| วันรับสินค้า
+					| {{webContent.deliveredDate}}
 				div.column.soft-table-header
-					| วันรับสินค้า
+					| {{webContent.deliveredDate}}
 				div.column.soft-table-header
-					| วันรับสินค้า
+					| {{webContent.deliveredDate}}
 			div.row
 				div.column.table-header.dark-cell
-					| ปริมาณ
+					| {{webContent.quantity}}
 				div.column.delivery-date-wrapper(ng-repeat="dayAndDate in deliveryDayAndDate")
 					div.delivery-day
 						| {{dayAndDate.day}}
@@ -183,11 +181,10 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 						|	{{dayAndDate.date}}
 			div.row(ng-repeat="item in prices")
 				div.column.table-header
-					| {{item.amount}} ชิ้น
+					| {{item.amount}} {{webContent.pieces}}
 				div.column(ng-if="$index !== 0")
-					| 
 				div.column.urgent-delivery(ng-if="$index == 0")
-					| จัดส่งแบบด่วนพิเศษ?
+					| {{webContent.fastestDelivery}}
 				div.column.price(ng-repeat="price in item.priceOfDate")
 					div.price-wrapper
 						input(type="radio", id="price{{$parent.$index}}_{{$index}}", name="price", ng-click="setPrice($parent.$index,$index)")
@@ -196,5 +193,4 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 								div.full-price
 									| {{price.fullprice}} .-
 								div.per-one
-									| {{price.perOne}} บาทต่อชิ้น
-
+									| {{price.perOne}} {{webContent.bahtPerPcs}}
