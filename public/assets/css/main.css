@@ -12,7 +12,7 @@ html {
   html a {
     border-bottom: dashed 1px white; }
   html a:hover {
-    color: #FFFF00; }
+    color: #FFDD66; }
 
 body {
   overflow-x: hidden;
@@ -568,8 +568,8 @@ body {
   .footer-wrapper .section-wrapper {
     vertical-align: top; }
     .footer-wrapper .section-wrapper .section a:hover {
-      color: #FFFF00;
-      border-bottom: dashed 1px #FFFF00; }
+      color: #FFDD66;
+      border-bottom: dashed 1px #FFDD66; }
     .footer-wrapper .section-wrapper .section a {
       color: white; }
     .footer-wrapper .section-wrapper .section .content .social-icon-wrapper {
