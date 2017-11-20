@@ -9,7 +9,7 @@ angular.module('app')
           "id": "1",
           "img": "",
           "name": "A",
-          "price": "100"  
+          "price": "100"
         },
         {
           "id": "2",

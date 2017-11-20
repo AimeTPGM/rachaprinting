@@ -15,6 +15,10 @@ $grey: #9F9F9F;
 $white: #FFF;
 $super-dark-grey: #333;
 $navbar-bg: rgba(255,255,255,0.8);
+$light-green: #93DD44;
+$eye-reading-green: #7AC74F;
+$coral: #F98954;
+$linear-green-on-top: linear-gradient($eye-reading-green, $base-green);
 
 // navbar
 $navbar-height: 50px;
@@ -54,6 +58,10 @@ body
 .darker-green-bg
   background: $darker-green;
 
+.gradient-green-on-top-bg
+  background: $linear-green-on-top;
+  color: white;
+
 .base-green-bg
   background: $base-green;
   color: white;
@@ -90,24 +98,26 @@ body
       cursor: pointer;
       position: relative;
       .dropdown-header
+        li.active:first-child
+          background: $eye-reading-green;
+          color: white;
+          box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+          border: solid 1px $eye-reading-green;
+        li.active:first-child::after
+          color: white;
         li:first-child::after
           content: '\f078';
           position: absolute;
           right: 20px;
           font-family: fontawesome;
           color: rgba(0,0,0,0.3);
-        li.active:first-child::after
-          color: white;
         li.active:first-child:hover::after
           color: white;
         li:first-child:hover::after
-          color: $base-green;
+          color: $eye-reading-green;
         li:first-child
           border: solid 1px rgba(0,0,0,0.3);
           border-radius: 3px;
-        .active
-          background: $base-green;
-          color: white;
         li
           width: 100%;
           display: flex;
@@ -141,7 +151,7 @@ body
           border-radius: 3px;
           border-bottom: solid 1px rgba(0,0,0,0.3);
         li:hover
-          border: solid 1px $base-green; 
+          border: solid 1px $eye-reading-green;
           box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
         li
           width: 100%;
@@ -184,6 +194,7 @@ body
           margin: 10px;
           margin-left: 0;
           align-items: center;
+          cursor: pointer;
           img
             height: 50px;
             width: 50px;
@@ -197,28 +208,30 @@ body
               font-size: 0.8em;
               margin-top: 10px;
         label:hover::before
-          border: solid 1px $base-green; 
-          background: $base-green;
+          border: solid 1px $eye-reading-green;
+          background: $eye-reading-green;
           color: white;
           content: '\f00c';
           font-family: fontawesome;
           line-height: 1.2em;
         label:hover
-          border: solid 1px $base-green; 
+          border: solid 1px $eye-reading-green;
           box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
         input[type="radio"]:checked+label
-          background: $base-green;
-          border: solid 1px $base-green;
+          background: $eye-reading-green;
+          border: solid 1px $eye-reading-green;
           color: white;
+          box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
         input[type="radio"]:checked+label::before
           background: white;
           font-family: fontawesome;
           content: '\f00c';
-          color: $base-green;
+          color: $eye-reading-green;
           text-align: center;
           font-size: 1em;
           display: inline;
           line-height: 1.2em;
+
 .navbar
   padding: 10px 15px 10px 15px;
   background: $navbar-bg;
@@ -388,6 +401,7 @@ body
         padding: 20px;
         text-align: center;
         width: 150px;
+        cursor: pointer;
         .active
           border: solid 5px $base-green;
         .img-wrapper
@@ -423,7 +437,7 @@ body
             width: 0;
           .active  
             width: 70px;
-            border-top: 2px dashed $base-green;
+            border-top: 2px dashed $eye-reading-green;
         .arrow-head
           width: 0;
           height: 0;
@@ -485,7 +499,8 @@ body
       margin: 5px;
       z-index: 2;
     .bullet:hover
-      background: rgba(0,185,0,0.3);
+      background: $light-green;
+      border: solid 1px $light-green;
     .active
       background: $base-green;
   .content-wrapper
@@ -497,7 +512,7 @@ body
     left: 0;
     right: 0;
     margin: auto;
-    border: solid 1px $base-green;
+    border: solid 1px $eye-reading-green;
     margin-top: 100px;
     .img-wrapper
       height: 150px;
@@ -514,7 +529,7 @@ body
         border-radius: 50%;
         opacity: 1;
     .comment-info-wrapper
-      color: $base-green;
+      color: $eye-reading-green;
       position: absolute;
       text-align: center;
       margin-top: 120px;
@@ -565,7 +580,7 @@ body
   .img-wrapper
     width: 100px;
     height: 100px;
-    background: $base-green;
+    background: $eye-reading-green;
   .img-wrapper:hover
     background: $grey;
     transform: scale(2);
@@ -685,7 +700,7 @@ body
           border: solid 1px rgba(0,0,0,0.3);
         button
           padding: 10px;
-          background: $base-green;
+          background: $eye-reading-green;
           color: white;
           min-width: 300px;
           margin: auto;
@@ -695,7 +710,7 @@ body
           font-size: 1.3em;
           font-weight: bold;
         button:hover
-          background: #333;
+          background: $base-green;
           cursor: pointer;
   .summary-wrapper
     text-align: center;
@@ -781,9 +796,9 @@ body
           input[type="radio"]
             display: none;
           label:hover
-            border: solid 1px $base-green;
+            border: solid 1px $eye-reading-green;
             box-shadow: 0 0 10px rgba(0,0,0,0.3);
-            background: $base-green;
+            background: $eye-reading-green;
             color: white;
             .content
               .sub
@@ -810,6 +825,7 @@ body
             text-align: center;
             border-radius: 3px;
             border: solid 1px rgba(0,0,0,0.3);
+            cursor: pointer;
             .content
               .sub
                 margin-top: 20px;
@@ -821,14 +837,16 @@ body
             align-items: center;
             display: grid;
           #choice2:hover
-            background: $base-green;
+            background: $eye-reading-green;
             color: white;
             .content
               .sub
                 color: white;
           label.selected
-            background: $base-green;
+            background: $eye-reading-green;
             color: white;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+            border: solid 1px $eye-reading-green;
             .content
               .sub
                 color: white;
@@ -855,11 +873,19 @@ body
     .delivery-choice-wrapper
       margin-top: 30px;
       font-size: 0.8em;
+      .row:last-child
+        border: 0;
+        .column
+          border-bottom: solid 1px $eye-reading-green;
+        .column:nth-child(2)
+          border-bottom: solid 1px $coral;
+      .row:nth-child(2)
+        .column:nth-child(2)
+          color: white;
       .row
         .column
           padding: 0;
           border: solid 0px transparent;
-          border-left: solid 1px $soft-green;
           max-width: calc(100%/6);
           .price-wrapper
             display: inline-flex;
@@ -887,31 +913,31 @@ body
                   font-size: 0.8em;
                   color: #333;
             input[type="radio"]:checked+label
-              background: $base-green;
+              background: $eye-reading-green;
               color: white;
               border: 0;
               .full-and-per-one-wrapper
                 .per-one
                   color: white;
             input[type="radio"]:checked+label::before
-              border: solid 1px $base-green;
+              border: solid 1px $eye-reading-green;
               font-family: fontawesome;
               content: '\f00c';
               font-size: 0.8em;
               line-height: 1.1em;
-              color: $base-green;
+              color: $eye-reading-green;
               background: white;
         .column.price:hover
-          box-shadow: 0 0 5px $base-green;
+          box-shadow: 0 0 5px $eye-reading-green;
           .price-wrapper
             label::before
-              border: solid 1px $base-green;
+              border: solid 1px $eye-reading-green;
               font-family: fontawesome;
               content: '\f00c';
               font-size: 0.8em;
               line-height: 1.1em;
               color: white;
-              background: $base-green;
+              background: $eye-reading-green;
         .urgent-delivery
           font-size: 1.2em;
           font-weight: bold;
@@ -920,23 +946,27 @@ body
           border-left: 0;
           border-right: 0;
         .column:first-child
-          border-left: solid 1px $base-green;
+          border-left: solid 1px $eye-reading-green;
+        .column:not(:nth-child(1))
+          border-right: solid 1px $eye-reading-green;
         .column:nth-child(2)
-          border-left: solid 1px $base-green;
+          border-left: solid 1px $coral;
+          border-right: solid 1px $coral;
+          color: $coral;
         .column:first-child.no-border
           border-left: 0;
         .column:last-child
-          border-right: solid 1px $base-green;
+          border-right: solid 1px $eye-reading-green;
         .main-table-header
           padding: 5px;
         .soft-table-header
-          border-left: solid 1px $soft-green;
+          border-left: solid 1px $eye-reading-green;
           padding: 5px;
         .soft-table-header:nth-child(2)
-          border-left: solid 1px $base-green;
-          background: $yellow;
+          border-left: solid 1px $coral;
+          background: $coral;
         .soft-table-header:last-child
-          border-right: solid 1px $base-green;
+          border-right: solid 1px $eye-reading-green;
         .delivery-date-wrapper
           padding: 10px;
           .delivery-day
@@ -990,8 +1020,9 @@ body
 .main-table-header
   width: calc((100%/6)*5);
 .soft-table-header
-  background: $soft-green;
+  background: $eye-reading-green;
   font-weight: bold;
+  color: white;
 
 
 // xs
