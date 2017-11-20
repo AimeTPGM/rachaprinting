@@ -9,5 +9,11 @@ angular.module('app')
       $scope.webContent = LanguageConfig.eng.howto
     }
 
+    $scope.templates = {
+      'navbar' : '/views/navbar-home.html',
+      'footer' : '/views/footer.html',
+      'credit' : '/views/credit.html',
+    }
+
   }
 ]);
