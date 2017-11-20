@@ -1,8 +1,16 @@
 angular.module('app')
-.controller('OrderDetailCtrl',['$scope', '$http','$window', '$timeout', '$interval', '$document', 
-	'OrderDetailService', 'ScrollService',
-	function($scope, $http, $window, $timeout, $interval, $document,
-		OrderDetailService, ScrollService){
+.controller('OrderDetailCtrl',['$scope', '$http','$window', '$timeout', '$interval', '$document', '$routeParams',
+	'OrderDetailService', 'ScrollService', 'LanguageConfig',
+	function($scope, $http, $window, $timeout, $interval, $document, $routeParams,
+		OrderDetailService, ScrollService, LanguageConfig){
+		
+		if($routeParams.lang == 'th'){
+			$scope.webContent = LanguageConfig.thai.orderDetail
+		}
+		else if($routeParams.lang == 'en'){
+			$scope.webContent = LanguageConfig.eng.orderDetail
+		}
+		
 		$scope.orderDetail = OrderDetailService.orderDetail
 		$scope.countdown = 10
 		$scope.customer = {}

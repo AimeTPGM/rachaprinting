@@ -1,6 +1,7 @@
 angular.module('app')
-.controller('BannerCtrl',['$scope', '$http','$window', '$timeout', 'BannerFactory',
-	function($scope, $http, $window, $timeout, BannerFactory){
+.controller('BannerCtrl',['$scope', '$http','$window', '$timeout', 'BannerFactory', 'LanguageConfig',
+	function($scope, $http, $window, $timeout, BannerFactory, LanguageConfig){
+		$scope.webContent = LanguageConfig.thai.banner
 		$scope.activeIndex = 0;
 		$scope.banners = BannerFactory.getBanners()
 		$scope.slideTo = function(index){

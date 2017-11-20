@@ -1,6 +1,13 @@
 angular.module('app')
-.controller('HowtoCtrl',['$scope', '$http','$window', 'AngularServiceFactory', 'AngularService',
-	function($scope, $http, $window, AngularServiceFactory, AngularService){
+.controller('HowtoCtrl',['$scope', '$http','$window', '$routeParams', 'AngularServiceFactory', 'AngularService', 'LanguageConfig',
+	function($scope, $http, $window, $routeParams, AngularServiceFactory, AngularService, LanguageConfig){
+		
+		if($routeParams.lang == 'th'){
+      $scope.webContent = LanguageConfig.thai.howto
+    }
+    else if($routeParams.lang == 'eng'){
+      $scope.webContent = LanguageConfig.eng.howto
+    }
 
 		$scope.steps = [
 		{

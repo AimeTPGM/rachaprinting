@@ -1,11 +1,18 @@
 angular.module('app')
-.controller('ProductCtrl',['$scope', '$http','$window', '$document', '$timeout', 'ProductFactory', 'AngularServiceFactory', 'ScrollService',
-	function($scope, $http, $window, $document, $timeout, ProductFactory, AngularServiceFactory, ScrollService){
-  $scope.products = ProductFactory.getProducts()
+.controller('ProductCtrl',['$scope', '$http','$window', '$document', '$timeout', '$routeParams', 'ProductFactory', 'AngularServiceFactory', 'ScrollService', 'LanguageConfig',
+	function($scope, $http, $window, $document, $timeout, $routeParams, ProductFactory, AngularServiceFactory, ScrollService, LanguageConfig){
+  	if($routeParams.lang == 'th'){
+      $scope.webContent = LanguageConfig.thai.product
+    }
+    else if($routeParams.lang == 'eng'){
+      $scope.webContent = LanguageConfig.eng.product
+    }
+
+  	$scope.products = ProductFactory.getProducts()
 		$scope.currentProduct = 0;
 		var scrollPoint = 0;
 		$scope.order = function(id){
-			$window.location.href="/order/"+id+"/new"
+			$window.location.href = $routeParams.lang+"/order/"+id+"/new"
 		}
 		$scope.right = function(){
 			if($scope.currentProduct == $scope.products.length-1)

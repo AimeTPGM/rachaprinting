@@ -1,6 +1,14 @@
 angular.module('app')
-.controller('ReviewCtrl',['$scope', '$http','$window', '$timeout', 'ReviewFactory',
-	function($scope, $http, $window, $timeout, ReviewFactory){
+.controller('ReviewCtrl',['$scope', '$http','$window', '$timeout', '$routeParams', 'ReviewFactory', 'LanguageConfig',
+	function($scope, $http, $window, $timeout, $routeParams, ReviewFactory, LanguageConfig){
+
+		if($routeParams.lang == 'th'){
+      $scope.webContent = LanguageConfig.thai.review
+    }
+    else if($routeParams.lang == 'eng'){
+      $scope.webContent = LanguageConfig.eng.review
+    }
+
 		$scope.activeIndex = 0;
 		$scope.reviews = ReviewFactory.getReviews()
 
