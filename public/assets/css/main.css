@@ -25,7 +25,7 @@ body {
   background: #009800; }
 
 .gradient-green-on-top-bg {
-  background: linear-gradient(#7AC74F, #00B900);
+  background: linear-gradient(#a1e07e, #00B900);
   color: white; }
 
 .base-green-bg {
@@ -947,6 +947,44 @@ body {
         .order-form-wrapper .order-step-wrapper .property-wrapper .property-item .form .input-wrapper span {
           font-size: 1.2em;
           font-weight: bold; }
+
+.location-wrapper {
+  margin-top: 72px; }
+  .location-wrapper .location-map {
+    width: 100vw;
+    height: 400px; }
+
+.about-us-wrapper {
+  margin: 50px; }
+  .about-us-wrapper .header {
+    margin-bottom: 50px; }
+    .about-us-wrapper .header span.hilight {
+      font-size: 1.3em;
+      color: #00B900; }
+  .about-us-wrapper .content {
+    font-size: 1.1em;
+    width: 60vw;
+    margin: auto; }
+    .about-us-wrapper .content span.hilight {
+      color: #7AC74F;
+      font-weight: bold; }
+
+.contact-wrapper {
+  margin: 50px; }
+  .contact-wrapper .header {
+    color: #7AC74F; }
+  .contact-wrapper .content {
+    margin: auto;
+    width: fit-content;
+    font-size: 1.2em;
+    margin-top: 20px; }
+    .contact-wrapper .content .contact-item {
+      display: flex;
+      padding: 20px; }
+      .contact-wrapper .content .contact-item .icon {
+        margin-right: 20px;
+        font-size: 1.5em;
+        color: #00B900; }
 
 .row {
   display: flex; }

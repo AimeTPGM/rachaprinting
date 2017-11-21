@@ -16,9 +16,10 @@ $white: #FFF;
 $super-dark-grey: #333;
 $navbar-bg: rgba(255,255,255,0.8);
 $light-green: #93DD44;
+$fresh-green: rgb(161, 224, 126);
 $eye-reading-green: #7AC74F;
 $coral: #F98954;
-$linear-green-on-top: linear-gradient($eye-reading-green, $base-green);
+$linear-green-on-top: linear-gradient($fresh-green, $base-green);
 
 // navbar
 $navbar-height: 50px;
@@ -994,7 +995,44 @@ body
               font-size: 1.2em;
               font-weight: bold;
 
+.location-wrapper
+  margin-top: 72px;
+  .location-map
+    width: 100vw;
+    height: 400px;
 
+.about-us-wrapper
+  margin: 50px;
+  .header
+    margin-bottom: 50px;
+    span.hilight
+      font-size: 1.3em;
+      color: $base-green;
+  .content
+    font-size: 1.1em;
+    width: 60vw;
+    margin: auto;
+    span.hilight
+      color: $eye-reading-green;
+      font-weight: bold;
+
+.contact-wrapper
+  margin: 50px;
+  .header
+    color: $eye-reading-green;
+  .content
+    margin: auto;
+    width: fit-content;
+    font-size: 1.2em;
+    margin-top: 20px;
+    .contact-item
+      display: flex;
+      padding: 20px;
+      .icon
+        margin-right: 20px;
+        font-size: 1.5em;
+        color: $base-green;
+      .contact
 .row
   display: flex;
   .column
