@@ -55,6 +55,12 @@ body {
     padding: 10px;
     border-radius: 3px;
     border: solid 1px rgba(0, 0, 0, 0.3); }
+  .form .input-wrapper input[type="number"]:required {
+    border: solid 1px #D44D5C; }
+  .form .input-wrapper input[type="number"] {
+    padding: 10px;
+    border-radius: 3px;
+    border: solid 1px rgba(0, 0, 0, 0.3); }
 
 .form .dropdown-wrapper {
   width: 100%;
@@ -943,17 +949,22 @@ body {
       margin-top: 50px; }
       .order-form-wrapper .order-step-wrapper .property-wrapper .property-item {
         width: calc(100%/2); }
+        .order-form-wrapper .order-step-wrapper .property-wrapper .property-item .form .input-wrapper input {
+          height: 72px; }
         .order-form-wrapper .order-step-wrapper .property-wrapper .property-item .form .input-wrapper input[type="text"]:disabled {
           color: white; }
         .order-form-wrapper .order-step-wrapper .property-wrapper .property-item .form .input-wrapper input[type="text"] {
           width: 72px;
-          height: 72px;
           font-size: 1.2em;
           color: #00B900;
           text-align: center; }
         .order-form-wrapper .order-step-wrapper .property-wrapper .property-item .form .input-wrapper span {
           font-size: 1.2em;
           font-weight: bold; }
+        .order-form-wrapper .order-step-wrapper .property-wrapper .property-item .form .input-wrapper input[type="number"] {
+          width: 100%;
+          font-size: 1.2em;
+          text-align: center; }
 
 .location-wrapper {
   margin-top: 72px; }

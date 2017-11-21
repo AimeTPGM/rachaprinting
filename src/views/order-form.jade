@@ -65,6 +65,36 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 						span  mm
 		div.property-wrapper
 			div.property-item
+				div.topic#size
+					| จำนวนหน้า
+				div.form
+					div.input-wrapper
+						input(type="number", min="1", value="1")
+			div.property-item
+				div.topic#paperType
+					| การเข้าเล่ม
+				div.dropdown-wrapper
+					ul
+						li.dropdown-header
+							ul
+								li(ng-click="showSelectPaperType()")#selectedPaperType
+									img
+									div.content
+										div.main
+											| {{selectedPaperType.name}} 
+										div.sub
+											| {{selectedPaperType.description}} 
+						li.dropdown-selector
+							ul
+								li(ng-repeat="list in paperTypes | orderBy:'id'", ng-click="setPaperType(list.id, $index)", ng-show="showPaperTypeList")
+									img
+									div.content
+										div.main
+											| {{list.name}}
+										div.sub
+											| {{list.description}}
+		div.property-wrapper
+			div.property-item
 				div.topic#print
 					| เลือกประเภทการพิมพ์
 				div.selector
@@ -119,6 +149,147 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 			div.property-item
 				div.topic#refinement
 					| เลือกการเคลือบ
+				div.dropdown-wrapper
+					ul
+						li.dropdown-header
+							ul
+								li(ng-click="showRefinement()")#selectedRefinement
+									img
+									div.content
+										div.main
+											| {{selectedRefinement.name}} 
+										div.sub
+											| {{selectedRefinement.description}} 
+						li.dropdown-selector
+							ul
+								li(ng-repeat="list in refinements | orderBy:'id'", ng-click="setRefinement(list.id, $index)", ng-show="showRefinementList")
+									img
+									div.content
+										div.main
+											| {{list.name}}
+										div.sub
+											| {{list.description}}
+		div.property-wrapper
+			div.property-item
+				div.topic#paperType
+					| การเจาะรู
+				div.dropdown-wrapper
+					ul
+						li.dropdown-header
+							ul
+								li(ng-click="showSelectPaperType()")#selectedPaperType
+									img
+									div.content
+										div.main
+											| {{selectedPaperType.name}} 
+										div.sub
+											| {{selectedPaperType.description}} 
+						li.dropdown-selector
+							ul
+								li(ng-repeat="list in paperTypes | orderBy:'id'", ng-click="setPaperType(list.id, $index)", ng-show="showPaperTypeList")
+									img
+									div.content
+										div.main
+											| {{list.name}}
+										div.sub
+											| {{list.description}}
+			div.property-item
+				div.topic#refinement
+					| การตกแต่ง
+				div.dropdown-wrapper
+					ul
+						li.dropdown-header
+							ul
+								li(ng-click="showRefinement()")#selectedRefinement
+									img
+									div.content
+										div.main
+											| {{selectedRefinement.name}} 
+										div.sub
+											| {{selectedRefinement.description}} 
+						li.dropdown-selector
+							ul
+								li(ng-repeat="list in refinements | orderBy:'id'", ng-click="setRefinement(list.id, $index)", ng-show="showRefinementList")
+									img
+									div.content
+										div.main
+											| {{list.name}}
+										div.sub
+											| {{list.description}}
+		div.property-wrapper
+			div.property-item
+				div.topic#paperType
+					| รูปทรงสติ๊กเกอร์
+				div.dropdown-wrapper
+					ul
+						li.dropdown-header
+							ul
+								li(ng-click="showSelectPaperType()")#selectedPaperType
+									img
+									div.content
+										div.main
+											| {{selectedPaperType.name}} 
+										div.sub
+											| {{selectedPaperType.description}} 
+						li.dropdown-selector
+							ul
+								li(ng-repeat="list in paperTypes | orderBy:'id'", ng-click="setPaperType(list.id, $index)", ng-show="showPaperTypeList")
+									img
+									div.content
+										div.main
+											| {{list.name}}
+										div.sub
+											| {{list.description}}
+			div.property-item
+				div.topic#refinement
+					| Sticker Delivery
+				div.dropdown-wrapper
+					ul
+						li.dropdown-header
+							ul
+								li(ng-click="showRefinement()")#selectedRefinement
+									img
+									div.content
+										div.main
+											| {{selectedRefinement.name}} 
+										div.sub
+											| {{selectedRefinement.description}} 
+						li.dropdown-selector
+							ul
+								li(ng-repeat="list in refinements | orderBy:'id'", ng-click="setRefinement(list.id, $index)", ng-show="showRefinementList")
+									img
+									div.content
+										div.main
+											| {{list.name}}
+										div.sub
+											| {{list.description}}
+		div.property-wrapper
+			div.property-item
+				div.topic#paperType
+					| การพิมพ์ปก
+				div.dropdown-wrapper
+					ul
+						li.dropdown-header
+							ul
+								li(ng-click="showSelectPaperType()")#selectedPaperType
+									img
+									div.content
+										div.main
+											| {{selectedPaperType.name}} 
+										div.sub
+											| {{selectedPaperType.description}} 
+						li.dropdown-selector
+							ul
+								li(ng-repeat="list in paperTypes | orderBy:'id'", ng-click="setPaperType(list.id, $index)", ng-show="showPaperTypeList")
+									img
+									div.content
+										div.main
+											| {{list.name}}
+										div.sub
+											| {{list.description}}
+			div.property-item
+				div.topic#refinement
+					| การพิมพ์ด้านใน
 				div.dropdown-wrapper
 					ul
 						li.dropdown-header

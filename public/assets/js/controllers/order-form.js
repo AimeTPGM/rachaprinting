@@ -178,5 +178,6 @@ angular.module('app')
 			$scope.showPaperTypeList = false
 		}
 
+
 	}
 ]);
