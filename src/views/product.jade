@@ -1,7 +1,7 @@
 div.horizontal-item-slide-wrapper(ng-controller="ProductCtrl")
 	div.header
 		span.hilight
-			| บริการสิ่งพิมพ์ของเรา
+			| {{webContent.languagepack_product_000001}}
 	div.slide
 		div.button-wrapper
 			a.button(ng-click="left()")
@@ -13,9 +13,8 @@ div.horizontal-item-slide-wrapper(ng-controller="ProductCtrl")
 					img(src="product.img")
 				div.content
 					div.name {{product.name}}
-					div.price ราคาเริ่มต้นที่ {{product.price}}.-
+					div.price {{webContent.languagepack_product_000002}} {{product.price}}.-
 		div.button-wrapper
 			a.button(ng-click="right()")
 				i
 					span.icon.fa.fa-angle-right
-

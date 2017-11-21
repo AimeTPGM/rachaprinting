@@ -8,7 +8,6 @@ angular.module('app')
     else if($routeParams.lang == 'en'){
       $scope.webContent = LanguageConfig.eng.howto
     }
-
 		$scope.steps = [
 		{
 			"description": "เลือกสินค้า&เช็คราคาหน้าเว็บ",

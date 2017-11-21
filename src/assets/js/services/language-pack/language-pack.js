@@ -2,7 +2,11 @@ angular.module('app')
 .service('LanguageConfig',
 	function(){
     // Thai
-    var howtoTH = {}
+    var howtoTH = {
+			languagepack_howto_000001:'4 ขั้นตอน สั่งง่าย',
+			languagepack_howto_000002:'สั่งพิมพ์ออนไลน์กับ',
+			languagepack_howto_000003:'ราชาการพิมพ์',
+		}
     var orderDetailTH = {
           summary: 'สรุปรายการสั่งซื้อของคุณ',
           mainOption: {
@@ -60,8 +64,14 @@ angular.module('app')
 			pieces:'ชิ้น',
 			bahtPerPcs:'บาทต่อชิ้น'
 		}
-    var ProductTH = {}
-    var reviewTH = {}
+    var ProductTH = {
+			languagepack_product_000001:'บริการสิ่งพิมพ์ของเรา',
+			languagepack_product_000002:'ราคาเริ่มต้นที่'
+		}
+    var reviewTH = {
+			languagepack_review_000001:'การันตีรีวิว',
+			languagepack_review_000001:'จากลูกค้า',
+		}
 
 		this.thai = {
       howto: howtoTH,
@@ -72,7 +82,11 @@ angular.module('app')
     }
 
     // English
-    var howtoEN = {}
+    var howtoEN = {
+			laugeagepack_howto_000001:'Easy 4 Steps',
+			laugeagepack_howto_000002:' Online printing service ',
+			laugeagepack_howto_000003:'with RachaPrinting',
+		}
     var orderDetailEN = {
           summary: 'Your Order Summary',
           mainOption: {
@@ -89,7 +103,7 @@ angular.module('app')
             }
           },
           print: {
-            property: 'Printing์',
+            property: 'Printing',
             print: {
               unselectedValue: 'Please select printing color option'
             },
@@ -129,8 +143,14 @@ angular.module('app')
 					pieces:'pcs.',
 					bahtPerPcs:'Bht/pc'
 				}
-    var ProductEN = {}
-    var reviewEN = {}
+    var ProductEN = {
+			languagepack_product_000001:'Our products',
+			languagepack_product_000002:'Starting price'
+		}
+    var reviewEN = {
+			languagepack_review_000001:'Garantee review by ',
+			languagepack_review_000002:'Customer'
+		}
     this.eng = {
       howto: howtoEN,
       orderDetail: orderDetailEN,
