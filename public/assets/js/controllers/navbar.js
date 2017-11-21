@@ -40,6 +40,10 @@ angular.module('app')
 			$window.location.href = '/#'+id
 		}
 
+		$scope.lang = function(lang){
+			$window.location.href = '/'+lang
+		}
+
 
 
 

@@ -40,6 +40,10 @@ angular.module('app')
 			ScrollService.scrollToID(id)
 		}
 
+		$scope.lang = function(lang){
+			$window.location.href = '/'+lang
+		}
+
 		
 		
 
