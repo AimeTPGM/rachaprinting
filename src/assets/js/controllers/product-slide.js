@@ -20,7 +20,7 @@ angular.module('app')
     $scope.currentProduct = 0
     var scrollPoint = 0
     $scope.order = function(id){
-      $window.location.href = $routeParams.lang+"/order/"+id+"/new"
+      $window.location.href = "/"+$routeParams.lang+"/order/"+id+"/new"
     }
     $scope.right = function(){
       if($scope.currentProduct == $scope.products.length-1)
