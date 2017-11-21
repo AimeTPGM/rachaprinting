@@ -15,5 +15,24 @@ angular.module('app')
       'credit' : '/views/credit.html',
     }
 
+    $scope.contacts = [
+      {
+        "text" : "(+66)812345678",
+        "icon" : "fa-phone"
+      },
+      {
+        "text" : "facebook",
+        "icon" : "fa-facebook"
+      },
+      {
+        "text" : "twitter",
+        "icon" : "fa-twitter"
+      },
+      {
+        "text" : "instagram",
+        "icon" : "fa-instagram"
+      }
+    ]
+
   }
 ]);

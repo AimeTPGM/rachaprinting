@@ -969,6 +969,23 @@ body {
       color: #7AC74F;
       font-weight: bold; }
 
+.contact-wrapper {
+  margin: 50px; }
+  .contact-wrapper .header {
+    color: #7AC74F; }
+  .contact-wrapper .content {
+    margin: auto;
+    width: fit-content;
+    font-size: 1.2em;
+    margin-top: 20px; }
+    .contact-wrapper .content .contact-item {
+      display: flex;
+      padding: 20px; }
+      .contact-wrapper .content .contact-item .icon {
+        margin-right: 20px;
+        font-size: 1.5em;
+        color: #00B900; }
+
 .row {
   display: flex; }
   .row .column {

@@ -26,6 +26,15 @@ div.about-us-wrapper
       | โบรชัวร์ รับพิมพ์แคตตาล็อค รับพิมพ์ใบปลิว รับทำโปสเตอร์ ออกแบบสื่อโฆษณา รับพิมพ์นิตยสาร รับพิมพ์วารสาร จัดพิมพ์หนังสือรุ่น รับทำปฏิทิน รับพิมพ์นามบัตร ส.ค.ส. กระดาษโน๊ต กล่องกระดาษ ฉลากสินค้า ถุงกระดาษ ถุงสัมมนา งานอิงค์เจ็ท เอกสารสำนักงาน ซองจดหมาย ซองเอกสาร หัวจดหมาย รับพิมพ์งานด่วน พิมพ์หนังสือ รับออกแบบฟิล์ม 4 สี เพลท 4 สีตัด รับพิมพ์นามบัตร รับพิมพ์การ์ด รับพิมพ์ออฟเซ็ท รับพิมพ์งานด่วน 
     span.hilight
       | บริการออกแบบสื่อสิ่งพิมพ์และรับพิมพ์งานพิมพ์ทุกชนิด
+div.contact-wrapper
+  div.header
+    | ติดต่อราชาการพิมพ์
+  div.content
+    div.contact-item(ng-repeat="contact in contacts")
+      div.icon
+        i(class="fa {{contact.icon}}")
+      div.contact
+        | {{contact.text}}
 
 div.gradient-green-on-top-bg(ng-include="templates.footer")
 div.base-green-bg(ng-include="templates.credit")
