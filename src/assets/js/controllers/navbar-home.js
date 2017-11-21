@@ -1,6 +1,6 @@
 angular.module('app')
-.controller('NavbarHomeCtrl',['$scope', '$http','$window', '$document', 'ScrollService',
-	function($scope, $http, $window, $document, ScrollService){
+.controller('NavbarHomeCtrl',['$scope', '$http','$window', '$document', 'ScrollService', '$routeParams',
+	function($scope, $http, $window, $document, ScrollService, $routeParams){
 		$scope.menus = [
 			{
 				'name': 'บริการของเรา',
@@ -38,6 +38,10 @@ angular.module('app')
 
 		$scope.scrollTo = function(id){
 			ScrollService.scrollToID(id)
+		}
+
+		$scope.lang = function(lang){
+			$window.location.href = '/'+lang
 		}
 
 		

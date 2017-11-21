@@ -1,6 +1,6 @@
 angular.module('app')
-.controller('NavbarCtrl',['$scope', '$http','$window', '$document',
-	function($scope, $http, $window, $document){
+.controller('NavbarCtrl',['$scope', '$http','$window', '$document', '$route',
+	function($scope, $http, $window, $document, $route){
 		$scope.menus = [
 			{
 				'name': 'บริการของเรา',
@@ -38,6 +38,10 @@ angular.module('app')
 
 		$scope.scrollTo = function(id){
 			$window.location.href = '/#'+id
+		}
+
+		$scope.lang = function(lang){
+			$window.location.href = '/'+lang
 		}
 
 

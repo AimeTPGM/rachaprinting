@@ -20,6 +20,10 @@ nav.navbar(ng-controller="NavbarHomeCtrl")
 				span.icon.is-left
 					i.fa.fa-search
 		div.navbar-item
-			img(ng-src="/assets/img/th-flag.png")
+			div.flag-wrapper
+				div(ng-click="lang('th')")
+					img(ng-src="/assets/img/th-flag.jpg")
+				div(ng-click="lang('en')")
+					img(ng-src="/assets/img/en-flag.png")
 
 	
