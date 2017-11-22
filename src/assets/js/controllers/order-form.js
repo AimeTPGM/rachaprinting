@@ -8,12 +8,9 @@ angular.module('app')
       OrderDetailService, ScrollService, AngularService,
       FormatFactory, PrintFactory, PrintColorFactory, PaperTypesFactory, RefinementFactory, DeliveryFactory, OrderFactory) {
 
-      if ($routeParams.lang == 'th') {
-        $scope.webContent = LanguageConfig.thai.orderForm
-      } else if ($routeParams.lang == 'en') {
-        $scope.webContent = LanguageConfig.eng.orderForm
-      }
-
+      var languagePack = LanguageConfig.setLanguage($routeParams.lang)
+   	 	$scope.webContent = languagePack.orderForm
+   	 	
       $scope.formats = FormatFactory.getFormats()
       $scope.prints = PrintFactory.getPrints()
       $scope.printColors = PrintColorFactory.getPrintColors()

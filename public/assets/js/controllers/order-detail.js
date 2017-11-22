@@ -4,12 +4,8 @@ angular.module('app')
 	function($scope, $http, $window, $timeout, $interval, $document, $routeParams,
 		OrderDetailService, ScrollService, LanguageConfig){
 		
-		if($routeParams.lang == 'th'){
-			$scope.webContent = LanguageConfig.thai.orderDetail
-		}
-		else if($routeParams.lang == 'en'){
-			$scope.webContent = LanguageConfig.eng.orderDetail
-		}
+		var languagePack = LanguageConfig.setLanguage($routeParams.lang)
+		$scope.webContent = languagePack.orderDetail
 		
 		$scope.orderDetail = OrderDetailService.orderDetail
 		$scope.countdown = 10
