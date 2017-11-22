@@ -19,3 +19,9 @@ nav.navbar(ng-controller="NavbarCtrl")
 				input.input(type="text", placeholder="{{webContent.languagepack_nav_000001}}")
 				span.icon.is-left
 					i.fa.fa-search
+		div.navbar-item
+			div.flag-wrapper
+				div(ng-click="lang('th')")
+					img(ng-src="/assets/img/th-flag.jpg")
+				div(ng-click="lang('en')")
+					img(ng-src="/assets/img/en-flag.png")

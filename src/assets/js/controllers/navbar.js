@@ -5,10 +5,12 @@ angular.module('app')
 		LanguageConfig){
 
 			if ($routeParams.lang == 'th') {
-				$scope.webContent = LanguageConfig.thai.nav
+				$scope.webContent = LanguageConfig.thai
 			} else if ($routeParams.lang == 'en') {
-				$scope.webContent = LanguageConfig.eng.nav
-			}
+				$scope.webContent = LanguageConfig.eng
+      }
+    
+    $scope.menus = $scope.webContent.nav
 
 		$scope.menus = $scope.webContent.menus
 		var showMobile = false
@@ -26,14 +28,13 @@ angular.module('app')
 				}
 			}
 
-		}
-
+    }
 		$scope.scrollTo = function(id){
 			$window.location.href = '/#'+id
 		}
 
-
-
-
+		$scope.lang = function(lang){
+			$window.location.href = '/'+lang
+		}
 	}
 ]);

@@ -15,6 +15,11 @@ app.config(['$routeProvider', '$locationProvider',
 			controller: 'OrderCtrl',
 			title : 'Order'
 		})
+		.when('/:lang/about',{
+			templateUrl: '/views/about-us.html',
+			controller: 'AboutUsCtrl',
+			title : 'Order'
+		})
 		
 		.otherwise({ redirectTo: '/th'});
 

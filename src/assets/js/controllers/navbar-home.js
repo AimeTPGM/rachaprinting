@@ -5,12 +5,12 @@ angular.module('app')
 		LanguageConfig,){
 
 		if ($routeParams.lang == 'th') {
-			$scope.webContent = LanguageConfig.thai.navhome
+			$scope.webContent = LanguageConfig
 		} else if ($routeParams.lang == 'en') {
-			$scope.webContent = LanguageConfig.eng.navhome
+			$scope.webContent = LanguageConfig.eng
 		}
 
-		$scope.menus = $scope.webContent.menus
+		$scope.menus = $scope.webContent.navhome.menus
 		var showMobile = false
 		$scope.navMobile = function(){
 			if(showMobile == false){
@@ -33,7 +33,9 @@ angular.module('app')
 		}
 
 
-
+		$scope.lang = function(lang){
+			$window.location.href = '/'+lang
+		}
 
 	}
 ]);
