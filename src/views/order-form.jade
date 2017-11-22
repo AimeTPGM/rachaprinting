@@ -27,6 +27,9 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 									| {{webContent.printOption.rachaDesignOption}}
 		div.property-wrapper
 			div.property-item
+				dropdown(topic="try", lists="tryList", item-click="showDir()", show="showTry", set-value="setValue")
+		div.property-wrapper
+			div.property-item
 				div.topic#size
 					| {{webContent.sizeOption.sizeOption}}
 				div.dropdown-wrapper

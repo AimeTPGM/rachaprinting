@@ -1,0 +1,23 @@
+div.topic
+  | {{topic}}
+  div.dropdown-wrapper
+    ul
+      li.dropdown-header
+        ul
+          //- li(ng-click="showFormat()")#selectedFormat
+          li(ng-click="itemClick()")
+            img
+            div.content
+              div.main
+                | b
+              div.sub
+                | a
+      li.dropdown-selector
+        ul
+          li(ng-repeat="list in lists", ng-show="show", ng-click="setValue(list.id)")
+            img
+            div.content
+              div.main
+                | {{list.name}}
+              div.sub
+                | {{list.description}}

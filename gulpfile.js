@@ -26,7 +26,7 @@ gulp.task('reloadSASS', ['font', 'sass'], function(){
   browserSync.reload()
 })
 
-gulp.task('reloadJS', ['js', 'controller', 'service','factory'], function(){
+gulp.task('reloadJS', ['js', 'controller', 'service', 'factory', 'directiveJS', 'directiveJADE'], function(){
   browserSync.reload()
 })
 
@@ -48,6 +48,17 @@ gulp.task('js', function(){
 gulp.task('controller', function(){
   return gulp.src('./src/assets/js/controllers/**/*.js')
   .pipe(gulp.dest('./public/assets/js/controllers'))
+})
+
+gulp.task('directiveJS', function(){
+  return gulp.src('./src/assets/js/directives/**/*.js')
+  .pipe(gulp.dest('./public/assets/js/directives'))
+})
+
+gulp.task('directiveJADE', function(){
+  return gulp.src('./src/assets/js/directives/**/*.jade')
+  .pipe(jade())
+  .pipe(gulp.dest('./public/assets/js/directives'))
 })
 
 gulp.task('service', function(){
@@ -82,12 +93,14 @@ gulp.task('img', function(){
   .pipe(gulp.dest('public/assets/img'))
 })
  
-gulp.task('watch', ['browserSync', 'index', 'jade', 'font', 'sass', 'js', 'controller', 'service', 'factory', 'img'], function () {
+gulp.task('watch', ['browserSync', 'index', 'jade', 'font', 'sass', 'js', 'controller', 'service', 'directiveJS', 'directiveJADE', 'factory', 'img'], function () {
   gulp.watch('./src/assets/sass/**/*.sass', ['reloadSASS'])
   gulp.watch('./src/assets/fonts/**/*.*', ['reloadSASS'])
   gulp.watch('./src/assets/js/**/*.js', ['reloadJS'])
   gulp.watch('./src/assets/js/controllers/**/*.*', ['reloadJS'])
   gulp.watch('./src/assets/js/services/**/*.*', ['reloadJS'])
+  gulp.watch('./src/assets/js/directives/**/*.js', ['reloadJS'])
+  gulp.watch('./src/assets/js/directives/**/*.jade', ['reloadJS'])
   gulp.watch('./src/assets/js/factories/**/*.*', ['reloadJS'])
   gulp.watch('./src/*.jade', ['reloadHTML'])
   gulp.watch('./src/views/**/*.jade', ['reloadHTML'])

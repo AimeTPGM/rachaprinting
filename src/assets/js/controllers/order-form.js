@@ -53,6 +53,20 @@ angular.module('app')
 
       var pleaseSelect = $scope.webContent.languagepack_orderform_000001
 
+      // Dir
+
+      $scope.try = "AAA"
+      $scope.tryList = PaperTypesFactory.getPaperTypes()
+      $scope.showTry = false
+      $scope.showDir = function(){
+        $scope.showTry = true
+      }
+      $scope.setValue = function(id){
+        console.log(id)
+        $scope.showTry = false
+      }
+
+      // jing jung
       $scope.setMainChoice = function(index) {
         if (index == 0) {
           addClassByID('choice1', 'selected')
