@@ -1,7 +1,7 @@
 div.example-wrapper(ng-controller="ExampleCtrl")
 	div.header
 		span.hilight
-			| ผลงานที่ผ่านมา
+			| {{webContent.languagepack_example_000001}}
 	div.mini-showcase-wrapper
 		div.img-wrapper(ng-repeat="example in examples", id="showcase{{$index}}")
 			| {{$index}}

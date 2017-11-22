@@ -1,24 +1,16 @@
 angular.module('app')
-.controller('NavbarHomeCtrl',['$scope', '$http','$window', '$document', 'ScrollService',
-	function($scope, $http, $window, $document, ScrollService){
-		$scope.menus = [
-			{
-				'name': 'บริการของเรา',
-				'section': 'service'
-			},
-			{
-				'name': 'วิธีสั่งซื้อ',
-				'section': 'howto'
-			},
-			{
-				'name': 'รีวิว',
-				'section': 'review'
-			},
-			{
-				'name': 'ผลงานที่ผ่านมา',
-				'section': 'example'
-			}
-		]
+.controller('NavbarHomeCtrl',['$scope', '$http','$window', '$document', 'ScrollService','$routeParams',
+	'LanguageConfig',
+	function($scope, $http, $window, $document, ScrollService, $routeParams,
+		LanguageConfig,){
+
+		if ($routeParams.lang == 'th') {
+			$scope.webContent = LanguageConfig.thai.navhome
+		} else if ($routeParams.lang == 'en') {
+			$scope.webContent = LanguageConfig.eng.navhome
+		}
+
+		$scope.menus = $scope.webContent.menus
 		var showMobile = false
 		$scope.navMobile = function(){
 			if(showMobile == false){
@@ -33,15 +25,15 @@ angular.module('app')
 					return false;
 				}
 			}
-			
+
 		}
 
 		$scope.scrollTo = function(id){
 			ScrollService.scrollToID(id)
 		}
 
-		
-		
+
+
 
 	}
 ]);

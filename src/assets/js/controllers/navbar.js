@@ -1,24 +1,16 @@
 angular.module('app')
-.controller('NavbarCtrl',['$scope', '$http','$window', '$document',
-	function($scope, $http, $window, $document){
-		$scope.menus = [
-			{
-				'name': 'บริการของเรา',
-				'section': 'service'
-			},
-			{
-				'name': 'วิธีสั่งซื้อ',
-				'section': 'howto'
-			},
-			{
-				'name': 'รีวิว',
-				'section': 'review'
-			},
-			{
-				'name': 'ผลงานที่ผ่านมา',
-				'section': 'example'
+.controller('NavbarCtrl',['$scope', '$http','$window', '$document','$routeParams',
+	'LanguageConfig',
+	function($scope, $http, $window, $document,$routeParams,
+		LanguageConfig){
+
+			if ($routeParams.lang == 'th') {
+				$scope.webContent = LanguageConfig.thai.nav
+			} else if ($routeParams.lang == 'en') {
+				$scope.webContent = LanguageConfig.eng.nav
 			}
-		]
+
+		$scope.menus = $scope.webContent.menus
 		var showMobile = false
 		$scope.navMobile = function(){
 			if(showMobile == false){

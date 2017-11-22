@@ -1,6 +1,48 @@
 angular.module('app')
 .service('LanguageConfig',
 	function(){
+		var navTH={
+			menus:[
+			{
+				'name': 'บริการของเรา',
+				'section': 'service'
+			},
+			{
+				'name': 'วิธีสั่งซื้อ',
+				'section': 'howto'
+			},
+			{
+				'name': 'รีวิว',
+				'section': 'review'
+			},
+			{
+				'name': 'ผลงานที่ผ่านมา',
+				'section': 'example'
+			}
+		],
+		languagepack_nav_000001:'ค้นหา',
+	}
+		var navhomeTH= {
+			menus:[
+			{
+				'name': 'บริการของเรา',
+				'section': 'service'
+			},
+			{
+				'name': 'วิธีสั่งซื้อ',
+				'section': 'howto'
+			},
+			{
+				'name': 'รีวิว',
+				'section': 'review'
+			},
+			{
+				'name': 'ผลงานที่ผ่านมา',
+				'section': 'example'
+			}
+		],
+		languagepack_navhome_000001:'ค้นหา',
+	}
     // Thai
     var howtoTH = {
 			languagepack_howto_000001:'4 ขั้นตอน สั่งง่าย',
@@ -166,7 +208,12 @@ angular.module('app')
 			deliveredDate:'วันรับสินค้า',
 			quantity:'ปริมาณ',
 			pieces:'ชิ้น',
-			bahtPerPcs:'บาทต่อชิ้น'
+			bahtPerPcs:'บาทต่อชิ้น',
+			languagepack_orderform_000001:{ name:'กำหนดเอง'},
+			languagepack_orderform_000002:'ออกแบบเอง',
+			languagepack_orderform_000003:'ให้ราชาปริ้นติ้งออกแบบให้',
+			languagepack_orderform_000004:'กำหนดเอง',
+			languagepack_orderform_000005:'กำหนดเอง',
 		}
     var ProductTH = {
 			languagepack_product_000001:'บริการสิ่งพิมพ์ของเรา',
@@ -176,16 +223,64 @@ angular.module('app')
 			languagepack_review_000001:'การันตีรีวิว',
 			languagepack_review_000001:'จากลูกค้า',
 		}
+		var exampleTH ={
+			languagepack_example_000001:'ผลงานที่ผ่านมา'
+		}
 
 		this.thai = {
+			nav:navTH,
+			navhome: navhomeTH,
       howto: howtoTH,
       orderDetail: orderDetailTH,
       orderForm: orderFormTH,
       product: ProductTH,
-      review: reviewTH
+      review: reviewTH,
+			example:exampleTH
     }
 
     // English
+		var navEN ={
+				menus:[
+				{
+					'name': 'Our Services',
+					'section': 'service'
+				},
+				{
+					'name': 'How to order',
+					'section': 'howto'
+				},
+				{
+					'name': 'Review by customer',
+					'section': 'review'
+				},
+				{
+					'name': 'Accomplishments',
+					'section': 'example'
+				}
+			],
+			languagepack_nav_000001:'Search',
+		}
+		var navhomeEN = {
+				menus:[
+				{
+					'name': 'Our Services',
+					'section': 'service'
+				},
+				{
+					'name': 'How to order',
+					'section': 'howto'
+				},
+				{
+					'name': 'Review by customer',
+					'section': 'review'
+				},
+				{
+					'name': 'Accomplishments',
+					'section': 'example'
+				}
+			],
+			languagepack_navhome_000001:'Search',
+		}
     var howtoEN = {
 			languagepack_howto_000001:'Easy 4 Steps',
 			languagepack_howto_000002:' Online printing service ',
@@ -349,7 +444,12 @@ angular.module('app')
 					deliveredDate:'Delivired date',
 					quantity:'Quantity',
 					pieces:'pcs.',
-					bahtPerPcs:'Bht/pc'
+					bahtPerPcs:'Bht/pc',
+					languagepack_orderform_000001:{ name:'My design'},
+					languagepack_orderform_000002:'My design',
+					languagepack_orderform_000003:'Let us design',
+					languagepack_orderform_000004:'My format',
+					languagepack_orderform_000005:'My size',
 				}
     var ProductEN = {
 			languagepack_product_000001:'Our products',
@@ -359,11 +459,17 @@ angular.module('app')
 			languagepack_review_000001:'Guarantee review by ',
 			languagepack_review_000002:'Customer'
 		}
+		var exampleEN ={
+			languagepack_example_000001:'Accomplishments',
+		}
     this.eng = {
+			nav:navEN,
+			navhome:navhomeEN,
       howto: howtoEN,
       orderDetail: orderDetailEN,
       orderForm: orderFormEN,
       product: ProductEN,
-      review: reviewEN
+      review: reviewEN,
+			example:exampleEN
     }
 })
