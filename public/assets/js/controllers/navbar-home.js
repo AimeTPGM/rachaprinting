@@ -6,6 +6,7 @@ angular.module('app')
 		
 		var languagePack = LanguageConfig.setLanguage($routeParams.lang)
     $scope.webContent = languagePack
+    console.log($scope.webContent)
 		$scope.menus = $scope.webContent.navhome.menus
 
 		var showMobile = false
