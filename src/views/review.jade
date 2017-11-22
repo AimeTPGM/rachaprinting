@@ -1,9 +1,9 @@
 div.review-wrapper(ng-controller="ReviewCtrl")
 	div.header
 		span.hilight
-			| การันตีรีวิว
+			| {{webContent.languagepack_review_000001}}
 		span.lowlight
-			|  จากลูกค้า
+			|  {{webContent.languagepack_review_000002}}
 	div.content-wrapper(ng-repeat="review in reviews")
 		div.img-wrapper(ng-class="{ active: $index == activeIndex }")
 			img(ng-src="{{review.customerImg}}")

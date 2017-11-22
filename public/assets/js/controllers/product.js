@@ -1,12 +1,9 @@
 angular.module('app')
 .controller('ProductCtrl',['$scope', '$http','$window', '$document', '$timeout', '$routeParams', 'ProductFactory', 'AngularServiceFactory', 'ScrollService', 'LanguageConfig',
 	function($scope, $http, $window, $document, $timeout, $routeParams, ProductFactory, AngularServiceFactory, ScrollService, LanguageConfig){
-  	if($routeParams.lang == 'th'){
-      $scope.webContent = LanguageConfig.thai.product
-    }
-    else if($routeParams.lang == 'eng'){
-      $scope.webContent = LanguageConfig.eng.product
-    }
+  	
+    var languagePack = LanguageConfig.setLanguage($routeParams.lang)
+    $scope.webContent = languagePack.product
 
   	$scope.products = ProductFactory.getProducts()
 		$scope.currentProduct = 0;

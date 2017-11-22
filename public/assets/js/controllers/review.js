@@ -2,12 +2,8 @@ angular.module('app')
 .controller('ReviewCtrl',['$scope', '$http','$window', '$timeout', '$routeParams', 'ReviewFactory', 'LanguageConfig',
 	function($scope, $http, $window, $timeout, $routeParams, ReviewFactory, LanguageConfig){
 
-		if($routeParams.lang == 'th'){
-      $scope.webContent = LanguageConfig.thai.review
-    }
-    else if($routeParams.lang == 'eng'){
-      $scope.webContent = LanguageConfig.eng.review
-    }
+		var languagePack = LanguageConfig.setLanguage($routeParams.lang)
+    $scope.webContent = languagePack.review
 
 		$scope.activeIndex = 0;
 		$scope.reviews = ReviewFactory.getReviews()
@@ -22,7 +18,7 @@ angular.module('app')
 		}
 
 		$timeout(reviewAutoChange, 5000);
-		
+
 		$scope.changeReview = function(index){
 			$scope.activeIndex = index;
 		}
