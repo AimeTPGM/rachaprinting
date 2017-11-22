@@ -2,12 +2,8 @@ angular.module('app')
 .controller('HowtoCtrl',['$scope', '$http','$window', '$routeParams', 'AngularServiceFactory', 'AngularService', 'LanguageConfig',
 	function($scope, $http, $window, $routeParams, AngularServiceFactory, AngularService, LanguageConfig){
 
-		if($routeParams.lang == 'th'){
-      $scope.webContent = LanguageConfig.thai.howto
-    }
-    else if($routeParams.lang == 'en'){
-      $scope.webContent = LanguageConfig.eng.howto
-    }
+		var languagePack = LanguageConfig.setLanguage($routeParams.lang)
+    $scope.webContent = languagePack.howto
 		$scope.steps = $scope.webContent.languagepack_howto_000004
 
 		var currentIndex = 0;

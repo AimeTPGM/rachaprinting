@@ -1,7 +1,10 @@
 angular.module('app')
-.controller('BannerCtrl',['$scope', '$http','$window', '$timeout', 'BannerFactory', 'LanguageConfig',
-	function($scope, $http, $window, $timeout, BannerFactory, LanguageConfig){
-		$scope.webContent = LanguageConfig.thai.banner
+.controller('BannerCtrl',['$scope', '$http','$window', '$timeout', 'BannerFactory', 'LanguageConfig', '$routeParams',
+	function($scope, $http, $window, $timeout, BannerFactory, LanguageConfig, $routeParams){
+
+		var languagePack = LanguageConfig.setLanguage($routeParams.lang)
+		$scope.webContent = languagePack.banner
+		
 		$scope.activeIndex = 0;
 		$scope.banners = BannerFactory.getBanners()
 		$scope.slideTo = function(index){

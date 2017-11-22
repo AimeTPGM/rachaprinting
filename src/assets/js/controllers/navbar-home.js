@@ -3,14 +3,11 @@ angular.module('app')
 	'LanguageConfig',
 	function($scope, $http, $window, $document, ScrollService, $routeParams,
 		LanguageConfig,){
-
-		if ($routeParams.lang == 'th') {
-			$scope.webContent = LanguageConfig
-		} else if ($routeParams.lang == 'en') {
-			$scope.webContent = LanguageConfig.eng
-		}
-
+		
+		var languagePack = LanguageConfig.setLanguage($routeParams.lang)
+    $scope.webContent = languagePack
 		$scope.menus = $scope.webContent.navhome.menus
+
 		var showMobile = false
 		$scope.navMobile = function(){
 			if(showMobile == false){

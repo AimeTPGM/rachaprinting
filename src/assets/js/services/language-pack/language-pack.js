@@ -1,6 +1,15 @@
 angular.module('app')
 .service('LanguageConfig',
 	function(){
+    this.selectedLanguage = 'th'
+    this.setLanguage = function(lang){
+      if (lang == 'th') {
+        return this.th
+      } else if (lang == 'en') {
+        return this.en
+      }
+    }
+
 		var navTH={
 			menus:[
 			{
@@ -227,7 +236,16 @@ angular.module('app')
 			languagepack_example_000001:'ผลงานที่ผ่านมา'
 		}
 
-		this.thai = {
+    var bannerTH = [
+      {
+        name: 'slide1'
+      },
+      {
+        name: 'slide2'
+      }
+    ]
+
+		this.th = {
 			nav:navTH,
 			navhome: navhomeTH,
       howto: howtoTH,
@@ -235,7 +253,8 @@ angular.module('app')
       orderForm: orderFormTH,
       product: ProductTH,
       review: reviewTH,
-			example:exampleTH
+			example: exampleTH,
+      banner: bannerTH
     }
 
     // English
@@ -462,7 +481,7 @@ angular.module('app')
 		var exampleEN ={
 			languagepack_example_000001:'Accomplishments',
 		}
-    this.eng = {
+    this.en = {
 			nav:navEN,
 			navhome:navhomeEN,
       howto: howtoEN,

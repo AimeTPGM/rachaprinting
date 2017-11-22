@@ -4,11 +4,8 @@ angular.module('app')
 	function($scope, $http, $window, $interval, AngularService, ExampleFactory, $routeParams,
 		LanguageConfig,){
 
-			if ($routeParams.lang == 'th') {
-        $scope.webContent = LanguageConfig.thai.example
-      } else if ($routeParams.lang == 'en') {
-        $scope.webContent = LanguageConfig.eng.example
-      }
+		var languagePack = LanguageConfig.setLanguage($routeParams.lang)
+    $scope.webContent = languagePack.example
 
 
 		$scope.examples = ExampleFactory.getExamples()
