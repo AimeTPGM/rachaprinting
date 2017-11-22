@@ -1,24 +1,18 @@
 angular.module('app')
-.controller('NavbarCtrl',['$scope', '$http','$window', '$document', '$route',
-	function($scope, $http, $window, $document, $route){
-		$scope.menus = [
-			{
-				'name': 'บริการของเรา',
-				'section': 'service'
-			},
-			{
-				'name': 'วิธีสั่งซื้อ',
-				'section': 'howto'
-			},
-			{
-				'name': 'รีวิว',
-				'section': 'review'
-			},
-			{
-				'name': 'ผลงานที่ผ่านมา',
-				'section': 'example'
-			}
-		]
+.controller('NavbarCtrl',['$scope', '$http','$window', '$document','$routeParams',
+	'LanguageConfig',
+	function($scope, $http, $window, $document,$routeParams,
+		LanguageConfig){
+
+			if ($routeParams.lang == 'th') {
+				$scope.webContent = LanguageConfig.thai
+			} else if ($routeParams.lang == 'en') {
+				$scope.webContent = LanguageConfig.eng
+      }
+    
+    $scope.menus = $scope.webContent.nav
+
+		$scope.menus = $scope.webContent.menus
 		var showMobile = false
 		$scope.navMobile = function(){
 			if(showMobile == false){
@@ -34,8 +28,7 @@ angular.module('app')
 				}
 			}
 
-		}
-
+    }
 		$scope.scrollTo = function(id){
 			$window.location.href = '/#'+id
 		}
@@ -43,9 +36,5 @@ angular.module('app')
 		$scope.lang = function(lang){
 			$window.location.href = '/'+lang
 		}
-
-
-
-
 	}
 ]);

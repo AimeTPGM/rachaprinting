@@ -5,7 +5,7 @@ angular.module('app')
 		if($routeParams.lang == 'th'){
       $scope.webContent = LanguageConfig.thai.review
     }
-    else if($routeParams.lang == 'eng'){
+    else if($routeParams.lang == 'en'){
       $scope.webContent = LanguageConfig.eng.review
     }
 
@@ -22,7 +22,7 @@ angular.module('app')
 		}
 
 		$timeout(reviewAutoChange, 5000);
-		
+
 		$scope.changeReview = function(index){
 			$scope.activeIndex = index;
 		}

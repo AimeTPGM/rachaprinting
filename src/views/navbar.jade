@@ -16,7 +16,7 @@ nav.navbar(ng-controller="NavbarCtrl")
 				| {{menu.name}}
 		div.navbar-search
 			p.control.has-icons-left
-				input.input(type="text", placeholder="ค้นหา")
+				input.input(type="text", placeholder="{{webContent.languagepack_nav_000001}}")
 				span.icon.is-left
 					i.fa.fa-search
 		div.navbar-item
@@ -25,5 +25,3 @@ nav.navbar(ng-controller="NavbarCtrl")
 					img(ng-src="/assets/img/th-flag.jpg")
 				div(ng-click="lang('en')")
 					img(ng-src="/assets/img/en-flag.png")
-
-	

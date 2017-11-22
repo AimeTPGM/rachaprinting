@@ -4,7 +4,7 @@ angular.module('app')
   	if($routeParams.lang == 'th'){
       $scope.webContent = LanguageConfig.thai.product
     }
-    else if($routeParams.lang == 'eng'){
+    else if($routeParams.lang == 'en'){
       $scope.webContent = LanguageConfig.eng.product
     }
 

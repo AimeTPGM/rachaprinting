@@ -1,6 +1,16 @@
 angular.module('app')
-.controller('ExampleCtrl',['$scope', '$http','$window', '$interval', 'AngularService', 'ExampleFactory',
-	function($scope, $http, $window, $interval, AngularService, ExampleFactory){
+.controller('ExampleCtrl',['$scope', '$http','$window', '$interval', 'AngularService', 'ExampleFactory','$routeParams',
+	'LanguageConfig',
+	function($scope, $http, $window, $interval, AngularService, ExampleFactory, $routeParams,
+		LanguageConfig,){
+
+			if ($routeParams.lang == 'th') {
+        $scope.webContent = LanguageConfig.thai.example
+      } else if ($routeParams.lang == 'en') {
+        $scope.webContent = LanguageConfig.eng.example
+      }
+
+
 		$scope.examples = ExampleFactory.getExamples()
 		var randomNumber = 0;
 		function random(){
@@ -12,6 +22,6 @@ angular.module('app')
 		$interval(function(){
 			random()
 		}, 1000)
-		
+
 	}
 ]);
