@@ -13,7 +13,7 @@ div.order-detail-wrapper(ng-controller="OrderDetailCtrl")
 			| {{webContent.format.property}}
 		div.value(ng-if="orderDetail.format.name !== undefined")
 			div
-				| {{orderDetail.format.name}} 
+				| {{orderDetail.format.name}}
 			div.undefined(ng-if="orderDetail.format.formatSize == undefined || orderDetail.format.formatSize.width == '' || orderDetail.format.formatSize.width == undefined || orderDetail.format.formatSize.height == '' || orderDetail.format.formatSize.height == undefined")
 				| {{webContent.format.size.unselectedValue}}
 			div(ng-if="orderDetail.format.formatSize !== undefined && orderDetail.format.formatSize.width !== '' && orderDetail.format.formatSize.height !== '' && orderDetail.format.formatSize.width !== undefined && orderDetail.format.formatSize.height !== undefined")
@@ -27,76 +27,76 @@ div.order-detail-wrapper(ng-controller="OrderDetailCtrl")
 			div(ng-if="orderDetail.printColor.name !== undefined", ng-click="scrollToID('printColor')")
 				| {{orderDetail.printColor.name}}
 			div(ng-if="orderDetail.print.name !== undefined", ng-click="scrollToID('print')")
-				| {{orderDetail.print.name}} 
+				| {{orderDetail.print.name}}
 			div.undefined(ng-if="orderDetail.print.name == undefined", ng-click="scrollToID('printColor')")
 				| {{webContent.print.printColor.unselectedValue}}
 			div.undefined(ng-if="orderDetail.printColor.name == undefined", ng-click="scrollToID('print')")
 				| {{webContent.print.print.unselectedValue}}
 	div.detail-wrapper(ng-click="scrollToID('paperType')")
 		div.property
-			| ประเภทกระดาษ
+			| {{webContent.languagepack_orderdetail_000001}}
 		div.value(ng-if="orderDetail.paperType.name !== undefined")
 			| {{orderDetail.paperType.name}}
 		div.value.undefined(ng-if="orderDetail.paperType.name == undefined")
-			| กรุณาเลือกประเภทกระดาษ
+			|  {{webContent.languagepack_orderdetail_000002}}
 	div.detail-wrapper(ng-click="scrollToID('refinement')")
 		div.property
-			| การเคลือบ
+			|  {{webContent.languagepack_orderdetail_000003}}
 		div.value(ng-if="orderDetail.refinement.name !== undefined")
 			| {{orderDetail.refinement.name}}
 		div.value.undefined(ng-if="orderDetail.refinement.name == undefined")
-			| กรุณาเลือกการเคลือบ
+			|  {{webContent.languagepack_orderdetail_000004}}
 	div.detail-wrapper(ng-click="scrollToID('delivery')")
 		div.property
-			| จัดส่งวันที่
+			|  {{webContent.languagepack_orderdetail_000005}}
 		div.value.undefined(ng-if="orderDetail.deliveryDayAndDate == undefined")
-			| กรุณาเลือกวันจัดส่ง
+			|  {{webContent.languagepack_orderdetail_000006}}
 		div.value(ng-if="orderDetail.deliveryDayAndDate !== undefined")
-			| {{orderDetail.deliveryDayAndDate.day}}ที่ {{orderDetail.deliveryDayAndDate.date}}
+			| {{orderDetail.deliveryDayAndDate.day}} {{webContent.languagepack_orderdetail_000007}} {{orderDetail.deliveryDayAndDate.date}}
 	div.total-wrapper(ng-if="orderDetail.price.fullprice == undefined", ng-click="scrollToID('delivery')")
 		span.undefined
-			| กรุณาเลือกราคาด้านบน
+			|  {{webContent.languagepack_orderdetail_000008}}
 	div.total-wrapper(ng-if="orderDetail.price.fullprice !== undefined", ng-click="scrollToID('delivery')")
 		span
-			| ค่าใช้จ่ายสุทธิ
+			|  {{webContent.languagepack_orderdetail_000009}}
 		span.total
 			| {{orderDetail.price.fullprice}}.00
 		span
-			| บาท
+			|  {{webContent.languagepack_orderdetail_000010}}
 	div.order-detail-personal-detail-form
 		div.header
-			| โปรดกรอกข้อมูลของคุณเพื่อให้เราติดต่อกลับ
+			| {{webContent.languagepack_orderdetail_000011}}
 		div.form-wrapper
 			div.form
-				input(type="text", placeholder="ชื่อ", ng-model="customer.name")
-				input(type="text", placeholder="เบอร์โทรศัพท์", ng-model="customer.phone")
-				input(type="text", placeholder="อีเมลล์", ng-model="customer.email")
+				input(type="text", placeholder="{{webContent.languagepack_orderdetail_000012}}", ng-model="customer.name")
+				input(type="text", placeholder="{{webContent.languagepack_orderdetail_000013}}", ng-model="customer.phone")
+				input(type="text", placeholder="{{webContent.languagepack_orderdetail_000014}}", ng-model="customer.email")
 				button(ng-click="placeOrder()")
-					| สั่งเลย
+					| {{webContent.languagepack_orderdetail_000015}}
 	div.overlay(ng-show="completedOrder")
 	div.summary-wrapper(ng-show="completedOrder")
 		div.header
 			div.icon
 				i.fa.fa-check-circle
 			div.content
-				| เราได้รับออเดอร์ของคุณเรียบร้อยแล้ว!
+				| {{webContent.languagepack_orderdetail_000016}}
 		div.content
-			span ขอบคุณค่ะ คุณ 
-			span.hilight {{orderDetail.customer.name}} 
-			span ราชาการพิมพ์ได้รับคำสั่งซื้อของคุณเรียบร้อยแล้ว 
+			span {{webContent.languagepack_orderdetail_000017}}
+			span.hilight {{orderDetail.customer.name}}
+			span {{webContent.languagepack_orderdetail_000018}}
 		div.content
-			span พนักงานของเราจะทำการติดต่อกลับไปทางเบอร์ 
-			span.hilight {{orderDetail.customer.phone}} 
-			span ภายใน 
-			span.hilight 24 
-			span ชั่วโมง
+			span {{webContent.languagepack_orderdetail_000019}}
+			span.hilight {{orderDetail.customer.phone}}
+			span {{webContent.languagepack_orderdetail_000020}}
+			span.hilight 24
+			span {{webContent.languagepack_orderdetail_000021}}
 		div.content
-			span (หากทำการติดต่อทางโทรศัพท์ไม่ได้ ราชาการพิมพ์จะติดต่อคุณผ่านทาง 
-			span.hilight {{orderDetail.customer.email}} 
-			span ค่ะ)
+			span {{webContent.languagepack_orderdetail_000022}}
+			span.hilight {{orderDetail.customer.email}}
+			span {{webContent.languagepack_orderdetail_000023}}
 		div.content
-			span.super-hilight ต้องการพิมพ์ด่วนที่สุด? 
-			span.hilight ติดต่อราชาการพิมพ์ได้ที่ 02-413-5661-4
+			span.super-hilight {{webContent.languagepack_orderdetail_000024}}
+			span.hilight {{webContent.languagepack_orderdetail_000025}}
 		div.content.end
 			span.lowlight
-				| กำลังพาคุณกลับไปที่หน้าหลักของเว็บราชาการพิมพ์ภายใน {{countdown}} วินาที...
+				| {{webContent.languagepack_orderdetail_000026}} {{countdown}} {{webContent.languagepack_orderdetail_000027}}
