@@ -1,0 +1,54 @@
+div.header-wrapper
+    | {{webContent.secondStep}}
+    //- div.header-triangle
+  div.order-step-wrapper
+    div.order-step-header-wrapper#delivery
+      div.order-step-header-row
+        div.order-step-header-column
+          div.icon
+            i.fa.fa-truck
+        div.order-step-header-column
+          div.sub-order-step-header
+            | {{webContent.deliveryLocation}}
+          div.order-step-header
+            | {{webContent.bangkok}}
+    div.delivery-choice-wrapper
+      div.row
+        div.column.blank.no-border
+        div.cloumn.table-header.dark-cell.main-table-header
+          | {{webContent.totalPrice}}
+      div.row
+        div.column.no-border
+        div.column.soft-table-header
+          | {{webContent.fastestDelivery}}
+        div.column.soft-table-header
+          | {{webContent.deliveredDate}}
+        div.column.soft-table-header
+          | {{webContent.deliveredDate}}
+        div.column.soft-table-header
+          | {{webContent.deliveredDate}}
+        div.column.soft-table-header
+          | {{webContent.deliveredDate}}
+      div.row
+        div.column.table-header.dark-cell
+          | {{webContent.quantity}}
+        div.column.delivery-date-wrapper(ng-repeat="dayAndDate in deliveryDayAndDate")
+          div.delivery-day
+            | {{dayAndDate.day}}
+          div.delivery-date
+            | {{dayAndDate.date}}
+      div.row(ng-repeat="item in prices")
+        div.column.table-header
+          | {{item.amount}} {{webContent.pieces}}
+        div.column(ng-if="$index !== 0")
+        div.column.urgent-delivery(ng-if="$index == 0")
+          | {{webContent.fastestDelivery}}
+        div.column.price(ng-repeat="price in item.priceOfDate")
+          div.price-wrapper
+            input(type="radio", id="price{{$parent.$index}}_{{$index}}", name="price", ng-click="setPrice($parent.$index,$index)")
+            label(for="price{{$parent.$index}}_{{$index}}")
+              div.full-and-per-one-wrapper
+                div.full-price
+                  | {{price.fullprice}} .-
+                div.per-one
+                  | {{price.perOne}} {{webContent.bahtPerPcs}}

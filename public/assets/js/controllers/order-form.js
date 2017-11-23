@@ -10,6 +10,11 @@ angular.module('app')
 
       var languagePack = LanguageConfig.setLanguage($routeParams.lang)
    	 	$scope.webContent = languagePack.orderForm
+
+      $scope.templates = {
+        step1: '/views/order-form-step1.html',
+        step2: '/views/order-form-step2.html'
+      }
    	 	
       $scope.formats = FormatFactory.getFormats()
       $scope.prints = PrintFactory.getPrints()
