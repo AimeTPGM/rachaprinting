@@ -70,7 +70,7 @@ div.header-wrapper
           div.input-wrapper
             input(type="number", min="1", value="1")
       div.property-item
-        div.topic#print
+        div.topic
           | การเข้าเล่ม
         dropdown(item-id="selectedBookBindingDropdown", selected="selectedBookBinding", lists="bookBindings", item-click="showBookBindingDropdown()", show="showBookBindingList", set-value="setBookBinding")
     div.property-wrapper
@@ -79,7 +79,7 @@ div.header-wrapper
           | {{webContent.sideOption}}
         radio(lists="prints", radio-name="'print'", radio-click="setPrint")
       div.property-item
-        div.topic#print
+        div.topic#printColor
           | {{webContent.sideOption}}
         radio(lists="printColors", radio-name="'printColor'", radio-click="setPrintColor")
     div.property-wrapper
