@@ -343,7 +343,7 @@ angular.module('app')
       $scope.selectedStickerCutting = pleaseSelect
       $scope.showStickerCuttingList = false
       $scope.showStickerCutting = function(){
-        if($scope.showStickerShapeList) $scope.showStickerCuttingList = false
+        if($scope.showStickerCuttingList) $scope.showStickerCuttingList = false
         else $scope.showStickerCuttingList = true
       }
       $scope.setStickerCutting = function(id, index){
