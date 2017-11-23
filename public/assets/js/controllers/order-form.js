@@ -30,6 +30,47 @@ angular.module('app')
           description: 'wiring'
         }
       ]
+      $scope.pinchings = [
+        {
+          id: 1,
+          name: 'เจาะรูมุมบนซ้าย',
+          description: 'เจาะรูหนึ่งรู ตรงมุมบนซ้ายของป้ายห้อย'
+        },
+        {
+          id: 2,
+          name: 'เจาะรูมุมบนตรงกลาง',
+          description: 'เจาะรูหนึ่งรู ด้านบนตรงกลางของป้ายห้อย'
+        },
+        {
+          id: 3,
+          name: 'เจาะรูมุมบนขวา',
+          description: 'เจาะรูหนึ่งรู ตรงมุมบนขวาของป้ายห้อย'
+        }
+      ]
+      $scope.decorations = [
+        {
+          id: 1,
+          name: 'พับขอบและเจาะตาไก่',
+          description: 'พับขอบและเจาะตาไก่ เพิ่มความทนทาน'
+        }
+      ]
+      $scope.stringRopes = [
+        {
+          id: 1,
+          name: 'ไม่มีเชือก',
+          description: 'ไม่มีเชือกสำหรับป้ายห้อย (ในกรณีที่คุณมีเชือกอยู่แล้ว)'
+        },
+        {
+          id: 2,
+          name: 'มีเชือก แต่ยังไม่ร้อยเชือก',
+          description: 'มีเชือกสำหรับป้ายห้อย ให้คุณสามารถไปร้อยได้เอง'
+        },
+        {
+          id: 3,
+          name: 'ร้อยเชือกเรียบร้อย',
+          description: 'มีเชือกสำหรับคล้องป้ายชื่อและร้อยเชือกให้เรียบร้อยสวยงามจากโรงพิมพ์'
+        }
+      ]
 
       var order = OrderDetailService.orderDetail
 
@@ -192,6 +233,7 @@ angular.module('app')
       }
 
       // BookBinding
+      // TODO: add active class by id 
       $scope.selectedBookBinding = pleaseSelect
       $scope.showBookBindingList = false
       $scope.showBookBindingDropdown = function(){
@@ -202,8 +244,49 @@ angular.module('app')
         $scope.selectedBookBinding = $scope.bookBindings[index]
         order.bookBinding = $scope.bookBindings[index]
         console.log(order)
-        addActiveClassByID('selectedBookBindingDropdown')
         $scope.showBookBindingList = false
+      }
+
+      // Pinching
+      $scope.selectedPinching = pleaseSelect
+      $scope.showPinchingList = false
+      $scope.showPinching = function(){
+        if($scope.showPinchingList) $scope.showPinchingList = false
+        else $scope.showPinchingList = true
+      }
+      $scope.setPinching = function(id, index){
+        $scope.selectedPinching = $scope.pinchings[index]
+        order.pinching = $scope.pinchings[index]
+        console.log(order)
+        $scope.showPinchingList = false
+      }
+
+      // Pinching
+      $scope.selectedDecoration = pleaseSelect
+      $scope.showDecorationList = false
+      $scope.showDecoration = function(){
+        if($scope.showDecorationList) $scope.showDecorationList = false
+        else $scope.showDecorationList = true
+      }
+      $scope.setDecoration = function(id, index){
+        $scope.selectedDecoration = $scope.decorations[index]
+        order.decoration = $scope.decorations[index]
+        console.log(order)
+        $scope.showDecorationList = false
+      }
+
+      // StringRopes
+      $scope.selectedStringRope = pleaseSelect
+      $scope.showStringRopeList = false
+      $scope.showStringRope = function(){
+        if($scope.showStringRopeList) $scope.showStringRopeList = false
+        else $scope.showStringRopeList = true
+      }
+      $scope.setStringRope = function(id, index){
+        $scope.selectedStringRope = $scope.stringRopes[index]
+        order.stringRope = $scope.stringRopes[index]
+        console.log(order)
+        $scope.showStringRopeList = false
       }
 
     }

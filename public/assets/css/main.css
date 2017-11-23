@@ -137,7 +137,8 @@ body {
           width: 50px;
           background: #333; }
         .form .dropdown-wrapper ul .dropdown-selector li .content {
-          margin-left: 10px; }
+          margin-left: 10px;
+          width: 75%; }
           .form .dropdown-wrapper ul .dropdown-selector li .content .main {
             font-weight: bold; }
           .form .dropdown-wrapper ul .dropdown-selector li .content .sub {
