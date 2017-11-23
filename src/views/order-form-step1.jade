@@ -97,31 +97,25 @@ div.header-wrapper
         div.topic#pinching
           | การเจาะรู
         dropdown(item-click="showPinching()",item-id="selectedPinching", selected="selectedPinching", lists="pinchings", set-value="setPinching", show="showPinchingList")
+    div.property-wrapper
       div.property-item
         div.topic#decoration
           | การตกแต่ง
         dropdown(item-click="showDecoration()",item-id="selectedDecoration", selected="selectedDecoration", lists="decorations", set-value="setDecoration", show="showDecorationList")
     div.property-wrapper
-      div.property-item#stringRope
-        div.topic
+      div.property-item
+        div.topic#stringRope
           | การร้อยเชือก
         dropdown(item-click="showStringRope()",item-id="selectedStringRope", selected="selectedStringRope", lists="stringRopes", set-value="setStringRope", show="showStringRopeList")
-      div.property-item
-        div.topic#refinement
-          | การตกแต่ง
-        //- TODO
-        //- dropdown(item-click="showRefinement()",item-id="selectedRefinement", selected="selectedRefinement", lists="refinements", set-value="setRefinement", show="showRefinementList")
     div.property-wrapper
       div.property-item
-        div.topic#paperType
+        div.topic#stickerShape
           | รูปทรงสติ๊กเกอร์
-        //- TODO
-        //- dropdown(item-click="showRefinement()",item-id="selectedRefinement", selected="selectedRefinement", lists="refinements", set-value="setRefinement", show="showRefinementList")
+        dropdown(item-click="showStickerShape()",item-id="selectedStickerShape", selected="selectedStickerShape", lists="stickerShapes", set-value="setStickerShape", show="showStickerShapeList")
       div.property-item
         div.topic#refinement
-          | Sticker Delivery
-        //- TODO
-        //- dropdown(item-click="showRefinement()",item-id="selectedRefinement", selected="selectedRefinement", lists="refinements", set-value="setRefinement", show="showRefinementList")
+          | การตัดสติ๊กเกอร์
+        dropdown(item-click="showStickerCutting()",item-id="selectedStickerCutting", selected="selectedStickerCutting", lists="stickerCuttings", set-value="setStickerCutting", show="showStickerCuttingList")
     div.property-wrapper
       div.property-item
         div.topic#paperType

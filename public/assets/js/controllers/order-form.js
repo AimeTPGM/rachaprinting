@@ -72,6 +72,42 @@ angular.module('app')
         }
       ]
 
+      $scope.stickerShapes = [
+        {
+          id: 1,
+          name: 'สี่เหลี่ยม',
+          description: 'พิมพ์สติ๊กเกอร์สี่เหลี่ยม'
+        },
+        {
+          id: 2,
+          name: 'วงกลม/วงรี',
+          description: 'พิมพ์สติ๊กเกอร์แบบวงกลมหรือวงรี'
+        },
+        {
+          id: 3,
+          name: 'ไดคัท',
+          description: 'พิมพ์สติ๊กเกอร์เป็นรูปร่างตามที่คุณต้องการ'
+        }
+      ]
+
+      $scope.stickerCuttings = [
+        {
+          id: 1,
+          name: 'ติดไว้บนกระดาษ A4/A3',
+          description: 'ติดไว้บนกระดาษ A3 หรือ A4'
+        },
+        {
+          id: 2,
+          name: 'ตัดออกเป็นชิ้นๆ',
+          description: 'ตัดสติ๊กออกเป็นชิ้น'
+        },
+        {
+          id: 3,
+          name: 'ตัดตามรูปร่าง',
+          description: 'ตัดสติ๊กเกอร์ตามรูปร่าง'
+        }
+      ]
+
       var order = OrderDetailService.orderDetail
 
       function addActiveClassByID(id) {
@@ -287,6 +323,34 @@ angular.module('app')
         order.stringRope = $scope.stringRopes[index]
         console.log(order)
         $scope.showStringRopeList = false
+      }
+
+      // StickerShape
+      $scope.selectedStickerShape = pleaseSelect
+      $scope.showStickerShapeList = false
+      $scope.showStickerShape = function(){
+        if($scope.showStickerShapeList) $scope.showStickerShapeList = false
+        else $scope.showStickerShapeList = true
+      }
+      $scope.setStickerShape = function(id, index){
+        $scope.selectedStickerShape = $scope.stickerShapes[index]
+        order.stickerShape = $scope.stickerShapes[index]
+        console.log(order)
+        $scope.showStickerShapeList = false
+      }
+
+      // StickerCutting
+      $scope.selectedStickerCutting = pleaseSelect
+      $scope.showStickerCuttingList = false
+      $scope.showStickerCutting = function(){
+        if($scope.showStickerShapeList) $scope.showStickerCuttingList = false
+        else $scope.showStickerCuttingList = true
+      }
+      $scope.setStickerCutting = function(id, index){
+        $scope.selectedStickerCutting = $scope.stickerCuttings[index]
+        order.stickerCuttings = $scope.stickerCuttings[index]
+        console.log(order)
+        $scope.showStickerCuttingList = false
       }
 
     }
