@@ -353,5 +353,10 @@ angular.module('app')
         $scope.showStickerCuttingList = false
       }
 
+      // Refactor
+      // function dropdownFunc(selected, showList, showFunc, setSelectedFunc, itemList){
+        
+      // }
+
     }
   ]);
