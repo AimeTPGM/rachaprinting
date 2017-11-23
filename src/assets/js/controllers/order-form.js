@@ -18,6 +18,13 @@ angular.module('app')
       $scope.refinements = RefinementFactory.getRefinements()
       $scope.deliveryDayAndDate = DeliveryFactory.getAvailableDeliveryDayAndDates()
       $scope.prices = OrderFactory.getPrices()
+      $scope.bookBindings = [
+        {
+          id: 1,
+          name: 'Wire-o-binding',
+          description: 'wiring'
+        }
+      ]
 
       var order = OrderDetailService.orderDetail
 
@@ -53,20 +60,6 @@ angular.module('app')
 
       var pleaseSelect = $scope.webContent.languagepack_orderform_000001
 
-      // Dir
-
-      $scope.try = "AAA"
-      $scope.tryList = PaperTypesFactory.getPaperTypes()
-      $scope.showTry = false
-      $scope.showDir = function(){
-        $scope.showTry = true
-      }
-      $scope.setValue = function(id){
-        console.log(id)
-        $scope.showTry = false
-      }
-
-      // jing jung
       $scope.setMainChoice = function(index) {
         if (index == 0) {
           addClassByID('choice1', 'selected')
@@ -180,9 +173,8 @@ angular.module('app')
 
       // PaperType
       $scope.selectedPaperType = pleaseSelect
-      $scope.showPaperType = true
       $scope.showPaperTypeList = false
-      $scope.showSelectPaperType = function() {
+      $scope.showSelectPaperTypeDropdown = function() {
         if ($scope.showPaperTypeList == true) $scope.showPaperTypeList = false
         else if ($scope.showPaperTypeList == false) $scope.showPaperTypeList = true
       }
@@ -192,6 +184,21 @@ angular.module('app')
         order.paperType = $scope.paperTypes[index]
         addActiveClassByID('selectedPaperType')
         $scope.showPaperTypeList = false
+      }
+
+      // BookBinding
+      $scope.selectedBookBinding = pleaseSelect
+      $scope.showBookBindingList = false
+      $scope.showBookBindingDropdown = function(){
+        if($scope.showBookBindingList) $scope.showBookBindingList = false
+        else $scope.showBookBindingList = true
+      }
+      $scope.setBookBinding = function(id, index){
+        $scope.selectedBookBinding = $scope.bookBindings[index]
+        order.bookBinding = $scope.bookBindings[index]
+        console.log(order)
+        addActiveClassByID('selectedBookBindingDropdown')
+        $scope.showBookBindingList = false
       }
 
     }

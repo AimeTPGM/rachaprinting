@@ -27,9 +27,6 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 									| {{webContent.printOption.rachaDesignOption}}
 		div.property-wrapper
 			div.property-item
-				dropdown(topic="try", lists="tryList", item-click="showDir()", show="showTry", set-value="setValue")
-		div.property-wrapper
-			div.property-item
 				div.topic#size
 					| {{webContent.sizeOption.sizeOption}}
 				div.dropdown-wrapper
@@ -74,28 +71,9 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 					div.input-wrapper
 						input(type="number", min="1", value="1")
 			div.property-item
-				div.topic#paperType
+				div.topic#print
 					| การเข้าเล่ม
-				div.dropdown-wrapper
-					ul
-						li.dropdown-header
-							ul
-								li(ng-click="showSelectPaperType()")#selectedPaperType
-									img
-									div.content
-										div.main
-											| {{selectedPaperType.name}} 
-										div.sub
-											| {{selectedPaperType.description}} 
-						li.dropdown-selector
-							ul
-								li(ng-repeat="list in paperTypes | orderBy:'id'", ng-click="setPaperType(list.id, $index)", ng-show="showPaperTypeList")
-									img
-									div.content
-										div.main
-											| {{list.name}}
-										div.sub
-											| {{list.description}}
+				dropdown(item-id="selectedBookBindingDropdown", selected="selectedBookBinding", lists="bookBindings", item-click="showBookBindingDropdown()", show="showBookBindingList", set-value="setBookBinding")
 		div.property-wrapper
 			div.property-item
 				div.topic#print
@@ -127,28 +105,10 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 										| {{list.description}}
 		div.property-wrapper
 			div.property-item
+				//- Paper Type
 				div.topic#paperType
 					| {{webContent.paperOption}}
-				div.dropdown-wrapper
-					ul
-						li.dropdown-header
-							ul
-								li(ng-click="showSelectPaperType()")#selectedPaperType
-									img
-									div.content
-										div.main
-											| {{selectedPaperType.name}}
-										div.sub
-											| {{selectedPaperType.description}}
-						li.dropdown-selector
-							ul
-								li(ng-repeat="list in paperTypes | orderBy:'id'", ng-click="setPaperType(list.id, $index)", ng-show="showPaperTypeList")
-									img
-									div.content
-										div.main
-											| {{list.name}}
-										div.sub
-											| {{list.description}}
+				dropdown(item-id="selectedPaperType", selected="selectedPaperType", lists="paperTypes", item-click="showSelectPaperTypeDropdown()", show="showPaperTypeList", set-value="setPaperType")
 			div.property-item
 				div.topic#refinement
 					| {{webContent.refinementOption}}

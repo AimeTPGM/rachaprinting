@@ -2,15 +2,17 @@ angular.module('app')
 .directive('dropdown',
   function(){
     function link(scope){
+      
     }
     return {
       restrict: 'EAC',
       scope: {
-        topic: '=',
         lists: '=',
         itemClick: '&',
+        selected: '=',
         show: '=',
-        setValue: '='
+        setValue: '=',
+        itemId: '='
       },
       templateUrl: '/assets/js/directives/dropdown.html',
       link: link
