@@ -208,7 +208,7 @@ angular.module('app')
       quantity:'ปริมาณ',
       pieces:'ชิ้น',
       bahtPerPcs:'บาทต่อชิ้น',
-      languagepack_orderform_000001:{ name:'กำหนดเอง'},
+      languagepack_orderform_000001:{ name:'กรุณาเลือก'},
       languagepack_orderform_000002:'ออกแบบเอง',
       languagepack_orderform_000003:'ให้ราชาปริ้นติ้งออกแบบให้',
       languagepack_orderform_000004:'กำหนดเอง',

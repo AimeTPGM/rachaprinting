@@ -1,0 +1,11 @@
+div.selector
+  div.control(ng-repeat="list in lists")
+    div.option-content-wrapper
+      input(type="radio", name="{{radioName}}", id="{{radioName}}{{$index}}", ng-click="radioClick($index)")
+      label(for="{{radioName}}{{$index}}")
+        img(ng-src="")
+        div.content
+          div.main
+            | {{list.name}}
+          div.sub
+            | {{list.description}}
