@@ -112,167 +112,42 @@ div.order-form-wrapper(ng-controller="OrderFormCtrl")
 			div.property-item
 				div.topic#refinement
 					| {{webContent.refinementOption}}
-				div.dropdown-wrapper
-					ul
-						li.dropdown-header
-							ul
-								li(ng-click="showRefinement()")#selectedRefinement
-									img
-									div.content
-										div.main
-											| {{selectedRefinement.name}}
-										div.sub
-											| {{selectedRefinement.description}}
-						li.dropdown-selector
-							ul
-								li(ng-repeat="list in refinements | orderBy:'id'", ng-click="setRefinement(list.id, $index)", ng-show="showRefinementList")
-									img
-									div.content
-										div.main
-											| {{list.name}}
-										div.sub
-											| {{list.description}}
+				dropdown(item-click="showRefinement()",item-id="selectedRefinement", selected="selectedRefinement", lists="refinements", set-value="setRefinement", show="showRefinementList")
 		div.property-wrapper
 			div.property-item
 				div.topic#paperType
 					| การเจาะรู
-				div.dropdown-wrapper
-					ul
-						li.dropdown-header
-							ul
-								li(ng-click="showSelectPaperType()")#selectedPaperType
-									img
-									div.content
-										div.main
-											| {{selectedPaperType.name}} 
-										div.sub
-											| {{selectedPaperType.description}} 
-						li.dropdown-selector
-							ul
-								li(ng-repeat="list in paperTypes | orderBy:'id'", ng-click="setPaperType(list.id, $index)", ng-show="showPaperTypeList")
-									img
-									div.content
-										div.main
-											| {{list.name}}
-										div.sub
-											| {{list.description}}
+				//- TODO
+				//- dropdown(item-click="showRefinement()",item-id="selectedRefinement", selected="selectedRefinement", lists="refinements", set-value="setRefinement", show="showRefinementList")
 			div.property-item
 				div.topic#refinement
 					| การตกแต่ง
-				div.dropdown-wrapper
-					ul
-						li.dropdown-header
-							ul
-								li(ng-click="showRefinement()")#selectedRefinement
-									img
-									div.content
-										div.main
-											| {{selectedRefinement.name}} 
-										div.sub
-											| {{selectedRefinement.description}} 
-						li.dropdown-selector
-							ul
-								li(ng-repeat="list in refinements | orderBy:'id'", ng-click="setRefinement(list.id, $index)", ng-show="showRefinementList")
-									img
-									div.content
-										div.main
-											| {{list.name}}
-										div.sub
-											| {{list.description}}
+				//- TODO
+				//- dropdown(item-click="showRefinement()",item-id="selectedRefinement", selected="selectedRefinement", lists="refinements", set-value="setRefinement", show="showRefinementList")
 		div.property-wrapper
 			div.property-item
 				div.topic#paperType
 					| รูปทรงสติ๊กเกอร์
-				div.dropdown-wrapper
-					ul
-						li.dropdown-header
-							ul
-								li(ng-click="showSelectPaperType()")#selectedPaperType
-									img
-									div.content
-										div.main
-											| {{selectedPaperType.name}} 
-										div.sub
-											| {{selectedPaperType.description}} 
-						li.dropdown-selector
-							ul
-								li(ng-repeat="list in paperTypes | orderBy:'id'", ng-click="setPaperType(list.id, $index)", ng-show="showPaperTypeList")
-									img
-									div.content
-										div.main
-											| {{list.name}}
-										div.sub
-											| {{list.description}}
+				//- TODO
+				//- dropdown(item-click="showRefinement()",item-id="selectedRefinement", selected="selectedRefinement", lists="refinements", set-value="setRefinement", show="showRefinementList")
 			div.property-item
 				div.topic#refinement
 					| Sticker Delivery
-				div.dropdown-wrapper
-					ul
-						li.dropdown-header
-							ul
-								li(ng-click="showRefinement()")#selectedRefinement
-									img
-									div.content
-										div.main
-											| {{selectedRefinement.name}} 
-										div.sub
-											| {{selectedRefinement.description}} 
-						li.dropdown-selector
-							ul
-								li(ng-repeat="list in refinements | orderBy:'id'", ng-click="setRefinement(list.id, $index)", ng-show="showRefinementList")
-									img
-									div.content
-										div.main
-											| {{list.name}}
-										div.sub
-											| {{list.description}}
+				//- TODO
+				//- dropdown(item-click="showRefinement()",item-id="selectedRefinement", selected="selectedRefinement", lists="refinements", set-value="setRefinement", show="showRefinementList")
 		div.property-wrapper
 			div.property-item
 				div.topic#paperType
 					| การพิมพ์ปก
-				div.dropdown-wrapper
-					ul
-						li.dropdown-header
-							ul
-								li(ng-click="showSelectPaperType()")#selectedPaperType
-									img
-									div.content
-										div.main
-											| {{selectedPaperType.name}} 
-										div.sub
-											| {{selectedPaperType.description}} 
-						li.dropdown-selector
-							ul
-								li(ng-repeat="list in paperTypes | orderBy:'id'", ng-click="setPaperType(list.id, $index)", ng-show="showPaperTypeList")
-									img
-									div.content
-										div.main
-											| {{list.name}}
-										div.sub
-											| {{list.description}}
+				//- TODO
+				//- dropdown(item-click="showRefinement()",item-id="selectedRefinement", selected="selectedRefinement", lists="refinements", set-value="setRefinement", show="showRefinementList")
 			div.property-item
 				div.topic#refinement
 					| การพิมพ์ด้านใน
-				div.dropdown-wrapper
-					ul
-						li.dropdown-header
-							ul
-								li(ng-click="showRefinement()")#selectedRefinement
-									img
-									div.content
-										div.main
-											| {{selectedRefinement.name}} 
-										div.sub
-											| {{selectedRefinement.description}} 
-						li.dropdown-selector
-							ul
-								li(ng-repeat="list in refinements | orderBy:'id'", ng-click="setRefinement(list.id, $index)", ng-show="showRefinementList")
-									img
-									div.content
-										div.main
-											| {{list.name}}
-										div.sub
-											| {{list.description}}
+				//- TODO
+				//- dropdown(item-click="showRefinement()",item-id="selectedRefinement", selected="selectedRefinement", lists="refinements", set-value="setRefinement", show="showRefinementList")
+
+	//- Delivery
 	div.order-step-separator
 	div.header-wrapper
 		| {{webContent.secondStep}}
