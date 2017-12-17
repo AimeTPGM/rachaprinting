@@ -29,6 +29,6 @@ angular.module('app')
       AngularServiceFactory.selectByID(id).attr('required', 'true')
     }
     this.removeRequiredByID = function(id){
-      AngularServiceFactory.selectByID(id).attr('required', 'falses')
+      AngularServiceFactory.selectByID(id).attr('required', 'false')
     }
 })

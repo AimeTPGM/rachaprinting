@@ -1,15 +1,16 @@
 angular.module('app')
 .controller('OrderDetailCtrl',['$scope', '$http','$window', '$timeout', '$interval', '$document', '$routeParams', 'AngularService',
-	'OrderDetailService', 'ScrollService', 'LanguageConfig',
-	function($scope, $http, $window, $timeout, $interval, $document, $routeParams, AngularService,
-		OrderDetailService, ScrollService, LanguageConfig){
-		
-		var languagePack = LanguageConfig.setLanguage($routeParams.lang)
-		$scope.webContent = languagePack.orderDetail
-		
-		$scope.orderDetail = OrderDetailService.orderDetail
-		$scope.countdown = 10
-		$scope.customer = {}
+
+  'OrderDetailService', 'ScrollService', 'LanguageConfig',
+  function($scope, $http, $window, $timeout, $interval, $document, $routeParams, AngularService,
+    OrderDetailService, ScrollService, LanguageConfig){
+    
+    var languagePack = LanguageConfig.setLanguage($routeParams.lang)
+    $scope.webContent = languagePack.orderDetail
+    
+    $scope.orderDetail = OrderDetailService.orderDetail
+    $scope.countdown = 10
+    $scope.customer = {}
     $scope.placeholder = {
       name: 'ชื่อ',
       email: 'อีเมลล์',
@@ -66,9 +67,8 @@ angular.module('app')
         }
       }
 		}
-
-		$scope.scrollToID = function(id){
-			ScrollService.scrollToID(id)
-		}
-	}
+    $scope.scrollToID = function(id){
+      ScrollService.scrollToID(id)
+    }
+  }
 ]);
