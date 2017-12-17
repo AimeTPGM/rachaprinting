@@ -29,7 +29,7 @@ div.footer-wrapper(ng-controller="FooterCtrl")
 			div.content
 				div.social-icon-wrapper
 					div.social-icon(ng-repeat="contact in contacts")
-						a
+						a(href="{{contact.link}}")
 							div.contact-icon
 								i.icon
 									span(class="fa {{contact.icon}}")

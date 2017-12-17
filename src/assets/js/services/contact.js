@@ -7,7 +7,15 @@ angular.module('app')
         "icon" : "fa-building"
       },
       {
-        "text" : "02-266-3738-40",
+        "text" : "02-266-3738",
+        "icon" : "fa-phone"
+      },
+      {
+        "text" : "02-266-3739",
+        "icon" : "fa-phone"
+      },
+      {
+        "text" : "02-266-3740",
         "icon" : "fa-phone"
       },
       {
@@ -20,11 +28,13 @@ angular.module('app')
       },
       {
         "text" : "facebook",
-        "icon" : "fa-facebook"
+        "icon" : "fa-facebook",
+        "link" : "https://www.facebook.com"
       },
       {
         "text" : "twitter",
-        "icon" : "fa-twitter"
+        "icon" : "fa-twitter",
+        "link" : "https://www.twitter.com"
       },
       {
         "text" : "instagram",

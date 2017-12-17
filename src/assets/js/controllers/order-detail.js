@@ -40,7 +40,7 @@ angular.module('app')
         }
         if($scope.customer.phone == null || $scope.customer.phone == '') {
           AngularService.addRequiredByID('customerPhone')
-          $scope.placeholder.phone = 'กรุณาใสเบอร์โทรศัพท์ที่ติดต่อได้'
+          $scope.placeholder.phone = 'กรุณาใส่เบอร์โทรศัพท์ที่ติดต่อได้'
 
         } else {
           AngularService.removeRequiredByID('customerPhone')
