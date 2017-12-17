@@ -68,9 +68,9 @@ div.order-detail-wrapper(ng-controller="OrderDetailCtrl")
 			| {{webContent.languagepack_orderdetail_000011}}
 		div.form-wrapper
 			div.form
-				input(type="text", placeholder="{{webContent.languagepack_orderdetail_000012}}", ng-model="customer.name")
-				input(type="text", placeholder="{{webContent.languagepack_orderdetail_000013}}", ng-model="customer.phone")
-				input(type="text", placeholder="{{webContent.languagepack_orderdetail_000014}}", ng-model="customer.email")
+				input#customerName(type="text", placeholder="{{placeholder.name}}", ng-model="customer.name")
+				input#customerPhone(type="text", placeholder="{{placeholder.phone}}", ng-model="customer.phone")
+				input#customerEmail(type="text", placeholder="{{placeholder.email}}", ng-model="customer.email")
 				button(ng-click="placeOrder()")
 					| {{webContent.languagepack_orderdetail_000015}}
 	div.overlay(ng-show="completedOrder")
@@ -82,7 +82,7 @@ div.order-detail-wrapper(ng-controller="OrderDetailCtrl")
 				| {{webContent.languagepack_orderdetail_000016}}
 		div.content
 			span {{webContent.languagepack_orderdetail_000017}}
-			span.hilight {{orderDetail.customer.name}}
+			span.hilight  {{orderDetail.customer.name}} 
 			span {{webContent.languagepack_orderdetail_000018}}
 		div.content
 			span {{webContent.languagepack_orderdetail_000019}}
@@ -92,11 +92,11 @@ div.order-detail-wrapper(ng-controller="OrderDetailCtrl")
 			span {{webContent.languagepack_orderdetail_000021}}
 		div.content
 			span {{webContent.languagepack_orderdetail_000022}}
-			span.hilight {{orderDetail.customer.email}}
+			span.hilight  {{orderDetail.customer.email}} 
 			span {{webContent.languagepack_orderdetail_000023}}
 		div.content
 			span.super-hilight {{webContent.languagepack_orderdetail_000024}}
-			span.hilight {{webContent.languagepack_orderdetail_000025}}
+			span.hilight  {{webContent.languagepack_orderdetail_000025}} 
 		div.content.end
 			span.lowlight
 				| {{webContent.languagepack_orderdetail_000026}} {{countdown}} {{webContent.languagepack_orderdetail_000027}}
