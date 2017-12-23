@@ -143,7 +143,7 @@ angular.module('app')
 
       var pleaseSelect = $scope.webContent.languagepack_orderform_000001
       $scope.showFilePath = function(file){
-        order.file = file
+        order.file = file.value
         $scope.filename = file.value
         console.log($scope.filename)
         $timeout(function() {
