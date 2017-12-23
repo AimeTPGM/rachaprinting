@@ -1,9 +1,21 @@
 angular.module('app')
 .factory('ProductFactory',
-	function(){
+	function(ConfigPath, $http){
 		var product = {}
 
+    var prefixUrl = ConfigPath.servicePath
     product.getProducts = function(){
+      $http.get(prefixUrl+'en/product/')
+      .then(function(response){
+        return response.data
+      }, function(err){
+        return err
+      })
+
+
+      
+    }
+    product.getProduct = function(){
       var products = [
         {
           "id": "1",

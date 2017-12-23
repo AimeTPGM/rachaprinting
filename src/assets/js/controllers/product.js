@@ -4,8 +4,9 @@ angular.module('app')
   	
     var languagePack = LanguageConfig.setLanguage($routeParams.lang)
     $scope.webContent = languagePack.product
-
+    $scope.products = {}
   	$scope.products = ProductFactory.getProducts()
+  	console.log($scope.products)
 		$scope.currentProduct = 0;
 		var scrollPoint = 0;
 		$scope.order = function(id){
