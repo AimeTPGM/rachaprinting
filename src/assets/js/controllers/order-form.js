@@ -1,10 +1,10 @@
 angular.module('app')
-  .controller('OrderFormCtrl', ['$scope', '$http', '$window', '$document', '$routeParams',
-    'LanguageConfig',
+  .controller('OrderFormCtrl', ['$scope', '$http', '$window', '$document', '$routeParams', '$timeout',
+    'LanguageConfig', 'Upload',
     'OrderDetailService', 'ScrollService', 'AngularService',
     'FormatFactory', 'PrintFactory', 'PrintColorFactory', 'PaperTypesFactory', 'RefinementFactory', 'DeliveryFactory', 'OrderFactory',
-    function($scope, $http, $window, $document, $routeParams,
-      LanguageConfig,
+    function($scope, $http, $window, $document, $routeParams, $timeout,
+      LanguageConfig, Upload,
       OrderDetailService, ScrollService, AngularService,
       FormatFactory, PrintFactory, PrintColorFactory, PaperTypesFactory, RefinementFactory, DeliveryFactory, OrderFactory) {
 
@@ -16,6 +16,7 @@ angular.module('app')
         step2: '/views/order-form-step2.html'
       }
    	 	
+      $scope.filename = 'คลิ๊กเพื่ออัพโหลดรูปภาพ'
       $scope.formats = FormatFactory.getFormats()
       $scope.prints = PrintFactory.getPrints()
       $scope.printColors = PrintColorFactory.getPrintColors()
@@ -141,6 +142,14 @@ angular.module('app')
       }
 
       var pleaseSelect = $scope.webContent.languagepack_orderform_000001
+      $scope.showFilePath = function(file){
+        order.file = file
+        $scope.filename = file.value
+        console.log($scope.filename)
+        $timeout(function() {
+            $scope.$apply();
+        }, 1000)
+      }
 
       $scope.setMainChoice = function(index) {
         if (index == 0) {
@@ -149,6 +158,7 @@ angular.module('app')
           order.choice = {
             name: $scope.webContent.languagepack_orderform_000002
           }
+
         } else if (index == 1) {
           addClassByID('choice2', 'selected')
           removeClassByID('choice1', 'selected')

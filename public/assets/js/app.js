@@ -1,4 +1,4 @@
-var app = angular.module('app',['ngRoute', 'duScroll']);
+var app = angular.module('app',['ngRoute', 'duScroll', 'ngFileUpload'])
 
 app.config(['$routeProvider', '$locationProvider',
 	function($routeProvider,$locationProvider) {
@@ -26,6 +26,6 @@ app.config(['$routeProvider', '$locationProvider',
 		$locationProvider.html5Mode({
 				enabled: true,
 				requireBase: false
-		});
+		})
 	}
-]);
+])

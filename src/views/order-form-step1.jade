@@ -14,8 +14,8 @@ div.header-wrapper
                   div.main
                     | {{webContent.printOption.designedOption}}
                   div.sub
-                    | {{webContent.printOption.upload}}
-              input(type="file", name="file", id="file")
+                    | {{filename}}
+              input(type="file", name="file", id="file", onchange="angular.element(this).scope().showFilePath(this)")
         div.main-choice-item
           div.option-content-wrapper
             label(ng-click="setMainChoice(1)")#choice2
