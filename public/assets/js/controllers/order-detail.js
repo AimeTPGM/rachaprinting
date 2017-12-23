@@ -18,17 +18,20 @@ angular.module('app')
     }
 
     function ValidateEmail(mail) {  
-     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))  
+      var regexStr = '/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/'
+      var regex = new RegExp(regexStr)
+      console.log(mail)
+      console.log(regex.test(mail.toLowerCase()))
+     if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(mail))  
       {  
-        return (true)  
+        return true  
       }  
       alert('กรุณากรอกอีเมลล์ในรูปแบบที่ถูกต้อง (ตัวอย่าง: email@example.com)')
       $scope.customer.email == ''
-      return (false)  
+      return false
     } 
 
 		$scope.placeOrder = function(){
-      console.log($scope.customer.phone)
       if($scope.customer.name == null || $scope.customer.name == ''
         || $scope.customer.phone == null || $scope.customer.phone == ''
         || $scope.customer.email == null || $scope.customer.email == '') {
@@ -55,6 +58,8 @@ angular.module('app')
       }
 
       else {
+        console.log('validate mail')
+        console.log($scope.customer.email)
         if(ValidateEmail($scope.customer.email)) {
           $scope.completedOrder = true
           OrderDetailService.orderDetail.customer = $scope.customer

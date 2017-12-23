@@ -69,8 +69,8 @@ div.order-detail-wrapper(ng-controller="OrderDetailCtrl")
 		div.form-wrapper
 			div.form
 				input#cusotmerName(type="text", placeholder="{{placeholder.name}}", ng-model="customer.name")
-				input#cusotmerPhone(type="text", placeholder="{{placeholder.phone}}", ng-model="customer.phone")
 				input#cusotmerEmail(type="text", placeholder="{{placeholder.email}}", ng-model="customer.email")
+				input#cusotmerPhone(type="text", placeholder="{{placeholder.phone}}", ng-model="customer.phone")
 				button(ng-click="placeOrder()")
 					| {{webContent.languagepack_orderdetail_000015}}
 	div.overlay(ng-show="completedOrder")

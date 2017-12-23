@@ -5,7 +5,7 @@ angular.module('app')
     
 
     $scope.templates = {
-      'navbar' : '/views/navbar-home.html',
+      'navbar' : '/views/navbar.html',
       'footer' : '/views/footer.html',
       'credit' : '/views/credit.html',
     }
