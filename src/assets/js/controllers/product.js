@@ -1,12 +1,29 @@
 angular.module('app')
-.controller('ProductCtrl',['$scope', '$http','$window', '$document', '$timeout', '$routeParams', 'ProductFactory', 'AngularServiceFactory', 'ScrollService', 'LanguageConfig',
-	function($scope, $http, $window, $document, $timeout, $routeParams, ProductFactory, AngularServiceFactory, ScrollService, LanguageConfig){
+.controller('ProductCtrl',['$scope', '$http', '$q', '$window', '$document', '$timeout', '$routeParams', 'ProductFactory', 'AngularServiceFactory', 'ScrollService', 'LanguageConfig',
+	function($scope, $http, $q, $window, $document, $timeout, $routeParams, ProductFactory, AngularServiceFactory, ScrollService, LanguageConfig){
   	
     var languagePack = LanguageConfig.setLanguage($routeParams.lang)
     $scope.webContent = languagePack.product
     $scope.products = {}
-  	$scope.products = ProductFactory.getProducts()
-  	console.log($scope.products)
+
+    async function getProducts(){
+    	return await new Promise((resolve, reject) => { 
+    		$http.get('http://192.168.1.105:8081/api/en/product')
+	      .then(function(response){
+	        resolve(response)
+	      })
+    	})
+      
+    }
+
+  	function getProductValue(){
+  		getProducts().then(function(value){
+	  		$scope.product = value.data
+	  	})
+  	} 
+
+  	getProductValue();
+  	
 		$scope.currentProduct = 0;
 		var scrollPoint = 0;
 		$scope.order = function(id){

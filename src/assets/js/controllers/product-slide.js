@@ -4,8 +4,8 @@ angular.module('app')
 
     var languagePack = LanguageConfig.setLanguage($routeParams.lang)
     $scope.webContent = languagePack.product
-
-    $scope.products = ProductFactory.getProducts()
+    
+   
     for (var i = 0; i < $scope.products.length; i++) {
       if($routeParams.productId == $scope.products[i].id){
         $scope.currentSelectedProduct = $scope.products[i]

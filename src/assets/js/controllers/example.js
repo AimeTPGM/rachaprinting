@@ -13,7 +13,6 @@ angular.module('app')
 		function random(){
 			AngularService.removeActiveClassByID('showcase'+randomNumber)
 			randomNumber = Math.floor(Math.random() * $scope.examples.length) + 0
-			console.log(randomNumber)
 			AngularService.addActiveClassByID('showcase'+randomNumber)
 		}
 		$interval(function(){
